@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="https://yt-dlpc.github.io/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://yt-dlpc.github.io/4k-8k-hdr.html">
+
+  <title>Download 4K/8K (HDR) with yt-dlp on Windows — Best Settings</title>
+  <meta name="description" content="Download 4K/8K (HDR) videos on Windows with yt-dlp. Best settings for AV1/VP9/H.264, format selection, 1080p cap, merges with FFmpeg, performance tips, and FAQ.">
+  <meta name="keywords" content="yt-dlp 4k, yt-dlp 8k, hdr, av1, vp9, h264, bestvideo+bestaudio, windows, ffmpeg, 2160p, 4320p, format selection">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Download 4K/8K (HDR) with yt-dlp on Windows">
+  <meta property="og:description" content="Best format selection for AV1/VP9/H.264, HDR notes, 1080p cap, FFmpeg merges, and performance tips.">
+  <meta property="og:url" content="https://yt-dlpc.github.io/4k-8k-hdr.html">
+  <meta property="og:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-03-25T13:35:22Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="4K/8K (HDR) with yt-dlp on Windows — Best Settings">
+  <meta name="twitter:description" content="Choose the right formats, ensure merges with FFmpeg, and optimize performance.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-ZL5RF9N1PR');
+  </script>
+
+  <!-- Structured Data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yt-dlpc.github.io/"},
+      {"@type": "ListItem", "position": 2, "name": "4K/8K (HDR)", "item": "https://yt-dlpc.github.io/4k-8k-hdr.html"}
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "How do I download in 4K?", "acceptedAnswer": {"@type": "Answer", "text": "Use yt-dlp -f \"bestvideo[height>=2160]+bestaudio/best\" \"URL\" and ensure ffmpeg.exe is next to yt-dlp.exe for merging."}},
+      {"@type": "Question", "name": "Why are video and audio separate?", "acceptedAnswer": {"@type": "Answer", "text": "YouTube often provides video-only and audio-only streams for high resolutions. yt-dlp downloads both and uses FFmpeg to merge them."}},
+      {"@type": "Question", "name": "How do I keep it at 1080p or lower?", "acceptedAnswer": {"@type": "Answer", "text": "Use yt-dlp -f \"bestvideo[height<=1080]+bestaudio/best\" \"URL\" to cap the resolution."}},
+      {"@type": "Question", "name": "Do I need FFmpeg for 4K?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, FFmpeg is required to merge separate video+audio streams at 4K/8K and to handle many audio conversions."}},
+      {"@type": "Question", "name": "What if my device can't play AV1 or WebM?", "acceptedAnswer": {"@type": "Answer", "text": "Select H.264/MP4 formats for better compatibility, for example: -f \"bestvideo[ext=mp4][vcodec*=h264]+bestaudio[ext=m4a]/best[ext=mp4]\"."}}
+    ]
+  }
+  </script>
+
+  <style>
+    :root { 
+      --accent: #2563eb; 
+      --bg: #f8fafc; 
+      --text: #111827; 
+      --muted: #6b7280; 
+      --card: #ffffff; 
+      --border: #e5e7eb; 
+      --code-bg: #0b1220;
+      --warning: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1040px; margin: 0 auto; padding: 20px; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 5; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { width: 38px; height: 38px; background: var(--accent); border-radius: 10px; color: #fff; display: grid; place-items: center; font-weight: 800; }
+    nav .nav-links { display: flex; gap: 14px; font-weight: 600; font-size: 14px; flex-wrap: wrap; }
+
+    .hero { padding: 36px 0 18px; }
+    h1 { font-size: 36px; margin: 8px 0 8px; }
+    .subtitle { color: var(--muted); max-width: 820px; margin: 0 0 18px; font-size: 18px; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); margin-top: 16px; }
+    .code { background: var(--code-bg); color: #e5e7eb; padding: 14px; border-radius: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; overflow-x: auto; border-left: 4px solid var(--accent); }
+
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .list { padding-left: 18px; }
+
+    .note { background: #fffbeb; border-left: 4px solid var(--warning); padding: 10px 14px; border-radius: 10px; }
+
+    footer { margin-top: 40px; padding: 30px 0 50px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); background: #fff; }
+    .footer-links { display: flex; gap: 16px; justify-content: center; font-size: 14px; margin-bottom: 8px; flex-wrap: wrap; }
+
+    @media (max-width: 880px) {
+      .two { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+    }
+
+    /* Cookie banner */
+    .cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(17,24,39,0.95); color: #fff; padding: 12px 16px; display: flex; gap: 12px; align-items: center; justify-content: space-between; font-size: 14px; z-index: 50; transform: translateY(100%); transition: transform .25s ease; }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-banner .accept-btn { background: var(--accent); color: #fff; border: 0; padding: 8px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <div class="brand">
+        <div class="brand-logo">YT</div>
+        <div>
+          <strong>yt-dlp Windows Helper</strong>
+          <div style="font-size:12px;color:#6b7280;">Unofficial, community-driven</div>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-links" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="download-windows.html">Download</a>
+          <a href="install.html">Install</a>
+          <a href="to-mp3.html">MP3</a>
+          <a href="download-playlist.html">Playlists</a>
+          <a href="4k-8k-hdr.html" aria-current="page">4K/8K</a>
+          <a href="subtitles-cc.html">Subtitles</a>
+          <a href="ffmpeg-windows.html">FFmpeg</a>
+          <a href="commands.html">Commands</a>
+          <a href="troubleshooting.html">Troubleshooting</a>
+          <a href="vs-youtube-dl.html">vs youtube-dl</a>
+          <a href="safe-legal.html">Safe & Legal</a>
+		  <a href="gui.html">Gui</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Download 4K/8K (HDR) with yt-dlp</h1>
+      <p class="subtitle">Choose the right formats for AV1/VP9/H.264, ensure <strong>bestvideo+bestaudio</strong> merges with <a href="ffmpeg-windows.html">FFmpeg</a>, cap resolution at 1080p when needed, and optimize performance.</p>
+      <p>
+        <a class="btn" href="get.html" target="_blank" rel="noopener">⬇️ Download yt-dlp.exe</a>
+        <a class="btn secondary" href="ffmpeg-windows.html">FFmpeg setup</a>
+      </p>
+      <div class="note">Note: Not every video has 4K/8K or HDR variants. yt-dlp can only download what's available from the source.</div>
+      <div class="muted" style="margin-top:8px"><span id="last-updated"></span> • Works on Windows 11/10</div>
+    </section>
+
+    <section class="card" id="basics">
+      <h2>Quick start for 4K/8K</h2>
+      <p>Let yt-dlp pick the best separate video+audio streams and merge with FFmpeg:</p>
+      <div class="code">yt-dlp -f "bestvideo+bestaudio/best" "URL"</div>
+      <ul class="list">
+        <li>For 4K (2160p) or higher: yt-dlp will choose the highest available by default.</li>
+        <li>Ensure <strong>ffmpeg.exe</strong> is next to <strong>yt-dlp.exe</strong> to merge the streams.</li>
+      </ul>
+    </section>
+
+    <section class="card two" id="cap-limit">
+      <div>
+        <h2>Cap resolution (1080p or lower)</h2>
+        <div class="code">yt-dlp -f "bestvideo[height<=1080]+bestaudio/best" "URL"</div>
+        <p>Use this when your device or editor struggles with 4K/8K.</p>
+      </div>
+      <div>
+        <h2>Prefer H.264/MP4 for compatibility</h2>
+        <div class="code">yt-dlp -f "bestvideo[ext=mp4][vcodec*=h264]+bestaudio[ext=m4a]/best[ext=mp4]" "URL"</div>
+        <p>Helpful for older players, TVs, and editors that dislike WebM/AV1.</p>
+      </div>
+    </section>
+
+    <section class="card two" id="codecs">
+      <div>
+        <h2>Prefer newer codecs (AV1/VP9)</h2>
+        <p>Let yt-dlp choose modern codecs when available and fall back gracefully:</p>
+        <div class="code">yt-dlp -f "bestvideo[vcodec^=av01]/bestvideo[vcodec^=vp9]/bestvideo"+bestaudio/best "URL"</div>
+        <p>This tries AV1 first, then VP9, then any best video, merged with best audio.</p>
+      </div>
+      <div>
+        <h2>About HDR</h2>
+        <p>HDR availability depends on the upload (e.g., VP9 Profile 2 or AV1 10‑bit). Some devices can't display HDR correctly.</p>
+        <ul class="list">
+          <li>If playback issues occur, try the H.264/MP4 command above.</li>
+          <li>For editing, you may prefer SDR (non‑HDR) formats for compatibility.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card two" id="performance">
+      <div>
+        <h2>Performance & reliability</h2>
+        <ul class="list">
+          <li>Concurrency for fragments: <span class="code">-N 4</span> (try 4–8)</li>
+          <li>Rate limit (if throttled): <span class="code">--limit-rate 5M</span></li>
+          <li>Retry on failures: <span class="code">--retries 10 --fragment-retries 10</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Troubleshooting</h2>
+        <ul class="list">
+          <li><strong>No audio</strong>: Ensure you used <span class="code">bestvideo+bestaudio</span> rather than video‑only.</li>
+          <li><strong>Merge errors</strong>: Confirm <strong>ffmpeg.exe</strong> is present and up to date.</li>
+          <li><strong>No 4K option</strong>: The source may not provide it; yt-dlp cannot upscale.</li>
+        </ul>
+        <p>See more: <a href="troubleshooting.html">Troubleshooting</a></p>
+      </div>
+    </section>
+
+    <section class="card" id="legal">
+      <h2>Legal & safety</h2>
+      <p>yt-dlp is open source and safe. Only download content you have rights to and comply with each website's Terms of Service.</p>
+      <p>Next steps: <a href="ffmpeg-windows.html">FFmpeg setup</a> • <a href="commands.html">Commands cheatsheet</a> • <a href="to-mp3.html">Convert to MP3</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="download-windows.html">Download</a>
+        <a href="install.html">Install</a>
+        <a href="to-mp3.html">MP3</a>
+        <a href="download-playlist.html">Playlists</a>
+        <a href="4k-8k-hdr.html">4K/8K</a>
+        <a href="subtitles-cc.html">Subtitles</a>
+        <a href="ffmpeg-windows.html">FFmpeg</a>
+        <a href="commands.html">Commands</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="vs-youtube-dl.html">vs youtube-dl</a>
+        <a href="safe-legal.html">Safe & Legal</a>
+		  <a href="gui.html">Gui</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+      <div style="font-size:13px;margin:6px 0"><span id="last-updated-footer"></span> • © 2026 Unofficial yt-dlp Windows Helper</div>
+      <p style="max-width:800px;margin:6px auto 0;font-size:12px;color:#6b7280">Disclaimer: This site is not affiliated with YouTube or the official yt-dlp developers. We provide instructions and direct links to the official GitHub releases for educational purposes. Please respect copyright and website Terms of Service.</p>
+    </div>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div>We use cookies to enhance your experience and analyze traffic. By clicking “Accept”, you agree to our <a style="color:#93c5fd" href="privacy.html">Privacy Policy</a>.</div>
+    <button class="accept-btn" id="accept-cookies">Accept</button>
+  </div>
+
+  <script>
+    // Last updated
+    (function(){
+      var d = new Date('2026-03-25T13:35:22Z');
+      var opts = { year:'numeric', month:'long', day:'numeric' };
+      var s = 'Last updated: ' + d.toLocaleDateString('en-US', opts);
+      var el1 = document.getElementById('last-updated');
+      var el2 = document.getElementById('last-updated-footer');
+      if (el1) el1.textContent = s;
+      if (el2) el2.textContent = s;
+    })();
+
+    // GA4 click tracking (optional)
+    (function(){
+      var links = document.querySelectorAll('a');
+      links.forEach(function(a){
+        a.addEventListener('click', function(){
+          if (typeof gtag === 'function') {
+            gtag('event', 'click', { event_category: '4k_page', event_label: a.href || a.textContent });
+          }
+        });
+      });
+    })();
+
+    // Cookie consent logic
+    (function(){
+      var banner = document.getElementById('cookie-consent-banner');
+      var accept = document.getElementById('accept-cookies');
+      var key = 'cookieConsent';
+      var val = localStorage.getItem(key);
+      setTimeout(function(){ if(!val) banner.classList.add('show'); }, 700);
+      accept.addEventListener('click', function(){
+        localStorage.setItem(key, 'accepted');
+        banner.classList.remove('show');
+        setTimeout(function(){ banner.style.display='none'; }, 300);
+      });
+    })();
+  </script>
+</body>
+</html>

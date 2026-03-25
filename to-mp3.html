@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="https://yt-dlpc.github.io/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://yt-dlpc.github.io/to-mp3.html">
+
+  <title>YouTube to MP3 with yt-dlp (Windows) — Best Quality, Tags & Artwork</title>
+  <meta name="description" content="Convert YouTube to MP3 on Windows with yt-dlp. Best quality settings, 320 kbps target, embed thumbnail & metadata, batch playlists to MP3. Clear commands & FAQ.">
+  <meta name="keywords" content="youtube to mp3 windows, yt-dlp mp3, convert youtube mp3, 320 kbps, embed thumbnail, id3 tags, playlist to mp3, ffmpeg windows">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="YouTube to MP3 with yt-dlp (Windows) — Best Quality">
+  <meta property="og:description" content="High-quality YouTube to MP3 conversion with yt-dlp. 320 kbps target, tags, artwork, playlists.">
+  <meta property="og:url" content="https://yt-dlpc.github.io/to-mp3.html">
+  <meta property="og:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-03-25T13:26:05Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YouTube to MP3 with yt-dlp (Windows)">
+  <meta name="twitter:description" content="Best quality settings, tags, artwork, playlists to MP3.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-ZL5RF9N1PR');
+  </script>
+
+  <!-- Structured Data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yt-dlpc.github.io/"},
+      {"@type": "ListItem", "position": 2, "name": "YouTube to MP3", "item": "https://yt-dlpc.github.io/to-mp3.html"}
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: HowTo (Convert to MP3) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Convert YouTube to MP3 with yt-dlp (Windows)",
+    "description": "Best-practice steps to convert a YouTube video or playlist to high-quality MP3 on Windows using yt-dlp and FFmpeg.",
+    "totalTime": "PT3M",
+    "tool": [{"@type": "HowToTool", "name": "yt-dlp.exe"}, {"@type": "HowToTool", "name": "ffmpeg.exe"}],
+    "step": [
+      {"@type": "HowToStep", "name": "Download tools", "text": "Get yt-dlp.exe and place ffmpeg.exe next to it in the same folder."},
+      {"@type": "HowToStep", "name": "Open PowerShell", "text": "Open PowerShell in the folder with yt-dlp.exe."},
+      {"@type": "HowToStep", "name": "Run the command", "text": "yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --embed-metadata \"VIDEO_URL\""},
+      {"@type": "HowToStep", "name": "Batch playlists (optional)", "text": "Use a playlist URL or add --yes-playlist to convert all items."}
+    ],
+    "dateModified": "2026-03-25"
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Is 320 kbps real?", "acceptedAnswer": {"@type": "Answer", "text": "yt-dlp can re-encode to a 320 kbps target with FFmpeg, but the actual quality is limited by the source stream (often Opus)."}},
+      {"@type": "Question", "name": "How to embed cover art and tags?", "acceptedAnswer": {"@type": "Answer", "text": "Use --embed-thumbnail and --embed-metadata. FFmpeg must be present to write artwork and ID3 tags."}},
+      {"@type": "Question", "name": "How to keep original audio without re-encoding?", "acceptedAnswer": {"@type": "Answer", "text": "Use -f ba -x --audio-format best. This keeps the best audio stream (often Opus) without converting to MP3."}},
+      {"@type": "Question", "name": "How to convert entire playlists to MP3?", "acceptedAnswer": {"@type": "Answer", "text": "Provide a playlist URL or add --yes-playlist. Combine with -o to set filenames, e.g. -o \"%(playlist_index)02d-%(title)s.%(ext)s\"."}},
+      {"@type": "Question", "name": "Where are files saved?", "acceptedAnswer": {"@type": "Answer", "text": "By default, files save to the current working folder. Use -o to change names or paths, e.g., -o \"C:/Music/%(title)s.%(ext)s\"."}}
+    ]
+  }
+  </script>
+
+  <style>
+    :root { 
+      --accent: #2563eb; 
+      --bg: #f8fafc; 
+      --text: #111827; 
+      --muted: #6b7280; 
+      --card: #ffffff; 
+      --border: #e5e7eb; 
+      --code-bg: #0b1220;
+      --warning: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1040px; margin: 0 auto; padding: 20px; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 5; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { width: 38px; height: 38px; background: var(--accent); border-radius: 10px; color: #fff; display: grid; place-items: center; font-weight: 800; }
+    nav .nav-links { display: flex; gap: 14px; font-weight: 600; font-size: 14px; flex-wrap: wrap; }
+
+    .hero { padding: 36px 0 18px; }
+    h1 { font-size: 36px; margin: 8px 0 8px; }
+    .subtitle { color: var(--muted); max-width: 820px; margin: 0 0 18px; font-size: 18px; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); margin-top: 16px; }
+    .code { background: var(--code-bg); color: #e5e7eb; padding: 14px; border-radius: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; overflow-x: auto; border-left: 4px solid var(--accent); }
+
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .list { padding-left: 18px; }
+
+    .note { background: #fffbeb; border-left: 4px solid var(--warning); padding: 10px 14px; border-radius: 10px; }
+
+    footer { margin-top: 40px; padding: 30px 0 50px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); background: #fff; }
+    .footer-links { display: flex; gap: 16px; justify-content: center; font-size: 14px; margin-bottom: 8px; flex-wrap: wrap; }
+
+    @media (max-width: 880px) {
+      .two { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+    }
+
+    /* Cookie banner */
+    .cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(17,24,39,0.95); color: #fff; padding: 12px 16px; display: flex; gap: 12px; align-items: center; justify-content: space-between; font-size: 14px; z-index: 50; transform: translateY(100%); transition: transform .25s ease; }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-banner .accept-btn { background: var(--accent); color: #fff; border: 0; padding: 8px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <div class="brand">
+        <div class="brand-logo">YT</div>
+        <div>
+          <strong>yt-dlp Windows Helper</strong>
+          <div style="font-size:12px;color:#6b7280;">Unofficial, community-driven</div>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-links" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="download-windows.html">Download</a>
+          <a href="install.html">Install</a>
+          <a href="to-mp3.html" aria-current="page">MP3</a>
+          <a href="download-playlist.html">Playlists</a>
+          <a href="4k-8k-hdr.html">4K/8K</a>
+          <a href="subtitles-cc.html">Subtitles</a>
+          <a href="ffmpeg-windows.html">FFmpeg</a>
+          <a href="commands.html">Commands</a>
+          <a href="troubleshooting.html">Troubleshooting</a>
+          <a href="vs-youtube-dl.html">vs youtube-dl</a>
+          <a href="safe-legal.html">Safe & Legal</a>
+		  <a href="gui.html">Gui</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>YouTube to MP3 on Windows (yt-dlp)</h1>
+      <p class="subtitle">Convert YouTube videos or entire playlists to MP3 with <strong>best quality</strong>, embedded artwork, and proper tags. Requires <a href="ffmpeg-windows.html">FFmpeg</a> for conversion and metadata.</p>
+      <p><a class="btn" href="get.html" target="_blank" rel="noopener">⬇️ Download yt-dlp.exe</a></p>
+      <div class="note">Quality note: YouTube often serves Opus audio. Converting to “320 kbps MP3” targets that bitrate but cannot exceed the source's true quality.</div>
+      <div class="muted" style="margin-top:8px"><span id="last-updated"></span> • Works on Windows 11/10</div>
+    </section>
+
+    <section class="card" id="best-quality">
+      <h2>Best-quality MP3 (recommended)</h2>
+      <p>Re-encode to MP3 at the highest variable bitrate and embed artwork + metadata (requires FFmpeg):</p>
+      <div class="code">yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --embed-metadata "VIDEO_URL"</div>
+      <ul class="list">
+        <li><code>--audio-quality 0</code>: highest VBR quality for MP3 (LAME preset).</li>
+        <li><code>--embed-thumbnail</code> and <code>--embed-metadata</code>: add cover art and ID3 tags when possible.</li>
+        <li>Use with playlists by passing a playlist URL (see below).</li>
+      </ul>
+    </section>
+
+    <section class="card two" id="alternatives">
+      <div>
+        <h2>Constant bitrate (CBR) example</h2>
+        <p>Target a specific bitrate (e.g., ~192 kbps):</p>
+        <div class="code">yt-dlp -x --audio-format mp3 --audio-quality 192K --embed-thumbnail --embed-metadata "VIDEO_URL"</div>
+      </div>
+      <div>
+        <h2>No re-encode (keep original)</h2>
+        <p>Keep the best audio stream without converting to MP3 (often Opus):</p>
+        <div class="code">yt-dlp -f ba -x --audio-format best "VIDEO_URL"</div>
+      </div>
+    </section>
+
+    <section class="card" id="playlists">
+      <h2>Convert an entire playlist to MP3</h2>
+      <p>Supply a playlist URL directly or force playlist processing:</p>
+      <div class="code">yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --embed-metadata --yes-playlist -o "%(playlist_index)02d-%(title)s.%(ext)s" "PLAYLIST_URL"</div>
+      <ul class="list">
+        <li><code>-o</code> uses an output template with zero‑padded indexes for proper sort order.</li>
+        <li>Add <code>--download-archive downloaded.txt</code> to skip previously converted items.</li>
+      </ul>
+    </section>
+
+    <section class="card two" id="filenames">
+      <div>
+        <h2>Filenames & folders</h2>
+        <div class="code">yt-dlp -x --audio-format mp3 -o "C:/Music/%(artist,channel)s/%(title)s.%(ext)s" "VIDEO_URL"</div>
+        <p>Build neat libraries using artist/channel and title. Windows paths use <code>/</code> or escaped <code>\\</code>.</p>
+      </div>
+      <div>
+        <h2>Tags & artwork tips</h2>
+        <ul class="list">
+          <li>Use <code>--embed-thumbnail --embed-metadata</code> for cover art and ID3.</li>
+          <li>Improve tags with <code>--parse-metadata</code> if your source has structured titles.</li>
+          <li>FFmpeg must be present for embedding to work.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card" id="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Is 320 kbps MP3 always better?</summary>
+        <p>Not necessarily. YouTube often provides Opus around 160 kbps (but efficient). Re-encoding to "320 kbps" sets the MP3 bitrate target but cannot add detail beyond the source.</p>
+      </details>
+      <details>
+        <summary>How do I batch multiple links?</summary>
+        <p>Put URLs in a text file and use <span class="code">yt-dlp -a links.txt -x --audio-format mp3 --audio-quality 0</span>.</p>
+      </details>
+      <details>
+        <summary>My files have no artwork?</summary>
+        <p>Ensure <strong>ffmpeg.exe</strong> is in the same folder as <strong>yt-dlp.exe</strong> and include <span class="code">--embed-thumbnail --embed-metadata</span>.</p>
+      </details>
+      <details>
+        <summary>Where do files save?</summary>
+        <p>By default, to the current folder. Control it with <span class="code">-o</span>, e.g., <span class="code">-o "C:/Music/%(title)s.%(ext)s"</span>.</p>
+      </details>
+    </section>
+
+    <section class="card" id="legal">
+      <h2>Legal & safety</h2>
+      <p>yt-dlp is open source and safe. Only download content you have rights to and follow each website's Terms of Service. We link to the official GitHub release.</p>
+      <p>More: <a href="safe-legal.html">Safe & Legal</a>
+		  <a href="gui.html">Gui</a> • Need FFmpeg? <a href="ffmpeg-windows.html">FFmpeg setup</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="download-windows.html">Download</a>
+        <a href="install.html">Install</a>
+        <a href="to-mp3.html">MP3</a>
+        <a href="download-playlist.html">Playlists</a>
+        <a href="4k-8k-hdr.html">4K/8K</a>
+        <a href="subtitles-cc.html">Subtitles</a>
+        <a href="ffmpeg-windows.html">FFmpeg</a>
+        <a href="commands.html">Commands</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+        <a href="vs-youtube-dl.html">vs youtube-dl</a>
+        <a href="safe-legal.html">Safe & Legal</a>
+		  <a href="gui.html">Gui</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+      <div style="font-size:13px;margin:6px 0"><span id="last-updated-footer"></span> • © 2026 Unofficial yt-dlp Windows Helper</div>
+      <p style="max-width:800px;margin:6px auto 0;font-size:12px;color:#6b7280">Disclaimer: This site is not affiliated with YouTube or the official yt-dlp developers. We provide instructions and direct links to the official GitHub releases for educational purposes. Please respect copyright and website Terms of Service.</p>
+    </div>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div>We use cookies to enhance your experience and analyze traffic. By clicking “Accept”, you agree to our <a style="color:#93c5fd" href="privacy.html">Privacy Policy</a>.</div>
+    <button class="accept-btn" id="accept-cookies">Accept</button>
+  </div>
+
+  <script>
+    // Last updated
+    (function(){
+      var d = new Date('2026-03-25T13:26:05Z');
+      var opts = { year:'numeric', month:'long', day:'numeric' };
+      var s = 'Last updated: ' + d.toLocaleDateString('en-US', opts);
+      var el1 = document.getElementById('last-updated');
+      var el2 = document.getElementById('last-updated-footer');
+      if (el1) el1.textContent = s;
+      if (el2) el2.textContent = s;
+    })();
+
+    // GA4 click tracking (optional)
+    (function(){
+      var links = document.querySelectorAll('a');
+      links.forEach(function(a){
+        a.addEventListener('click', function(){
+          if (typeof gtag === 'function') {
+            gtag('event', 'click', { event_category: 'mp3_page', event_label: a.href || a.textContent });
+          }
+        });
+      });
+    })();
+
+    // Cookie consent logic
+    (function(){
+      var banner = document.getElementById('cookie-consent-banner');
+      var accept = document.getElementById('accept-cookies');
+      var key = 'cookieConsent';
+      var val = localStorage.getItem(key);
+      setTimeout(function(){ if(!val) banner.classList.add('show'); }, 700);
+      accept.addEventListener('click', function(){
+        localStorage.setItem(key, 'accepted');
+        banner.classList.remove('show');
+        setTimeout(function(){ banner.style.display='none'; }, 300);
+      });
+    })();
+  </script>
+</body>
+</html>
