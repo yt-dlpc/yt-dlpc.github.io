@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="https://yt-dlpc.github.io/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://yt-dlpc.github.io/de/commands.html">
+
+  <!-- hreflang -->
+  <link rel="alternate" href="https://yt-dlpc.github.io/de/commands.html" hreflang="de">
+  <link rel="alternate" href="https://yt-dlpc.github.io/commands.html" hreflang="en">
+  <link rel="alternate" href="https://yt-dlpc.github.io/commands.html" hreflang="x-default">
+
+  <title>yt-dlp Befehls-Cheatsheet (Windows) — Schnelle Beispiele</title>
+  <meta name="description" content="yt-dlp Befehle für Windows: beste Videoqualität, 1080p-Limit, 4K/8K, MP3, Wiedergabelisten, Untertitel, Dateinamen, Rate-Limits, Wiederholungen, Cookies/Auth, Update. Copy & Paste Beispiele.">
+  <meta name="keywords" content="yt-dlp befehle windows, cheatsheet, 1080p, 4k, mp3, wiedergabeliste, untertitel, output vorlage, rate limit, wiederholungen, cookies, authentifizierung, update">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="yt-dlp Befehls-Cheatsheet (Windows)">
+  <meta property="og:description" content="Copy & Paste yt-dlp Befehle für Windows: Qualität, MP3, Wiedergabelisten, Untertitel, Dateinamen, Wiederholungen, Cookies und mehr.">
+  <meta property="og:url" content="https://yt-dlpc.github.io/de/commands.html">
+  <meta property="og:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-04-04T17:36:20Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="yt-dlp Befehls-Cheatsheet (Windows)">
+  <meta name="twitter:description" content="Schnelle Beispiele für Qualität, MP3, Wiedergabelisten, Untertitel, Dateinamen, Wiederholungen, Cookies, Update.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-ZL5RF9N1PR');
+  </script>
+
+  <!-- Structured Data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://yt-dlpc.github.io/de/"},
+      {"@type": "ListItem", "position": 2, "name": "Befehle", "item": "https://yt-dlpc.github.io/de/commands.html"}
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Wie begrenze ich Downloads auf 1080p?", "acceptedAnswer": {"@type": "Answer", "text": "Verwende yt-dlp -f \"bestvideo[height<=1080]+bestaudio/best\" \"URL\", um die Auflösung zu begrenzen."}},
+      {"@type": "Question", "name": "Wie konvertiere ich zu MP3?", "acceptedAnswer": {"@type": "Answer", "text": "Verwende yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --embed-metadata \"URL\" (FFmpeg erforderlich)."}},
+      {"@type": "Question", "name": "Wie lade ich eine komplette Wiedergabeliste herunter?", "acceptedAnswer": {"@type": "Answer", "text": "Führe yt-dlp --yes-playlist \"PLAYLIST_URL\" aus und nutze ggf. -o \"%(playlist_index)02d-%(title)s.%(ext)s\" zur Beibehaltung der Reihenfolge."}},
+      {"@type": "Question", "name": "Wie setze ich fort und vermeide Duplikate?", "acceptedAnswer": {"@type": "Answer", "text": "Füge --continue zum Fortsetzen unvollständiger Dateien und --download-archive downloaded.txt hinzu, um bereits gespeicherte Elemente zu überspringen."}},
+      {"@type": "Question", "name": "Wie übergebe ich Cookies für private/geschützte Videos?", "acceptedAnswer": {"@type": "Answer", "text": "Verwende --cookies-from-browser chrome (oder edge/firefox), um dich mit deinem eingeloggten Browser-Profil zu authentifizieren."}}
+    ]
+  }
+  </script>
+
+  <style>
+    :root { 
+      --accent: #2563eb; 
+      --bg: #f8fafc; 
+      --text: #111827; 
+      --muted: #6b7280; 
+      --card: #ffffff; 
+      --border: #e5e7eb; 
+      --code-bg: #0b1220;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1040px; margin: 0 auto; padding: 20px; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 5; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { width: 38px; height: 38px; background: var(--accent); border-radius: 10px; color: #fff; display: grid; place-items: center; font-weight: 800; }
+    nav .nav-links { display: flex; gap: 14px; font-weight: 600; font-size: 14px; flex-wrap: wrap; }
+
+    .hero { padding: 36px 0 18px; }
+    h1 { font-size: 36px; margin: 8px 0 8px; }
+    .subtitle { color: var(--muted); max-width: 820px; margin: 0 0 18px; font-size: 18px; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); margin-top: 16px; }
+    .code { background: var(--code-bg); color: #e5e7eb; padding: 14px; border-radius: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; overflow-x: auto; border-left: 4px solid var(--accent); }
+
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .list { padding-left: 18px; }
+
+    @media (max-width: 880px) {
+      .grid2 { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+    }
+
+    /* Cookie banner */
+    .cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(17,24,39,0.95); color: #fff; padding: 12px 16px; display: flex; gap: 12px; align-items: center; justify-content: space-between; font-size: 14px; z-index: 50; transform: translateY(100%); transition: transform .25s ease; }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-banner .accept-btn { background: var(--accent); color: #fff; border: 0; padding: 8px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <div class="brand">
+        <div class="brand-logo">YT</div>
+        <div>
+          <strong>yt-dlp Windows Helper</strong>
+          <div style="font-size:12px;color:#6b7280;">Inoffiziell, von der Community betrieben</div>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-links" aria-label="Hauptnavigation">
+          <a href="">Startseite</a>
+          <a href="download-windows.html">Download</a>
+          <a href="install.html">Installieren</a>
+          <a href="to-mp3.html">MP3</a>
+          <a href="download-playlist.html">Wiedergabelisten</a>
+          <a href="4k-8k-hdr.html">4K/8K</a>
+          <a href="subtitles-cc.html">Untertitel</a>
+          <a href="ffmpeg-windows.html">FFmpeg</a>
+          <a href="commands.html" aria-current="page">Befehle</a>
+          <a href="troubleshooting.html">Fehlerbehebung</a>
+          <a href="vs-youtube-dl.html">vs youtube-dl</a>
+          <a href="safe-legal.html">Sicher & Rechtlich</a>
+          <a href="gui.html">GUI</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>yt-dlp Befehls-Cheatsheet (Windows)</h1>
+      <p class="subtitle">Kopiere & füge die nützlichsten Befehle für Windows ein: Qualität, MP3, Wiedergabelisten, Untertitel, Dateinamen, Wiederholungen, Cookies und mehr. Stelle sicher, dass <a href="ffmpeg-windows.html">FFmpeg</a> für Merges und Audiokonvertierung vorhanden ist.</p>
+      <p><a class="btn" href="get.html" target="_blank" rel="noopener">⬇️ yt-dlp.exe herunterladen</a></p>
+      <div class="muted" style="margin-top:8px"><span id="last-updated"></span> • Funktioniert auf Windows 11/10</div>
+    </section>
+
+    <section class="card" id="basics">
+      <h2>Grundlagen</h2>
+      <div class="code">yt-dlp "https://www.youtube.com/watch?v=VIDEO_ID"</div>
+      <div class="code">yt-dlp --version
+yt-dlp -U</div>
+    </section>
+
+    <section class="card grid2" id="quality">
+      <div>
+        <h2>Beste Qualität (automatisches Merge)</h2>
+        <div class="code">yt-dlp -f "bestvideo+bestaudio/best" "URL"</div>
+      </div>
+      <div>
+        <h2>Auf 1080p begrenzen</h2>
+        <div class="code">yt-dlp -f "bestvideo[height<=1080]+bestaudio/best" "URL"</div>
+      </div>
+    </section>
+
+    <section class="card grid2" id="compat">
+      <div>
+        <h2>MP4/H.264 bevorzugen</h2>
+        <div class="code">yt-dlp -f "bestvideo[ext=mp4][vcodec*=h264]+bestaudio[ext=m4a]/best[ext=mp4]" "URL"</div>
+      </div>
+      <div>
+        <h2>AV1 bevorzugen, dann VP9</h2>
+        <div class="code">yt-dlp -f "bestvideo[vcodec^=av01]+bestaudio/bestvideo[vcodec^=vp9]+bestaudio/best" "URL"</div>
+      </div>
+    </section>
+
+    <section class="card grid2" id="audio">
+      <div>
+        <h2>Zu MP3 konvertieren (beste)</h2>
+        <div class="code">yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --embed-metadata "URL"</div>
+      </div>
+      <div>
+        <h2>Original-Audio behalten (kein Re-Encode)</h2>
+        <div class="code">yt-dlp -f ba -x --audio-format best "URL"</div>
+      </div>
+    </section>
+
+    <section class="card grid2" id="lists">
+      <div>
+        <h2>Komplette Wiedergabeliste</h2>
+        <div class="code">yt-dlp --yes-playlist -o "%(playlist_index)02d-%(title)s.%(ext)s" "PLAYLIST_URL"</div>
+      </div>
+      <div>
+        <h2>Bestimmte Elemente oder Bereiche</h2>
+        <div class="code">yt-dlp --playlist-items 1,5,10-12 "PLAYLIST_URL"</div>
+      </div>
+    </section>
+
+    <section class="card grid2" id="subs">
+      <div>
+        <h2>Untertitel herunterladen</h2>
+        <div class="code">yt-dlp --write-sub --sub-langs "de" --sub-format srt "URL"</div>
+      </div>
+      <div>
+        <h2>Auto-Untertitel, in MKV einbetten</h2>
+        <div class="code">yt-dlp -f "bv+ba/best" --write-auto-sub --sub-langs "de,*" --embed-subs --merge-output-format mkv "URL"</div>
+      </div>
+    </section>
+
+    <section class="card grid2" id="names">
+      <div>
+        <h2>Output-Vorlagen (Ordner & Namen)</h2>
+        <div class="code">-o "C:/Videos/%(playlist)s/%(playlist_index)02d-%(title)s.%(ext)s"</div>
+        <div class="code">-o "C:/Music/%(artist,channel)s/%(title)s.%(ext)s"</div>
+      </div>
+      <div>
+        <h2>Archive & Fortsetzen</h2>
+        <div class="code">--download-archive downloaded.txt --continue</div>
+      </div>
+    </section>
+
+    <section class="card grid2" id="network">
+      <div>
+        <h2>Performance & Limits</h2>
+        <div class="code">-N 4 --limit-rate 5M --retries 10 --fragment-retries 10</div>
+      </div>
+      <div>
+        <h2>Cookies & Authentifizierung</h2>
+        <div class="code">--cookies-from-browser chrome</div>
+        <p class="muted">Nutze bei Bedarf edge oder firefox. Nur für Inhalte, zu denen du berechtigt bist.</p>
+      </div>
+    </section>
+
+    <section class="card grid2" id="meta">
+      <div>
+        <h2>Thumbnails & Metadaten</h2>
+        <div class="code">--embed-thumbnail --embed-metadata</div>
+      </div>
+      <div>
+        <h2>Trockenlauf & Formate auflisten</h2>
+        <div class="code">-F "URL"  # Formate auflisten
+--simulate "URL"  # kein Download</div>
+      </div>
+    </section>
+
+    <section class="card" id="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Wo werden Dateien gespeichert?</summary>
+        <p>Standardmäßig im aktuellen Arbeitsordner. Verwende <span class="code">-o</span>, um Pfade zu ändern.</p>
+      </details>
+      <details>
+        <summary>Warum erhalte ich getrennte Video-/Audiodateien?</summary>
+        <p>Hohe Auflösungen kommen oft als getrennte Streams. Stelle sicher, dass <strong>ffmpeg.exe</strong> vorhanden ist, damit yt-dlp sie zusammenführen kann.</p>
+      </details>
+      <details>
+        <summary>Wie aktualisiere ich yt-dlp?</summary>
+        <p>Führe <span class="code">yt-dlp -U</span> aus. Siehe die <a href="install.html">Installationsanleitung</a> für mehr.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="">Startseite</a>
+        <a href="download-windows.html">Download</a>
+        <a href="install.html">Installieren</a>
+        <a href="to-mp3.html">MP3</a>
+        <a href="download-playlist.html">Wiedergabelisten</a>
+        <a href="4k-8k-hdr.html">4K/8K</a>
+        <a href="subtitles-cc.html">Untertitel</a>
+        <a href="ffmpeg-windows.html">FFmpeg</a>
+        <a href="commands.html">Befehle</a>
+        <a href="troubleshooting.html">Fehlerbehebung</a>
+        <a href="vs-youtube-dl.html">vs youtube-dl</a>
+        <a href="safe-legal.html">Sicher & Rechtlich</a>
+        <a href="gui.html">GUI</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+      <div style="font-size:13px;margin:6px 0"><span id="last-updated-footer"></span> • © 2026 Inoffizieller yt-dlp Windows Helper</div>
+      <p style="max-width:800px;margin:6px auto 0;font-size:12px;color:#6b7280">Hinweis: Diese Website steht in keiner Verbindung zu YouTube oder den offiziellen yt-dlp-Entwicklern. Wir bieten Anleitungen und direkte Links zu den offiziellen GitHub-Releases zu Bildungszwecken. Bitte respektiere Urheberrechte und die Nutzungsbedingungen von Websites.</p>
+    </div>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie-Einwilligung">
+    <div>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und den Traffic zu analysieren. Durch Klicken auf „Akzeptieren“ stimmen Sie unserer <a style="color:#93c5fd" href="privacy.html">Datenschutzerklärung</a> zu.</div>
+    <button class="accept-btn" id="accept-cookies">Akzeptieren</button>
+  </div>
+
+  <script>
+    // Zuletzt aktualisiert
+    (function(){
+      var d = new Date('2026-04-04T17:36:20Z');
+      var opts = { year:'numeric', month:'long', day:'numeric' };
+      var s = 'Zuletzt aktualisiert: ' + d.toLocaleDateString('de-DE', opts);
+      var el1 = document.getElementById('last-updated');
+      var el2 = document.getElementById('last-updated-footer');
+      if (el1) el1.textContent = s;
+      if (el2) el2.textContent = s;
+    })();
+
+    // GA4 Klick-Tracking (optional)
+    (function(){
+      var links = document.querySelectorAll('a');
+      links.forEach(function(a){
+        a.addEventListener('click', function(){
+          if (typeof gtag === 'function') {
+            gtag('event', 'click', { event_category: 'commands_page', event_label: a.href || a.textContent });
+          }
+        });
+      });
+    })();
+
+    // Cookie-Einwilligung
+    (function(){
+      var banner = document.getElementById('cookie-consent-banner');
+      var accept = document.getElementById('accept-cookies');
+      var key = 'cookieConsent';
+      var val = localStorage.getItem(key);
+      setTimeout(function(){ if(!val) banner.classList.add('show'); }, 700);
+      accept.addEventListener('click', function(){
+        localStorage.setItem(key, 'accepted');
+        banner.classList.remove('show');
+        setTimeout(function(){ banner.style.display='none'; }, 300);
+      });
+    })();
+  </script>
+</body>
+</html>

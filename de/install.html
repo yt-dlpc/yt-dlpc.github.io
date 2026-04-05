@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="https://yt-dlpc.github.io/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://yt-dlpc.github.io/de/install.html">
+
+  <!-- hreflang -->
+  <link rel="alternate" href="https://yt-dlpc.github.io/de/install.html" hreflang="de">
+  <link rel="alternate" href="https://yt-dlpc.github.io/install.html" hreflang="en">
+  <link rel="alternate" href="https://yt-dlpc.github.io/install.html" hreflang="x-default">
+
+  <title>yt-dlp unter Windows installieren — Schritt‑für‑Schritt (PowerShell, PATH, FFmpeg)</title>
+  <meta name="description" content="So installierst du yt-dlp unter Windows 11/10: yt-dlp.exe herunterladen, zum PATH hinzufügen, über PowerShell/CMD ausführen, Version prüfen, mit -U aktualisieren, FFmpeg einrichten. Klare Schritte + Befehle.">
+  <meta name="keywords" content="yt-dlp installieren windows, yt-dlp windows 11, zum PATH hinzufügen, powershell, cmd, ffmpeg windows, yt-dlp aktualisieren, version prüfen, youtube downloader cli">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="yt-dlp unter Windows installieren — Schritt‑für‑Schritt (PowerShell, PATH, FFmpeg)">
+  <meta property="og:description" content="yt-dlp.exe herunterladen, zum PATH hinzufügen, prüfen und aktualisieren. Optional FFmpeg für 4K/8K und MP3 einrichten.">
+  <meta property="og:url" content="https://yt-dlpc.github.io/de/install.html">
+  <meta property="og:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-04-04T17:47:45Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="yt-dlp unter Windows installieren — Schritt‑für‑Schritt (PowerShell, PATH, FFmpeg)">
+  <meta name="twitter:description" content="Klare Schritte zur Installation und Nutzung von yt-dlp unter Windows. PATH hinzufügen und FFmpeg einrichten.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-ZL5RF9N1PR');
+  </script>
+
+  <!-- Structured Data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://yt-dlpc.github.io/de/"},
+      {"@type": "ListItem", "position": 2, "name": "Installieren", "item": "https://yt-dlpc.github.io/de/install.html"}
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: HowTo (Install on Windows) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "yt-dlp unter Windows installieren",
+    "description": "Schritt‑für‑Schritt‑Anleitung zur Installation von yt-dlp unter Windows 11/10, Hinzufügen zum PATH, Versionsprüfung und FFmpeg‑Setup.",
+    "totalTime": "PT5M",
+    "supply": [{"@type": "HowToSupply", "name": "Windows 11/10 PC"}],
+    "tool": [{"@type": "HowToTool", "name": "PowerShell oder Eingabeaufforderung"}],
+    "step": [
+      {"@type": "HowToStep", "name": "yt-dlp.exe herunterladen", "text": "Hole die neueste yt-dlp.exe vom offiziellen GitHub‑Release.", "url": "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe"},
+      {"@type": "HowToStep", "name": "Datei ablegen", "text": "Verschiebe yt-dlp.exe in einen Ordner wie C:\\Tools\\yt-dlp oder C:\\Users\\YOU\\Downloads."},
+      {"@type": "HowToStep", "name": "(Optional) Zum PATH hinzufügen", "text": "Füge diesen Ordner deinem Benutzer‑PATH hinzu, um yt-dlp aus jedem Verzeichnis auszuführen."},
+      {"@type": "HowToStep", "name": "Prüfen & aktualisieren", "text": "Öffne PowerShell, führe yt-dlp --version und yt-dlp -U aus."},
+      {"@type": "HowToStep", "name": "FFmpeg installieren", "text": "Lege ffmpeg.exe neben yt-dlp.exe für 4K/8K‑Merges und Audiokonvertierungen."}
+    ],
+    "dateModified": "2026-04-04"
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Brauche ich Admin‑Rechte?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. yt-dlp.exe ist portabel und läuft ohne Installation. Admin wird nur benötigt, wenn du den Ordner für alle Nutzer zum System‑PATH hinzufügen willst."}},
+      {"@type": "Question", "name": "PowerShell kann die Datei nicht ausführen?", "acceptedAnswer": {"@type": "Answer", "text": "Rechtsklick auf die Datei > Eigenschaften > ggf. \"Zulassen\"/\"Entsperren\" aktivieren. Stelle sicher, dass du yt-dlp.exe aus ihrem Ordner startest oder der Ordner im PATH ist."}},
+      {"@type": "Question", "name": "Warum brauche ich FFmpeg?", "acceptedAnswer": {"@type": "Answer", "text": "YouTube liefert Video und Audio oft als getrennte Streams. FFmpeg führt sie für beste Qualität zusammen und ermöglicht Audiokonvertierungen wie MP3."}},
+      {"@type": "Question", "name": "Wie aktualisiere ich yt-dlp?", "acceptedAnswer": {"@type": "Answer", "text": "Öffne PowerShell im Ordner mit yt-dlp.exe und führe: yt-dlp -U aus. Dadurch wird die ausführbare Datei durch die neueste Version ersetzt."}}
+    ]
+  }
+  </script>
+
+  <style>
+    :root { 
+      --accent: #2563eb; 
+      --bg: #f8fafc; 
+      --text: #111827; 
+      --muted: #6b7280; 
+      --card: #ffffff; 
+      --border: #e5e7eb; 
+      --code-bg: #0b1220;
+      --warning: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1040px; margin: 0 auto; padding: 20px; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 5; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { width: 38px; height: 38px; background: var(--accent); border-radius: 10px; color: #fff; display: grid; place-items: center; font-weight: 800; }
+    nav .nav-links { display: flex; gap: 14px; font-weight: 600; font-size: 14px; flex-wrap: wrap; }
+
+    .hero { padding: 36px 0 18px; }
+    h1 { font-size: 36px; margin: 8px 0 8px; }
+    .subtitle { color: var(--muted); max-width: 820px; margin: 0 0 18px; font-size: 18px; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); margin-top: 16px; }
+    .code { background: var(--code-bg); color: #e5e7eb; padding: 14px; border-radius: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; overflow-x: auto; border-left: 4px solid var(--accent); }
+
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .list { padding-left: 18px; }
+
+    .note { background: #fffbeb; border-left: 4px solid var(--warning); padding: 10px 14px; border-radius: 10px; }
+    .muted { color: var(--muted); }
+
+    footer { margin-top: 40px; padding: 30px 0 50px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); background: #fff; }
+    .footer-links { display: flex; gap: 16px; justify-content: center; font-size: 14px; margin-bottom: 8px; flex-wrap: wrap; }
+
+    @media (max-width: 880px) {
+      .two { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+    }
+
+    /* Cookie banner */
+    .cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(17,24,39,0.95); color: #fff; padding: 12px 16px; display: flex; gap: 12px; align-items: center; justify-content: space-between; font-size: 14px; z-index: 50; transform: translateY(100%); transition: transform .25s ease; }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-banner .accept-btn { background: var(--accent); color: #fff; border: 0; padding: 8px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <div class="brand">
+        <div class="brand-logo">YT</div>
+        <div>
+          <strong>yt-dlp Windows Helper</strong>
+          <div style="font-size:12px;color:#6b7280;">Inoffiziell, von der Community betrieben</div>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-links" aria-label="Hauptnavigation">
+          <a href="index.html">Startseite</a>
+          <a href="download-windows.html">Download</a>
+          <a href="install.html" aria-current="page">Installieren</a>
+          <a href="to-mp3.html">MP3</a>
+          <a href="download-playlist.html">Wiedergabelisten</a>
+          <a href="4k-8k-hdr.html">4K/8K</a>
+          <a href="subtitles-cc.html">Untertitel</a>
+          <a href="ffmpeg-windows.html">FFmpeg</a>
+          <a href="commands.html">Befehle</a>
+          <a href="troubleshooting.html">Fehlerbehebung</a>
+          <a href="vs-youtube-dl.html">vs youtube-dl</a>
+          <a href="safe-legal.html">Sicher & Rechtlich</a>
+          <a href="gui.html">GUI</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>yt-dlp unter Windows installieren</h1>
+      <p class="subtitle">Kurzanleitung zur Einrichtung von <strong>yt-dlp.exe</strong> unter Windows 11/10, Hinzufügen zum <strong>PATH</strong>, Prüfen, Aktualisieren und Aktivieren von <strong>FFmpeg</strong> für 4K/8K und MP3.</p>
+      <p><a class="btn" href="get.html" target="_blank" rel="noopener">⬇️ yt-dlp.exe herunterladen</a></p>
+      <div class="note">Tipp: Du kannst yt-dlp.exe ohne Installation ausführen. Das Hinzufügen zum PATH macht es nur aus jedem Ordner verfügbar.</div>
+      <div class="muted" style="margin-top:8px"><span id="last-updated"></span> • Funktioniert auf Windows 11/10</div>
+    </section>
+
+    <section class="card" id="steps">
+      <h2>Schritt‑für‑Schritt</h2>
+      <ol class="list">
+        <li>Lade <strong>yt-dlp.exe</strong> vom offiziellen GitHub‑Release: <a href="get.html" target="_blank" rel="noopener">neuester Build</a>.</li>
+        <li>Verschiebe sie in einen Ordner wie <code>C:\\Tools\\yt-dlp</code> oder <code>C:\\Users\\YOU\\Downloads</code>.</li>
+        <li>(Optional) Füge den Ordner deinem <strong>PATH</strong> hinzu:
+          <ul class="list">
+            <li><strong>GUI‑Methode:</strong> Start → nach „Umgebungsvariablen“ suchen → Umgebungsvariablen bearbeiten → unter <em>Benutzervariablen</em> <em>Path</em> öffnen → <em>Neu</em> → deinen Ordner einfügen (z. B. <code>C:\\Tools\\yt-dlp</code>) → OK.</li>
+            <li><strong>PowerShell (aktueller Benutzer):</strong> <span class="code">setx PATH "%PATH%;C:\\Tools\\yt-dlp"</span> (danach Terminal neu starten).</li>
+          </ul>
+        </li>
+        <li>Öffne <strong>PowerShell</strong> im Ordner (Explorer → Adressleiste → <code>powershell</code> tippen → Enter) und führe aus:
+          <div class="code">yt-dlp --version</div>
+        </li>
+        <li>Halte es aktuell:
+          <div class="code">yt-dlp -U</div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card" id="ffmpeg">
+      <h2>FFmpeg (empfohlen)</h2>
+      <p>FFmpeg ermöglicht das Zusammenführen getrennter Video/Audio‑Streams (4K/8K) und Audiokonvertierungen (z. B. MP3).</p>
+      <ol class="list">
+        <li>Lade <strong>ffmpeg.exe</strong> aus offiziellen Quellen herunter.</li>
+        <li>Lege <strong>ffmpeg.exe</strong> neben <strong>yt-dlp.exe</strong> in denselben Ordner.</li>
+        <li>Prüfe durch einen Download in hoher Qualität; yt-dlp sollte FFmpeg automatisch erkennen und Formate mergen.</li>
+      </ol>
+      <p>Alle Details: <a href="ffmpeg-windows.html">FFmpeg unter Windows einrichten</a>.</p>
+    </section>
+
+    <section class="card two" id="post-install">
+      <div>
+        <h2>Nach der Installation: Checks</h2>
+        <p>Kurzer Test in PowerShell:</p>
+        <div class="code">yt-dlp "https://www.youtube.com/watch?v=VIDEO_ID"</div>
+        <p>Version und Update‑Status prüfen:</p>
+        <div class="code">yt-dlp --version
+yt-dlp -U</div>
+      </div>
+      <div>
+        <h2>Aus jedem Ordner starten</h2>
+        <p>Sobald der Ordner im PATH ist, kannst du yt-dlp überall ausführen. Ansonsten aus seinem Ordner starten oder den vollständigen Pfad angeben:</p>
+        <div class="code">C:\\Tools\\yt-dlp\\yt-dlp.exe --version</div>
+      </div>
+    </section>
+
+    <section class="card" id="troubleshooting">
+      <h2>Fehlerbehebung</h2>
+      <ul class="list">
+        <li><strong>SmartScreen‑Warnung?</strong> Klicke <em>Weitere Informationen</em> → <em>Trotzdem ausführen</em>. Üblich bei portablen Open‑Source‑Tools.</li>
+        <li><strong>„Befehl nicht gefunden“ nach PATH‑Update?</strong> Terminal schließen und neu öffnen (PATH wird beim Sitzungsstart geladen).</li>
+        <li><strong>„Zugriff verweigert“ oder blockiert?</strong> Rechtsklick auf <em>yt-dlp.exe</em> → <em>Eigenschaften</em> → <em>Zulassen/Entsperren</em> (falls vorhanden) aktivieren → OK.</li>
+        <li><strong>Merge‑Fehler bei 4K/8K?</strong> Stelle sicher, dass <em>ffmpeg.exe</em> im selben Ordner wie <em>yt-dlp.exe</em> liegt.</li>
+      </ul>
+      <p>Siehe auch: <a href="commands.html">Befehls‑Cheatsheet</a> • <a href="troubleshooting.html">Ausführliche Fehlerbehebung</a></p>
+    </section>
+
+    <section class="card" id="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Brauche ich Admin‑Rechte für die Installation?</summary>
+        <p>Nein. yt-dlp.exe ist portabel. Admin ist nur nötig, wenn du PATH für alle Benutzer setzen willst; für deinen Benutzer nutze die GUI‑Methode oder <span class="code">setx</span>.</p>
+      </details>
+      <details>
+        <summary>Funktioniert das auf Windows 7/8 oder ARM?</summary>
+        <p>yt-dlp zielt primär auf moderne Windows‑Versionen. Ältere Systeme können eine Python‑basierte Einrichtung benötigen. Für ARM64 prüfe die offiziellen Release‑Hinweise zur Kompatibilität.</p>
+      </details>
+      <details>
+        <summary>Wie aktualisiere ich auf die neueste Version?</summary>
+        <p>Führe <span class="code">yt-dlp -U</span> aus. Dadurch wird die ausführbare Datei direkt aktualisiert.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Startseite</a>
+        <a href="download-windows.html">Download</a>
+        <a href="install.html">Installieren</a>
+        <a href="to-mp3.html">MP3</a>
+        <a href="download-playlist.html">Wiedergabelisten</a>
+        <a href="4k-8k-hdr.html">4K/8K</a>
+        <a href="subtitles-cc.html">Untertitel</a>
+        <a href="ffmpeg-windows.html">FFmpeg</a>
+        <a href="commands.html">Befehle</a>
+        <a href="troubleshooting.html">Fehlerbehebung</a>
+        <a href="vs-youtube-dl.html">vs youtube-dl</a>
+        <a href="safe-legal.html">Sicher & Rechtlich</a>
+        <a href="gui.html">GUI</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+      <div style="font-size:13px;margin:6px 0"><span id="last-updated-footer"></span> • © 2026 Inoffizieller yt-dlp Windows Helper</div>
+      <p style="max-width:800px;margin:6px auto 0;font-size:12px;color:#6b7280">Hinweis: Diese Website steht in keiner Verbindung zu YouTube oder den offiziellen yt-dlp‑Entwicklern. Wir bieten Anleitungen und direkte Links zu den offiziellen GitHub‑Releases zu Bildungszwecken. Bitte respektiere Urheberrechte und die Nutzungsbedingungen von Websites.</p>
+    </div>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie-Einwilligung">
+    <div>Wir verwenden Cookies, um deine Erfahrung zu verbessern und den Traffic zu analysieren. Durch Klicken auf „Akzeptieren“ stimmst du unserer <a style="color:#93c5fd" href="privacy.html">Datenschutzerklärung</a> zu.</div>
+    <button class="accept-btn" id="accept-cookies">Akzeptieren</button>
+  </div>
+
+  <script>
+    // Zuletzt aktualisiert
+    (function(){
+      var d = new Date('2026-04-04T17:47:45Z');
+      var opts = { year:'numeric', month:'long', day:'numeric' };
+      var s = 'Zuletzt aktualisiert: ' + d.toLocaleDateString('de-DE', opts);
+      var el1 = document.getElementById('last-updated');
+      var el2 = document.getElementById('last-updated-footer');
+      if (el1) el1.textContent = s;
+      if (el2) el2.textContent = s;
+    })();
+
+    // GA4 Klick-Tracking (optional)
+    (function(){
+      var links = document.querySelectorAll('a');
+      links.forEach(function(a){
+        a.addEventListener('click', function(){
+          if (typeof gtag === 'function') {
+            gtag('event', 'click', { event_category: 'install_page', event_label: a.href || a.textContent });
+          }
+        });
+      });
+    })();
+
+    // Cookie-Einwilligung
+    (function(){
+      var banner = document.getElementById('cookie-consent-banner');
+      var accept = document.getElementById('accept-cookies');
+      var key = 'cookieConsent';
+      var val = localStorage.getItem(key);
+      setTimeout(function(){ if(!val) banner.classList.add('show'); }, 700);
+      accept.addEventListener('click', function(){
+        localStorage.setItem(key, 'accepted');
+        banner.classList.remove('show');
+        setTimeout(function(){ banner.style.display='none'; }, 300);
+      });
+    })();
+  </script>
+</body>
+</html>

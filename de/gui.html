@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="https://yt-dlpc.github.io/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://yt-dlpc.github.io/de/gui.html">
+
+  <!-- hreflang -->
+  <link rel="alternate" href="https://yt-dlpc.github.io/de/gui.html" hreflang="de">
+  <link rel="alternate" href="https://yt-dlpc.github.io/gui.html" hreflang="en">
+  <link rel="alternate" href="https://yt-dlpc.github.io/gui.html" hreflang="x-default">
+
+  <title>yt-dlp GUI für Windows — Frontends & Verwendung</title>
+  <meta name="description" content="Du suchst eine GUI für yt-dlp unter Windows? Entdecke Open-Source-Frontends und lerne, wie du yt-dlp.exe/FFmpeg einbindest, Formate und Ordner festlegst und Probleme behebst.">
+  <meta name="keywords" content="yt-dlp gui windows, gui frontend, video downloader gui, open source gui, windows yt-dlp oberfläche, ffmpeg gui">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="yt-dlp GUI für Windows — Frontends & Verwendung">
+  <meta property="og:description" content="Finde eine Windows-GUI für yt-dlp, konfiguriere yt-dlp.exe und FFmpeg, wähle Formate und behebe häufige Probleme.">
+  <meta property="og:url" content="https://yt-dlpc.github.io/de/gui.html">
+  <meta property="og:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-04-04T17:45:25Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="yt-dlp GUI für Windows — Frontends & Verwendung">
+  <meta name="twitter:description" content="Open-Source-GUIs für yt-dlp unter Windows und wie du sie einrichtest.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-ZL5RF9N1PR');
+  </script>
+
+  <!-- Structured Data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://yt-dlpc.github.io/de/"},
+      {"@type": "ListItem", "position": 2, "name": "yt-dlp GUI für Windows", "item": "https://yt-dlpc.github.io/de/gui.html"}
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Gibt es eine offizielle GUI für yt-dlp?", "acceptedAnswer": {"@type": "Answer", "text": "yt-dlp ist primär ein CLI-Tool. Es gibt keine offizielle GUI, aber mehrere Community-Frontends für Windows."}},
+      {"@type": "Question", "name": "Brauche ich mit einer GUI trotzdem FFmpeg?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. GUIs rufen in der Regel yt-dlp im Hintergrund auf; FFmpeg wird weiterhin für 4K/8K-Merges und Audiokonvertierung benötigt."}},
+      {"@type": "Question", "name": "Wo werden Downloads gespeichert?", "acceptedAnswer": {"@type": "Answer", "text": "Jede GUI hat eigene Ordnereinstellungen und Vorlagen. Prüfe den Ausgabepfad und nutze Variablen (z. B. Playlist/Titel), wenn verfügbar."}},
+      {"@type": "Question", "name": "Ist die Nutzung von Drittanbieter-GUIs sicher?", "acceptedAnswer": {"@type": "Answer", "text": "Nutze seriöse Open-Source-Projekte und prüfe Releases. Wir verlinken öffentliche Repos; überprüfe sie vor der Installation."}}]
+  }
+  </script>
+
+  <style>
+    :root { 
+      --accent: #2563eb; 
+      --bg: #f8fafc; 
+      --text: #111827; 
+      --muted: #6b7280; 
+      --card: #ffffff; 
+      --border: #e5e7eb; 
+      --code-bg: #0b1220;
+      --warning: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1040px; margin: 0 auto; padding: 20px; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 5; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { width: 38px; height: 38px; background: var(--accent); border-radius: 10px; color: #fff; display: grid; place-items: center; font-weight: 800; }
+    nav .nav-links { display: flex; gap: 14px; font-weight: 600; font-size: 14px; flex-wrap: wrap; }
+
+    .hero { padding: 36px 0 18px; }
+    h1 { font-size: 36px; margin: 8px 0 8px; }
+    .subtitle { color: var(--muted); max-width: 820px; margin: 0 0 18px; font-size: 18px; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); margin-top: 16px; }
+    .code { background: var(--code-bg); color: #e5e7eb; padding: 14px; border-radius: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; overflow-x: auto; border-left: 4px solid var(--accent); }
+
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .list { padding-left: 18px; }
+    .note { background: #fffbeb; border-left: 4px solid var(--warning); padding: 10px 14px; border-radius: 10px; }
+    .muted { color: var(--muted); }
+
+    footer { margin-top: 40px; padding: 30px 0 50px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); background: #fff; }
+    .footer-links { display: flex; gap: 16px; justify-content: center; font-size: 14px; margin-bottom: 8px; flex-wrap: wrap; }
+
+    @media (max-width: 880px) {
+      .two { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+    }
+
+    /* Cookie banner */
+    .cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(17,24,39,0.95); color: #fff; padding: 12px 16px; display: flex; gap: 12px; align-items: center; justify-content: space-between; font-size: 14px; z-index: 50; transform: translateY(100%); transition: transform .25s ease; }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-banner .accept-btn { background: var(--accent); color: #fff; border: 0; padding: 8px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <div class="brand">
+        <div class="brand-logo">YT</div>
+        <div>
+          <strong>yt-dlp Windows Helper</strong>
+          <div style="font-size:12px;color:#6b7280;">Inoffiziell, von der Community betrieben</div>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-links" aria-label="Hauptnavigation">
+          <a href="index.html">Startseite</a>
+          <a href="download-windows.html">Download</a>
+          <a href="install.html">Installieren</a>
+          <a href="to-mp3.html">MP3</a>
+          <a href="download-playlist.html">Wiedergabelisten</a>
+          <a href="4k-8k-hdr.html">4K/8K</a>
+          <a href="subtitles-cc.html">Untertitel</a>
+          <a href="ffmpeg-windows.html">FFmpeg</a>
+          <a href="commands.html">Befehle</a>
+          <a href="troubleshooting.html">Fehlerbehebung</a>
+          <a href="vs-youtube-dl.html">vs youtube-dl</a>
+          <a href="safe-legal.html">Sicher & Rechtlich</a>
+          <a href="gui.html" aria-current="page">GUI</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>yt-dlp GUI für Windows</h1>
+      <p class="subtitle">Du bevorzugst eine grafische Oberfläche? Hier erfährst du, wie du ein Community‑<strong>GUI‑Frontend</strong> für <strong>yt-dlp</strong> auswählst, <strong>yt-dlp.exe</strong> und <strong>FFmpeg</strong> einrichtest, Formate auswählst und Ordnung hältst.</p>
+      <p>
+        <a class="btn" href="get.html?src=gui_page" rel="noopener">⬇️ yt-dlp.exe herunterladen</a>
+        <a class="btn secondary" href="ffmpeg-windows.html">FFmpeg einrichten</a>
+      </p>
+      <div class="note">Hinweis: Es gibt keine offizielle GUI. Die unten genannten Projekte stammen aus der Community. Prüfe sie vor der Nutzung — Vertrauen ist gut, Kontrolle besser.</div>
+      <div class="muted" style="margin-top:8px"><span id="last-updated"></span> • Funktioniert auf Windows 11/10</div>
+    </section>
+
+    <section class="card" id="options">
+      <h2>Beliebte GUI‑Optionen (Community‑Projekte)</h2>
+      <ul class="list">
+        <li><strong>Open Video Downloader</strong> — plattformübergreifende GUI, die yt-dlp unter der Haube nutzen kann. Repository: <a href="https://github.com/jely2002/youtube-dl-gui" target="_blank" rel="noopener">github.com/jely2002/youtube-dl-gui</a>.</li>
+        <li><strong>GitHub‑Suche (Windows‑GUIs)</strong> — weitere Open‑Source‑GUIs entdecken: <a href="https://github.com/search?q=yt-dlp+gui+windows&type=repositories" target="_blank" rel="noopener">Suche nach „yt-dlp gui windows“</a>.</li>
+        <li><strong>Web‑Dashboards/Self‑Hosted</strong> — Downloads über Browser‑UIs verwalten: <a href="https://github.com/search?q=yt-dlp+web+ui&type=repositories" target="_blank" rel="noopener">Suche nach „yt-dlp web ui“</a>.</li>
+      </ul>
+      <p>Wir pflegen diese Tools nicht und verlinken sie nur der Bequemlichkeit halber. Prüfe Code, Releases und Community‑Feedback vor der Installation.</p>
+    </section>
+
+    <section class="card two" id="setup">
+      <div>
+        <h2>GUI auf yt-dlp.exe zeigen lassen</h2>
+        <ul class="list">
+          <li>Die meisten GUIs erlauben das Auswählen des <strong>yt-dlp.exe</strong>-Pfads in den Einstellungen.</li>
+          <li>Halte yt-dlp in der GUI aktuell oder führe <span class="code">yt-dlp -U</span> aus.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>FFmpeg für Merges aktivieren</h2>
+        <ul class="list">
+          <li>Lege <strong>ffmpeg.exe</strong> neben <strong>yt-dlp.exe</strong> oder konfiguriere den Pfad in der GUI.</li>
+          <li>Erforderlich für 4K/8K‑Video+Audio‑Merges und MP3‑Konvertierung.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card two" id="formats">
+      <div>
+        <h2>Bevorzugte Formate & Qualität</h2>
+        <ul class="list">
+          <li>Beste Qualität: <span class="code">bestvideo+bestaudio</span> (mit FFmpeg zusammengeführt)</li>
+          <li>Auf 1080p begrenzen: <span class="code">bestvideo[height<=1080]+bestaudio/best</span></li>
+          <li>MP4/H.264 bevorzugen: <span class="code">bestvideo[ext=mp4][vcodec*=h264]+bestaudio[ext=m4a]/best[ext=mp4]</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Ordner & Dateinamen</h2>
+        <ul class="list">
+          <li>Nutze Playlist-/Titel‑Variablen, wenn die GUI Vorlagen unterstützt.</li>
+          <li>Beispielstruktur: <span class="code">C:/Videos/%(playlist)s/%(playlist_index)02d-%(title)s.%(ext)s</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card two" id="troubleshooting">
+      <div>
+        <h2>Häufige GUI‑Probleme</h2>
+        <ul class="list">
+          <li><strong>Merge fehlgeschlagen</strong>: FFmpeg‑Pfad setzen und aktuell halten.</li>
+          <li><strong>Langsame Geschwindigkeit</strong>: Parallelität in den Einstellungen reduzieren oder später erneut versuchen; gedrosselte Netze meiden.</li>
+          <li><strong>Login erforderlich</strong>: Manche GUIs unterstützen Cookies; sonst per CLI mit <span class="code">--cookies-from-browser</span> arbeiten.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Mehr Kontrolle per CLI?</h2>
+        <p>Für fortgeschrittene Fälle bietet die CLI mehr Kontrolle und Diagnose.</p>
+        <p>Siehe: <a href="commands.html">Befehls‑Cheatsheet</a> • <a href="troubleshooting.html">Fehlerbehebung</a></p>
+      </div>
+    </section>
+
+    <section class="card" id="legal">
+      <h2>Rechtliches & Sicherheit</h2>
+      <p>Drittanbieter‑GUIs werden von ihren Autor:innen gepflegt. Lade nur aus vertrauenswürdigen Quellen. yt-dlp ist Open Source; respektiere Urheberrechte und die Nutzungsbedingungen jeder Website.</p>
+      <p>Weiter: <a href="download-windows.html">Download für Windows</a> • <a href="install.html">Installieren</a> • <a href="ffmpeg-windows.html">FFmpeg einrichten</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Startseite</a>
+        <a href="download-windows.html">Download</a>
+        <a href="install.html">Installieren</a>
+        <a href="to-mp3.html">MP3</a>
+        <a href="download-playlist.html">Wiedergabelisten</a>
+        <a href="4k-8k-hdr.html">4K/8K</a>
+        <a href="subtitles-cc.html">Untertitel</a>
+        <a href="ffmpeg-windows.html">FFmpeg</a>
+        <a href="commands.html">Befehle</a>
+        <a href="troubleshooting.html">Fehlerbehebung</a>
+        <a href="vs-youtube-dl.html">vs youtube-dl</a>
+        <a href="safe-legal.html">Sicher & Rechtlich</a>
+        <a href="gui.html">GUI</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+      <div style="font-size:13px;margin:6px 0"><span id="last-updated-footer"></span> • © 2026 Inoffizieller yt-dlp Windows Helper</div>
+      <p style="max-width:800px;margin:6px auto 0;font-size:12px;color:#6b7280">Hinweis: Diese Website steht in keiner Verbindung zu YouTube oder den offiziellen yt-dlp‑Entwicklern. Wir bieten Anleitungen und direkte Links zu den offiziellen GitHub‑Releases zu Bildungszwecken. Bitte respektiere Urheberrechte und die Nutzungsbedingungen von Websites.</p>
+    </div>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie-Einwilligung">
+    <div>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und den Traffic zu analysieren. Durch Klicken auf „Akzeptieren“ stimmst du unserer <a style="color:#93c5fd" href="privacy.html">Datenschutzerklärung</a> zu.</div>
+    <button class="accept-btn" id="accept-cookies">Akzeptieren</button>
+  </div>
+
+  <script>
+    // Zuletzt aktualisiert
+    (function(){
+      var d = new Date('2026-04-04T17:45:25Z');
+      var opts = { year:'numeric', month:'long', day:'numeric' };
+      var s = 'Zuletzt aktualisiert: ' + d.toLocaleDateString('de-DE', opts);
+      var el1 = document.getElementById('last-updated');
+      var el2 = document.getElementById('last-updated-footer');
+      if (el1) el1.textContent = s;
+      if (el2) el2.textContent = s;
+    })();
+
+    // GA4 Klick-Tracking (optional)
+    (function(){
+      var links = document.querySelectorAll('a');
+      links.forEach(function(a){
+        a.addEventListener('click', function(){
+          if (typeof gtag === 'function') {
+            gtag('event', 'click', { event_category: 'gui_page', event_label: a.href || a.textContent });
+          }
+        });
+      });
+    })();
+
+    // Cookie-Einwilligung
+    (function(){
+      var banner = document.getElementById('cookie-consent-banner');
+      var accept = document.getElementById('accept-cookies');
+      var key = 'cookieConsent';
+      var val = localStorage.getItem(key);
+      setTimeout(function(){ if(!val) banner.classList.add('show'); }, 700);
+      accept.addEventListener('click', function(){
+        localStorage.setItem(key, 'accepted');
+        banner.classList.remove('show');
+        setTimeout(function(){ banner.style.display='none'; }, 300);
+      });
+    })();
+  </script>
+</body>
+</html>
