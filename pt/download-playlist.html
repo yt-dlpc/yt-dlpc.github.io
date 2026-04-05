@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="https://yt-dlpc.github.io/favicon.ico" type="image/x-icon">
+
+  <link rel="canonical" href="https://yt-dlpc.github.io/pt/download-playlist.html">
+  <link rel="alternate" href="https://yt-dlpc.github.io/download-playlist.html" hreflang="en">
+  <link rel="alternate" href="https://yt-dlpc.github.io/download-playlist.html" hreflang="x-default">
+  <link rel="alternate" href="https://yt-dlpc.github.io/pt/download-playlist.html" hreflang="pt">
+
+  <title>Baixar playlists e canais do YouTube com o yt-dlp (Windows)</title>
+  <meta name="description" content="Baixe playlists e canais inteiros do YouTube no Windows com o yt-dlp. Mantenha a ordem, escolha faixas ou itens, retome e evite duplicados, defina nomes de arquivo e faça mesclas 4K com o FFmpeg.">
+  <meta name="keywords" content="yt-dlp playlist, baixar playlist do youtube windows, baixar vídeos de canal, ordem da playlist, intervalo de playlist, retomar downloads, arquivo de histórico, modelo de nomes de arquivo, ffmpeg 4k">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt">
+  <meta property="og:title" content="Baixar playlists e canais do YouTube com o yt-dlp (Windows)">
+  <meta property="og:description" content="Playlists completas/parciais, canais, retomada, arquivo, ordenação e nomes de arquivo. Guia para Windows.">
+  <meta property="og:url" content="https://yt-dlpc.github.io/pt/download-playlist.html">
+  <meta property="og:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-04-04T18:18:24Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Baixar playlists e canais do YouTube (Windows)">
+  <meta name="twitter:description" content="Intervalos, ordenação, retomada, arquivo, nomes, mesclas 4K com FFmpeg.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-ZL5RF9N1PR');
+  </script>
+
+  <!-- Structured Data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://yt-dlpc.github.io/pt/"},
+      {"@type": "ListItem", "position": 2, "name": "Playlists e Canais", "item": "https://yt-dlpc.github.io/pt/download-playlist.html"}
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: HowTo (Download Playlist) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Baixar uma playlist do YouTube no Windows com o yt-dlp",
+    "description": "Passos para baixar uma playlist inteira ou itens selecionados no Windows usando o yt-dlp. Inclui ordenação e retomada.",
+    "totalTime": "PT3M",
+    "inLanguage": "pt",
+    "tool": [
+      {"@type": "HowToTool", "name": "yt-dlp.exe"},
+      {"@type": "HowToTool", "name": "ffmpeg.exe"}
+    ],
+    "step": [
+      {"@type": "HowToStep", "name": "Abrir o PowerShell", "text": "Abra o PowerShell na pasta onde está o yt-dlp.exe."},
+      {"@type": "HowToStep", "name": "Playlist completa", "text": "yt-dlp --yes-playlist \"PLAYLIST_URL\""},
+      {"@type": "HowToStep", "name": "Manter a ordem", "text": "Adicione -o \"%(playlist_index)02d-%(title)s.%(ext)s\" para preservar a ordem nos nomes de arquivo."},
+      {"@type": "HowToStep", "name": "Retomar e pular duplicados", "text": "Use --continue e --download-archive downloaded.txt para retomar e evitar baixar itens já salvos."}
+    ],
+    "dateModified": "2026-04-04"
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "pt",
+    "mainEntity": [
+      {"@type": "Question", "name": "Como baixo uma playlist inteira?", "acceptedAnswer": {"@type": "Answer", "text": "Execute yt-dlp --yes-playlist \"PLAYLIST_URL\". Para mesclar vídeo+áudio em 4K, garanta que o ffmpeg.exe esteja ao lado do yt-dlp.exe."}},
+      {"@type": "Question", "name": "Como baixar apenas itens específicos?", "acceptedAnswer": {"@type": "Answer", "text": "Use --playlist-items com índices ou intervalos, por exemplo, --playlist-items 1,5,10-12."}},
+      {"@type": "Question", "name": "Como manter a ordem da playlist nos nomes?", "acceptedAnswer": {"@type": "Answer", "text": "Use um modelo de saída com playlist_index, por exemplo, -o \"%(playlist_index)02d-%(title)s.%(ext)s\"."}},
+      {"@type": "Question", "name": "Como retomar e pular duplicados?", "acceptedAnswer": {"@type": "Answer", "text": "Adicione --continue para retomar arquivos parciais e --download-archive downloaded.txt para evitar rebaixar itens já salvos."}},
+      {"@type": "Question", "name": "Posso baixar um canal inteiro?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Forneça a URL do canal ou o @handle. Combine com --dateafter/--datebefore, --playlist-reverse ou --playlist-items para controle."}}
+    ]
+  }
+  </script>
+
+  <style>
+    :root { 
+      --accent: #2563eb; 
+      --bg: #f8fafc; 
+      --text: #111827; 
+      --muted: #6b7280; 
+      --card: #ffffff; 
+      --border: #e5e7eb; 
+      --code-bg: #0b1220;
+      --warning: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1040px; margin: 0 auto; padding: 20px; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 5; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { width: 38px; height: 38px; background: var(--accent); border-radius: 10px; color: #fff; display: grid; place-items: center; font-weight: 800; }
+    nav .nav-links { display: flex; gap: 14px; font-weight: 600; font-size: 14px; flex-wrap: wrap; }
+
+    .hero { padding: 36px 0 18px; }
+    h1 { font-size: 36px; margin: 8px 0 8px; }
+    .subtitle { color: var(--muted); max-width: 820px; margin: 0 0 18px; font-size: 18px; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); margin-top: 16px; }
+    .code { background: var(--code-bg); color: #e5e7eb; padding: 14px; border-radius: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; overflow-x: auto; border-left: 4px solid var(--accent); }
+
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .list { padding-left: 18px; }
+
+    .note { background: #fffbeb; border-left: 4px solid var(--warning); padding: 10px 14px; border-radius: 10px; }
+
+    footer { margin-top: 40px; padding: 30px 0 50px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); background: #fff; }
+    .footer-links { display: flex; gap: 16px; justify-content: center; font-size: 14px; margin-bottom: 8px; flex-wrap: wrap; }
+
+    @media (max-width: 880px) {
+      .two { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+    }
+
+    /* Cookie banner */
+    .cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(17,24,39,0.95); color: #fff; padding: 12px 16px; display: flex; gap: 12px; align-items: center; justify-content: space-between; font-size: 14px; z-index: 50; transform: translateY(100%); transition: transform .25s ease; }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-banner .accept-btn { background: var(--accent); color: #fff; border: 0; padding: 8px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <div class="brand">
+        <div class="brand-logo">YT</div>
+        <div>
+          <strong>yt-dlp Windows Helper</strong>
+          <div style="font-size:12px;color:#6b7280;">Não oficial, mantido pela comunidade</div>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-links" aria-label="Navegação principal">
+          <a href="index.html">Início</a>
+          <a href="download-windows.html">Download</a>
+          <a href="install.html">Instalação</a>
+          <a href="to-mp3.html">MP3</a>
+          <a href="download-playlist.html" aria-current="page">Playlists</a>
+          <a href="4k-8k-hdr.html">4K/8K</a>
+          <a href="subtitles-cc.html">Legendas</a>
+          <a href="ffmpeg-windows.html">FFmpeg</a>
+          <a href="commands.html">Comandos</a>
+          <a href="troubleshooting.html">Solução de problemas</a>
+          <a href="vs-youtube-dl.html">vs youtube-dl</a>
+          <a href="safe-legal.html">Seguro e legal</a>
+          <a href="gui.html">GUI</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Baixar playlists e canais do YouTube (Windows)</h1>
+      <p class="subtitle">Use o <strong>yt-dlp</strong> para salvar playlists completas ou itens selecionados, manter a ordem original, retomar com segurança e evitar duplicados. Para mesclas em 4K/8K, instale o <a href="ffmpeg-windows.html">FFmpeg</a>.</p>
+      <p><a class="btn" href="get.html" target="_blank" rel="noopener">⬇️ Download do yt-dlp.exe</a></p>
+      <div class="note">Dica: Atualize antes de tarefas grandes — execute <span class="code">yt-dlp -U</span> para garantir os extratores mais recentes.</div>
+      <div class="muted" style="margin-top:8px"><span id="last-updated"></span> • Funciona no Windows 11/10</div>
+    </section>
+
+    <section class="card" id="full-playlist">
+      <h2>Baixar uma playlist inteira</h2>
+      <div class="code">yt-dlp --yes-playlist "PLAYLIST_URL"</div>
+      <ul class="list">
+        <li>Preservar a ordem nos nomes: <span class="code">-o "%(playlist_index)02d-%(title)s.%(ext)s"</span></li>
+        <li>Mesclar melhor vídeo+áudio (requer FFmpeg): <span class="code">-f "bestvideo+bestaudio/best"</span></li>
+      </ul>
+    </section>
+
+    <section class="card two" id="ranges-items">
+      <div>
+        <h2>Baixar um intervalo (início/fim)</h2>
+        <div class="code">yt-dlp --playlist-start 5 --playlist-end 15 -o "%(playlist_index)02d-%(title)s.%(ext)s" "PLAYLIST_URL"</div>
+      </div>
+      <div>
+        <h2>Apenas itens específicos</h2>
+        <div class="code">yt-dlp --playlist-items 1,5,10-12 "PLAYLIST_URL"</div>
+      </div>
+    </section>
+
+    <section class="card two" id="resume-archive">
+      <div>
+        <h2>Retomar e evitar duplicados</h2>
+        <div class="code">yt-dlp --continue --download-archive downloaded.txt "PLAYLIST_URL"</div>
+        <ul class="list">
+          <li><code>--continue</code> retoma downloads parciais.</li>
+          <li><code>--download-archive</code> registra itens concluídos para evitar novos downloads.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Inverter ou embaralhar a ordem</h2>
+        <div class="code">yt-dlp --playlist-reverse "PLAYLIST_URL"
+# ou
+yt-dlp --playlist-random "PLAYLIST_URL"</div>
+      </div>
+    </section>
+
+    <section class="card two" id="channels-output">
+      <div>
+        <h2>Baixar um canal</h2>
+        <p>Use a URL do canal ou o @handle (ex.: <code>https://www.youtube.com/@Channel/videos</code>):</p>
+        <div class="code">yt-dlp "CHANNEL_URL" -o "%(upload_date>%Y-%m-%d)s-%(title)s.%(ext)s"</div>
+        <ul class="list">
+          <li>Filtrar por data: <span class="code">--dateafter 20240101 --datebefore 20241231</span></li>
+          <li>Combine com <span class="code">--download-archive</span> para sincronizações incrementais.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Nomes de arquivo e pastas</h2>
+        <div class="code">-o "%(playlist)s/%(playlist_index)02d-%(title)s.%(ext)s"</div>
+        <p>Crie pastas organizadas por playlist e mantenha a ordenação automaticamente.</p>
+      </div>
+    </section>
+
+    <section class="card two" id="performance-auth">
+      <div>
+        <h2>Dicas de desempenho</h2>
+        <ul class="list">
+          <li>Concorrência para fragmentos: <span class="code">-N 4</span> (tente 4–8)</li>
+          <li>Limite de taxa (se houver throttling): <span class="code">--limit-rate 5M</span></li>
+          <li>Tentativas em falhas: <span class="code">--retries 10 --fragment-retries 10</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Itens privados/restritos por idade</h2>
+        <ul class="list">
+          <li>Use cookies do navegador: <span class="code">--cookies-from-browser chrome</span> (ou edge/firefox)</li>
+          <li>Baixe apenas conteúdo ao qual você tem direito de acesso.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card" id="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Por que alguns itens são ignorados?</summary>
+        <p>Podem exigir login, ter restrição regional ou já constar no seu <span class="code">--download-archive</span>. Verifique os logs para detalhes.</p>
+      </details>
+      <details>
+        <summary>Posso baixar apenas em 1080p?</summary>
+        <p>Sim. Use <span class="code">-f "bestvideo[height<=1080]+bestaudio/best"</span>. Para mesclas 4K/8K, garanta que o FFmpeg esteja instalado.</p>
+      </details>
+      <details>
+        <summary>Como altero a ordem?</summary>
+        <p>Use <span class="code">--playlist-reverse</span> para inverter a ordem ou <span class="code">--playlist-random</span> para embaralhar. Nomes com <span class="code">%(playlist_index)</span> preservam a sequência.</p>
+      </details>
+      <details>
+        <summary>Onde os arquivos são salvos?</summary>
+        <p>Por padrão, na pasta atual. Use <span class="code">-o</span> para definir nomes/caminhos, por exemplo, <span class="code">-o "C:/Videos/%(playlist)s/%(playlist_index)02d-%(title)s.%(ext)s"</span>.</p>
+      </details>
+    </section>
+
+    <section class="card" id="legal">
+      <h2>Legalidade e segurança</h2>
+      <p>O yt-dlp é de código aberto e seguro. Baixe conteúdo apenas quando você tiver direitos e cumpra os Termos de Serviço de cada site.</p>
+      <p>Mais: <a href="safe-legal.html">Seguro e legal</a>
+      <a href="gui.html">GUI</a> • Precisa de mesclas 4K? <a href="ffmpeg-windows.html">Configuração do FFmpeg</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="download-windows.html">Download</a>
+        <a href="install.html">Instalação</a>
+        <a href="to-mp3.html">MP3</a>
+        <a href="download-playlist.html">Playlists</a>
+        <a href="4k-8k-hdr.html">4K/8K</a>
+        <a href="subtitles-cc.html">Legendas</a>
+        <a href="ffmpeg-windows.html">FFmpeg</a>
+        <a href="commands.html">Comandos</a>
+        <a href="troubleshooting.html">Solução de problemas</a>
+        <a href="vs-youtube-dl.html">vs youtube-dl</a>
+        <a href="safe-legal.html">Seguro e legal</a>
+        <a href="gui.html">GUI</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+      <div style="font-size:13px;margin:6px 0"><span id="last-updated-footer"></span> • © 2026 Unofficial yt-dlp Windows Helper</div>
+      <p style="max-width:800px;margin:6px auto 0;font-size:12px;color:#6b7280">Aviso: Este site não é afiliado ao YouTube nem aos desenvolvedores oficiais do yt-dlp. Fornecemos instruções e links diretos para os lançamentos oficiais no GitHub para fins educacionais. Respeite direitos autorais e os Termos de Serviço dos sites.</p>
+    </div>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentimento de cookies">
+    <div>Usamos cookies para melhorar sua experiência e analisar o tráfego. Ao clicar em “Aceitar”, você concorda com nossa <a style="color:#93c5fd" href="privacy.html">Política de Privacidade</a>.</div>
+    <button class="accept-btn" id="accept-cookies">Aceitar</button>
+  </div>
+
+  <script>
+    // Last updated
+    (function(){
+      var d = new Date('2026-04-04T18:18:24Z');
+      var opts = { year:'numeric', month:'long', day:'numeric' };
+      var s = 'Última atualização: ' + d.toLocaleDateString('pt', opts);
+      var el1 = document.getElementById('last-updated');
+      var el2 = document.getElementById('last-updated-footer');
+      if (el1) el1.textContent = s;
+      if (el2) el2.textContent = s;
+    })();
+
+    // GA4 click tracking (optional)
+    (function(){
+      var links = document.querySelectorAll('a');
+      links.forEach(function(a){
+        a.addEventListener('click', function(){
+          if (typeof gtag === 'function') {
+            gtag('event', 'click', { event_category: 'playlist_page', event_label: a.href || a.textContent });
+          }
+        });
+      });
+    })();
+
+    // Cookie consent logic
+    (function(){
+      var banner = document.getElementById('cookie-consent-banner');
+      var accept = document.getElementById('accept-cookies');
+      var key = 'cookieConsent';
+      var val = localStorage.getItem(key);
+      setTimeout(function(){ if(!val) banner.classList.add('show'); }, 700);
+      accept.addEventListener('click', function(){
+        localStorage.setItem(key, 'accepted');
+        banner.classList.remove('show');
+        setTimeout(function(){ banner.style.display='none'; }, 300);
+      });
+    })();
+  </script>
+</body>
+</html>

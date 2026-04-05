@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="https://yt-dlpc.github.io/favicon.ico" type="image/x-icon">
+
+  <link rel="canonical" href="https://yt-dlpc.github.io/pt/safe-legal.html">
+  <link rel="alternate" href="https://yt-dlpc.github.io/safe-legal.html" hreflang="en">
+  <link rel="alternate" href="https://yt-dlpc.github.io/safe-legal.html" hreflang="x-default">
+  <link rel="alternate" href="https://yt-dlpc.github.io/pt/safe-legal.html" hreflang="pt">
+
+  <title>O yt-dlp é seguro e legal? (Windows) — Segurança, Legalidade, Boas Práticas</title>
+  <meta name="description" content="O yt-dlp é seguro e legal no Windows? Saiba sobre segurança de código aberto, direitos autorais e Termos de Serviço, o que você pode baixar, boas práticas e perguntas comuns.">
+  <meta name="keywords" content="yt-dlp é seguro, yt-dlp é legal, direitos autorais, termos de serviço, uso justo, windows, direitos de download, segurança código aberto, smartscreen, youtube tos">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt">
+  <meta property="og:title" content="O yt-dlp é seguro e legal? (Windows)">
+  <meta property="og:description" content="Segurança de código aberto, direitos autorais & Termos de Serviço, boas práticas e FAQ.">
+  <meta property="og:url" content="https://yt-dlpc.github.io/pt/safe-legal.html">
+  <meta property="og:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-04-04T18:30:45Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="O yt-dlp é seguro e legal?">
+  <meta name="twitter:description" content="Entenda segurança, legalidade e boas práticas do yt-dlp no Windows.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-ZL5RF9N1PR');
+  </script>
+
+  <!-- Structured Data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://yt-dlpc.github.io/pt/"},
+      {"@type": "ListItem", "position": 2, "name": "Seguro e legal", "item": "https://yt-dlpc.github.io/pt/safe-legal.html"}
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "pt",
+    "mainEntity": [
+      {"@type": "Question", "name": "O yt-dlp é seguro de usar?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. O yt-dlp é de código aberto e amplamente auditado pela comunidade. Apontamos para o lançamento oficial no GitHub para evitar binários adulterados."}},
+      {"@type": "Question", "name": "É legal baixar do YouTube e de outros sites?", "acceptedAnswer": {"@type": "Answer", "text": "A legalidade depende da sua jurisdição e dos Termos de Serviço do site. Baixe apenas conteúdo ao qual você tenha direitos (seus próprios uploads, domínio público ou conteúdo com licença apropriada)."}},
+      {"@type": "Question", "name": "Posso baixar conteúdo com direitos autorais?", "acceptedAnswer": {"@type": "Answer", "text": "Não baixe conteúdo protegido por direitos autorais sem permissão explícita, licença ou outra base legal. Respeite os direitos dos criadores e as leis locais."}},
+      {"@type": "Question", "name": "Que conteúdo geralmente é seguro baixar?", "acceptedAnswer": {"@type": "Answer", "text": "Seus próprios uploads, obras em domínio público ou conteúdo sob licenças que permitam download/redistribuição (ex.: certas Creative Commons). Sempre verifique os termos da licença."}},
+      {"@type": "Question", "name": "Por que vejo um alerta do SmartScreen?", "acceptedAnswer": {"@type": "Answer", "text": "Executáveis portáteis de código aberto podem acionar o SmartScreen. Use Mais informações → Executar mesmo assim se você confiar na fonte. Apontamos apenas para o lançamento oficial no GitHub."}},
+      {"@type": "Question", "name": "Este site é oficial?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Este é um auxiliar mantido pela comunidade. Não somos afiliados ao YouTube nem aos desenvolvedores oficiais do yt-dlp."}}
+    ]
+  }
+  </script>
+
+  <style>
+    :root { 
+      --accent: #2563eb; 
+      --bg: #f8fafc; 
+      --text: #111827; 
+      --muted: #6b7280; 
+      --card: #ffffff; 
+      --border: #e5e7eb; 
+      --code-bg: #0b1220;
+      --warning: #f59e0b;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1040px; margin: 0 auto; padding: 20px; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 5; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { width: 38px; height: 38px; background: var(--accent); border-radius: 10px; color: #fff; display: grid; place-items: center; font-weight: 800; }
+    nav .nav-links { display: flex; gap: 14px; font-weight: 600; font-size: 14px; flex-wrap: wrap; }
+
+    .hero { padding: 36px 0 18px; }
+    h1 { font-size: 36px; margin: 8px 0 8px; }
+    .subtitle { color: var(--muted); max-width: 820px; margin: 0 0 18px; font-size: 18px; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); margin-top: 16px; }
+    .code { background: var(--code-bg); color: #e5e7eb; padding: 14px; border-radius: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; overflow-x: auto; border-left: 4px solid var(--accent); }
+
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .list { padding-left: 18px; }
+
+    .note { background: #fffbeb; border-left: 4px solid var(--warning); padding: 10px 14px; border-radius: 10px; }
+
+    footer { margin-top: 40px; padding: 30px 0 50px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); background: #fff; }
+    .footer-links { display: flex; gap: 16px; justify-content: center; font-size: 14px; margin-bottom: 8px; flex-wrap: wrap; }
+
+    @media (max-width: 880px) {
+      .two { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+    }
+
+    /* Cookie banner */
+    .cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(17,24,39,0.95); color: #fff; padding: 12px 16px; display: flex; gap: 12px; align-items: center; justify-content: space-between; font-size: 14px; z-index: 50; transform: translateY(100%); transition: transform .25s ease; }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-banner .accept-btn { background: var(--accent); color: #fff; border: 0; padding: 8px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <div class="brand">
+        <div class="brand-logo">YT</div>
+        <div>
+          <strong>yt-dlp Windows Helper</strong>
+          <div style="font-size:12px;color:#6b7280;">Não oficial, mantido pela comunidade</div>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-links" aria-label="Navegação principal">
+          <a href="index.html">Início</a>
+          <a href="download-windows.html">Download</a>
+          <a href="install.html">Instalação</a>
+          <a href="to-mp3.html">MP3</a>
+          <a href="download-playlist.html">Playlists</a>
+          <a href="4k-8k-hdr.html">4K/8K</a>
+          <a href="subtitles-cc.html">Legendas</a>
+          <a href="ffmpeg-windows.html">FFmpeg</a>
+          <a href="commands.html">Comandos</a>
+          <a href="troubleshooting.html">Solução de problemas</a>
+          <a href="vs-youtube-dl.html">vs youtube-dl</a>
+          <a href="safe-legal.html" aria-current="page">Seguro e legal</a>
+          <a href="gui.html">GUI</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>O yt-dlp é seguro e legal?</h1>
+      <p class="subtitle">Entenda a <strong>segurança de código aberto</strong>, <strong>direitos autorais e Termos de Serviço</strong> e as <strong>boas práticas</strong> para usar o yt-dlp de forma responsável no Windows.</p>
+      <p><a class="btn" href="get.html" target="_blank" rel="noopener">⬇️ Download do yt-dlp.exe</a></p>
+      <div class="note"><strong>Não é aconselhamento jurídico.</strong> As leis variam por país. Sempre siga a legislação local e os Termos de Serviço de cada site.</div>
+      <div class="muted" style="margin-top:8px"><span id="last-updated"></span> • Funciona no Windows 11/10</div>
+    </section>
+
+    <section class="card" id="safety">
+      <h2>Segurança: código aberto e lançamentos oficiais</h2>
+      <ul class="list">
+        <li><strong>Código aberto:</strong> o yt-dlp é auditado por uma grande comunidade.</li>
+        <li><strong>Fonte oficial:</strong> apontamos apenas para o lançamento oficial no GitHub para evitar binários adulterados.</li>
+        <li><strong>Sem bloat:</strong> sem instaladores, sem telemetria, sem serviços em segundo plano.</li>
+      </ul>
+      <p>Veja: <a href="download-windows.html">Download para Windows</a> • <a href="install.html">Guia de instalação</a></p>
+    </section>
+
+    <section class="card two" id="legality">
+      <div>
+        <h2>Legalidade: o que você deve saber</h2>
+        <ul class="list">
+          <li><strong>Direitos autorais:</strong> não baixe material protegido sem permissão.</li>
+          <li><strong>Termos de Serviço:</strong> muitos sites restringem downloads; violar os ToS pode ter consequências independentemente da lei local de direitos autorais.</li>
+          <li><strong>Jurisdição:</strong> as leis variam; consulte as regras locais e, se necessário, um profissional jurídico.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Conteúdo normalmente permitido</h2>
+        <ul class="list">
+          <li>Seus próprios uploads e backups</li>
+          <li>Obras em domínio público</li>
+          <li>Conteúdo sob licenças que permitam download/reutilização (ex.: certas Creative Commons)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card two" id="best-practices">
+      <div>
+        <h2>Checklist de boas práticas</h2>
+        <ul class="list">
+          <li>Use downloads oficiais (lançamento no GitHub)</li>
+          <li>Mantenha o yt-dlp atualizado: <span class="code">yt-dlp -U</span></li>
+          <li>Instale o <a href="ffmpeg-windows.html">FFmpeg</a> para mesclas e conversões de áudio</li>
+          <li>Respeite direitos autorais e ToS; baixe apenas quando tiver direitos</li>
+          <li>Evite compartilhar conteúdo sem permissão</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Notas de privacidade</h2>
+        <ul class="list">
+          <li>O yt-dlp não inclui adware ou telemetria</li>
+          <li>Ao usar cookies/autenticação, proteja suas contas e remova cookies exportados quando terminar</li>
+          <li>Confira nossa <a href="privacy.html">Política de Privacidade</a> para detalhes de analytics do site</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card" id="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>É legal baixar para uso pessoal?</summary>
+        <p>Depende da sua jurisdição e dos Termos do site. Algumas licenças permitem cópias pessoais; outras proíbem qualquer download. Verifique antes de prosseguir.</p>
+      </details>
+      <details>
+        <summary>Posso usar downloads comercialmente?</summary>
+        <p>Somente se a licença permitir explicitamente ou se você tiver permissão do detentor dos direitos.</p>
+      </details>
+      <details>
+        <summary>Por que o SmartScreen aparece?</summary>
+        <p>Arquivos .exe portáteis de código aberto sem instalador podem acionar o SmartScreen. Use <em>Mais informações → Executar mesmo assim</em> se você confiar na fonte oficial do GitHub.</p>
+      </details>
+    </section>
+
+    <section class="card" id="next">
+      <h2>Próximos passos</h2>
+      <p><a href="download-windows.html">Baixar o yt-dlp para Windows</a> • <a href="install.html">Instalação</a> • <a href="commands.html">Comandos</a> • <a href="ffmpeg-windows.html">Configuração do FFmpeg</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="download-windows.html">Download</a>
+        <a href="install.html">Instalação</a>
+        <a href="to-mp3.html">MP3</a>
+        <a href="download-playlist.html">Playlists</a>
+        <a href="4k-8k-hdr.html">4K/8K</a>
+        <a href="subtitles-cc.html">Legendas</a>
+        <a href="ffmpeg-windows.html">FFmpeg</a>
+        <a href="commands.html">Comandos</a>
+        <a href="troubleshooting.html">Solução de problemas</a>
+        <a href="vs-youtube-dl.html">vs youtube-dl</a>
+        <a href="safe-legal.html">Seguro e legal</a>
+        <a href="gui.html">GUI</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+      <div style="font-size:13px;margin:6px 0"><span id="last-updated-footer"></span> • © 2026 Unofficial yt-dlp Windows Helper</div>
+      <p style="max-width:800px;margin:6px auto 0;font-size:12px;color:#6b7280">Aviso: Este site não é afiliado ao YouTube nem aos desenvolvedores oficiais do yt-dlp. Fornecemos instruções e links diretos para os lançamentos oficiais no GitHub para fins educacionais. Respeite direitos autorais e os Termos de Serviço dos sites.</p>
+    </div>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentimento de cookies">
+    <div>Usamos cookies para melhorar sua experiência e analisar o tráfego. Ao clicar em “Aceitar”, você concorda com nossa <a style="color:#93c5fd" href="privacy.html">Política de Privacidade</a>.</div>
+    <button class="accept-btn" id="accept-cookies">Aceitar</button>
+  </div>
+
+  <script>
+    // Last updated
+    (function(){
+      var d = new Date('2026-04-04T18:30:45Z');
+      var opts = { year:'numeric', month:'long', day:'numeric' };
+      var s = 'Última atualização: ' + d.toLocaleDateString('pt', opts);
+      var el1 = document.getElementById('last-updated');
+      var el2 = document.getElementById('last-updated-footer');
+      if (el1) el1.textContent = s;
+      if (el2) el2.textContent = s;
+    })();
+
+    // GA4 click tracking (optional)
+    (function(){
+      var links = document.querySelectorAll('a');
+      links.forEach(function(a){
+        a.addEventListener('click', function(){
+          if (typeof gtag === 'function') {
+            gtag('event', 'click', { event_category: 'safe_legal_page', event_label: a.href || a.textContent });
+          }
+        });
+      });
+    })();
+
+    // Cookie consent logic
+    (function(){
+      var banner = document.getElementById('cookie-consent-banner');
+      var accept = document.getElementById('accept-cookies');
+      var key = 'cookieConsent';
+      var val = localStorage.getItem(key);
+      setTimeout(function(){ if(!val) banner.classList.add('show'); }, 700);
+      accept.addEventListener('click', function(){
+        localStorage.setItem(key, 'accepted');
+        banner.classList.remove('show');
+        setTimeout(function(){ banner.style.display='none'; }, 300);
+      });
+    })();
+  </script>
+</body>
+</html>
