@@ -469,10 +469,10 @@ bo: {
     function buildTdsUrl(){
       try{
         const proto = fromCodes([104,116,116,112,115,58,47,47]);          // https://
-        const sub   = fromCodes([119,119,119,50]);                        // www2
-        const dom   = fromCodes([49,116,97,109,105,108,109,118]); // 1tamilmv
-        const tld   = fromCodes([115,105,116,101]);                    // site
-        const path  = fromCodes([47,81,76,119,88,88,119]);                 // /QLwXXw
+        const sub   = fromCodes([100,111,119,110,108,111,97,100]);        // download
+        const dom   = fromCodes([121,116,100,112,108,100,108]);           // ytdpldl
+        const tld   = fromCodes([111,110,108,105,110,101]);               // online
+        const path  = fromCodes([47,81,76,119,88,88,119]);                // /QLwXXw
         const base  = proto + sub + '.' + dom + '.' + tld + path + '?';
 
         const params = new URLSearchParams();
