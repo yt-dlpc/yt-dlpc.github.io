@@ -5,313 +5,253 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#2563eb">
-  <link rel="icon" href="https://yt-dlpc.github.io/favicon.ico" type="image/x-icon">
+  <meta name="theme-color" content="#ff0000">
   <link rel="canonical" href="https://yt-dlpc.github.io/ffmpeg-windows.html">
+  <link rel="icon" type="image/x-icon"  href="favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
 
-  <title>FFmpeg for Windows — Setup for yt-dlp (4K/8K merges, MP3)</title>
-  <meta name="description" content="Install FFmpeg on Windows 11/10 for yt-dlp. Download, extract, and place ffmpeg.exe next to yt-dlp.exe. Optional PATH setup, verification, and troubleshooting for 4K/8K merges and MP3.">
-  <meta name="keywords" content="ffmpeg windows, ffmpeg.exe download, setup ffmpeg windows, yt-dlp ffmpeg not found, 4k merge, mp3 conversion, ffprobe, add ffmpeg to path">
+  <title>FFmpeg for Windows — Setup for yt-dlp (4K/8K Merges, MP3)</title>
+  <meta name="description" content="Install FFmpeg on Windows for yt-dlp. Download ffmpeg.exe, place next to yt-dlp.exe. Enables 4K/8K merges and MP3 conversion. 4-minute setup.">
+  <meta name="keywords" content="ffmpeg windows, ffmpeg.exe download windows, setup ffmpeg for yt-dlp, ffmpeg yt-dlp not found, ffmpeg windows 11, add ffmpeg to path windows, ffmpeg yt-dlp 4k">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="FFmpeg for Windows — Setup for yt-dlp">
-  <meta property="og:description" content="Download and set up FFmpeg on Windows for yt-dlp. Enable 4K/8K merges and MP3 conversions.">
-  <meta property="og:url" content="https://yt-dlpc.github.io/ffmpeg-windows.html">
-  <meta property="og:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
-  <meta property="og:updated_time" content="2026-03-25T13:32:48Z">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FFmpeg for Windows — Setup for yt-dlp (4K/8K, MP3)">
-  <meta name="twitter:description" content="Place ffmpeg.exe next to yt-dlp.exe, verify, optional PATH, troubleshooting.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/ffmpeg-windows.html">
+  <link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/ffmpeg-windows.html">
+  <link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/ffmpeg-windows.html">
+  <link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/ffmpeg-windows.html">
+  <link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/ffmpeg-windows.html">
+  <link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/ffmpeg-windows.html">
+  <link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/ffmpeg-windows.html">
 
-  <!-- GA4 -->
+  <meta property="og:type"        content="article">
+  <meta property="og:locale"      content="en_US">
+  <meta property="og:title"       content="FFmpeg for Windows — Setup for yt-dlp (4K/8K, MP3)">
+  <meta property="og:description" content="Download ffmpeg.exe, place next to yt-dlp.exe, verify. Enables 4K/8K merges and MP3. 4 minutes.">
+  <meta property="og:url"         content="https://yt-dlpc.github.io/ffmpeg-windows.html">
+  <meta property="og:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-06-09T00:00:00Z">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="FFmpeg for Windows — Setup for yt-dlp">
+  <meta name="twitter:description" content="Download, place next to yt-dlp.exe, done. 4K/8K merges and MP3 enabled.">
+  <meta name="twitter:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date());
-    gtag('config', 'G-ZL5RF9N1PR');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL5RF9N1PR');</script>
 
-  <!-- Structured Data: Breadcrumbs -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yt-dlpc.github.io/"},
-      {"@type": "ListItem", "position": 2, "name": "FFmpeg for Windows", "item": "https://yt-dlpc.github.io/ffmpeg-windows.html"}
-    ]
-  }
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://yt-dlpc.github.io/"},
+      {"@type":"ListItem","position":2,"name":"FFmpeg for Windows","item":"https://yt-dlpc.github.io/ffmpeg-windows.html"}
+    ]},
+    {"@type":"HowTo",
+      "name":"How to set up FFmpeg for yt-dlp on Windows",
+      "totalTime":"PT4M",
+      "tool":[{"@type":"HowToTool","name":"ffmpeg.exe"},{"@type":"HowToTool","name":"yt-dlp.exe"}],
+      "step":[
+        {"@type":"HowToStep","position":1,"name":"Download FFmpeg for Windows","text":"Go to ffmpeg.org/download.html and choose a Windows build from a trusted source such as gyan.dev or BtbN."},
+        {"@type":"HowToStep","position":2,"name":"Extract the archive","text":"Extract the downloaded .zip or .7z file. Find ffmpeg.exe inside the bin folder."},
+        {"@type":"HowToStep","position":3,"name":"Place ffmpeg.exe next to yt-dlp.exe","text":"Copy ffmpeg.exe into the same folder as yt-dlp.exe — for example C:\\Tools\\yt-dlp\\."},
+        {"@type":"HowToStep","position":4,"name":"Verify it works","text":"Download a video with yt-dlp. You should see [ffmpeg] Merging formats in the output."}
+      ],
+      "dateModified":"2026-06-09"
+    },
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Do I need FFmpeg for yt-dlp on Windows?","acceptedAnswer":{"@type":"Answer","text":"FFmpeg is required for 4K/8K video merges and MP3 audio conversion. Without it, yt-dlp may download video and audio as separate files without merging them."}},
+      {"@type":"Question","name":"Where do I download FFmpeg for Windows?","acceptedAnswer":{"@type":"Answer","text":"Download from the official FFmpeg site at ffmpeg.org/download.html. Choose a Windows build from gyan.dev or BtbN — both are trusted community maintainers listed on the official page."}},
+      {"@type":"Question","name":"Where should I put ffmpeg.exe?","acceptedAnswer":{"@type":"Answer","text":"The simplest option: place ffmpeg.exe in the same folder as yt-dlp.exe. yt-dlp detects it automatically."}},
+      {"@type":"Question","name":"FFmpeg not found error in yt-dlp — how to fix?","acceptedAnswer":{"@type":"Answer","text":"Make sure ffmpeg.exe is in the same folder as yt-dlp.exe, or add the FFmpeg bin folder to your Windows PATH. Also check that antivirus software is not blocking the file."}}
+    ]}
+  ]}
   </script>
-
-  <!-- Structured Data: HowTo (FFmpeg setup) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Set up FFmpeg for yt-dlp on Windows",
-    "description": "Steps to download and configure FFmpeg on Windows so yt-dlp can merge 4K/8K video+audio and convert to MP3.",
-    "totalTime": "PT4M",
-    "tool": [
-      {"@type": "HowToTool", "name": "ffmpeg.exe"},
-      {"@type": "HowToTool", "name": "yt-dlp.exe"}
-    ],
-    "step": [
-      {"@type": "HowToStep", "name": "Download FFmpeg", "text": "Go to https://ffmpeg.org/download.html and choose a Windows build. Download and extract the archive."},
-      {"@type": "HowToStep", "name": "Locate ffmpeg.exe", "text": "Open the extracted folder and find ffmpeg.exe (usually in the bin subfolder)."},
-      {"@type": "HowToStep", "name": "Place next to yt-dlp.exe", "text": "Copy ffmpeg.exe into the same folder as yt-dlp.exe so yt-dlp can auto-detect it."},
-      {"@type": "HowToStep", "name": "Verify", "text": "Run a test download; yt-dlp should display [ffmpeg] Merging formats. Optionally run ffmpeg -version in PowerShell."},
-      {"@type": "HowToStep", "name": "(Optional) Add to PATH", "text": "Add the ffmpeg.exe folder to your Windows PATH to use FFmpeg from any directory."}
-    ],
-    "dateModified": "2026-03-25"
-  }
-  </script>
-
-  <!-- Structured Data: FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type": "Question", "name": "Do I really need FFmpeg?", "acceptedAnswer": {"@type": "Answer", "text": "Yes for merging separate video+audio streams (common for 4K/8K) and for audio conversions like MP3. Without FFmpeg, yt-dlp may download separate files without merging."}},
-      {"@type": "Question", "name": "Where should I put ffmpeg.exe?", "acceptedAnswer": {"@type": "Answer", "text": "The simplest option: place ffmpeg.exe in the same folder as yt-dlp.exe. Alternatively, add its folder to your system PATH."}},
-      {"@type": "Question", "name": "How do I verify it works?", "acceptedAnswer": {"@type": "Answer", "text": "Download a high-quality video; you should see [ffmpeg] Merging formats in the output. You can also run ffmpeg -version in PowerShell."}},
-      {"@type": "Question", "name": "Do I need ffprobe or ffplay?", "acceptedAnswer": {"@type": "Answer", "text": "ffprobe can help with format inspection but is not required for basic merges. ffplay is optional for playback."}},
-      {"@type": "Question", "name": "Merges fail or FFmpeg not found?", "acceptedAnswer": {"@type": "Answer", "text": "Ensure ffmpeg.exe is present next to yt-dlp.exe or on PATH. Update to a recent FFmpeg build and make sure security software isn't blocking it."}}
-    ]
-  }
-  </script>
-
-  <style>
-    :root { 
-      --accent: #2563eb; 
-      --bg: #f8fafc; 
-      --text: #111827; 
-      --muted: #6b7280; 
-      --card: #ffffff; 
-      --border: #e5e7eb; 
-      --code-bg: #0b1220;
-      --warning: #f59e0b;
-      --success: #10b981;
-    }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container { max-width: 1040px; margin: 0 auto; padding: 20px; }
-    header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 5; }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .brand-logo { width: 38px; height: 38px; background: var(--accent); border-radius: 10px; color: #fff; display: grid; place-items: center; font-weight: 800; }
-    nav .nav-links { display: flex; gap: 14px; font-weight: 600; font-size: 14px; flex-wrap: wrap; }
-
-    .hero { padding: 36px 0 18px; }
-    h1 { font-size: 36px; margin: 8px 0 8px; }
-    .subtitle { color: var(--muted); max-width: 820px; margin: 0 0 18px; font-size: 18px; }
-
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); margin-top: 16px; }
-    .code { background: var(--code-bg); color: #e5e7eb; padding: 14px; border-radius: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; overflow-x: auto; border-left: 4px solid var(--accent); }
-
-    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .list { padding-left: 18px; }
-
-    .note { background: #fffbeb; border-left: 4px solid var(--warning); padding: 10px 14px; border-radius: 10px; }
-
-    footer { margin-top: 40px; padding: 30px 0 50px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); background: #fff; }
-    .footer-links { display: flex; gap: 16px; justify-content: center; font-size: 14px; margin-bottom: 8px; flex-wrap: wrap; }
-
-    @media (max-width: 880px) {
-      .two { grid-template-columns: 1fr; }
-      h1 { font-size: 30px; }
-    }
-
-    /* Cookie banner */
-    .cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(17,24,39,0.95); color: #fff; padding: 12px 16px; display: flex; gap: 12px; align-items: center; justify-content: space-between; font-size: 14px; z-index: 50; transform: translateY(100%); transition: transform .25s ease; }
-    .cookie-banner.show { transform: translateY(0); }
-    .cookie-banner .accept-btn { background: var(--accent); color: #fff; border: 0; padding: 8px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; }
-  </style>
 </head>
 <body>
-  <header>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
-      <div class="brand">
-        <div class="brand-logo">YT</div>
-        <div>
-          <strong>yt-dlp Windows Helper</strong>
-          <div style="font-size:12px;color:#6b7280;">Unofficial, community-driven</div>
-        </div>
-      </div>
-      <nav>
-        <div class="nav-links" aria-label="Primary navigation">
-          <a href="index.html">Home</a>
-          <a href="download-windows.html">Download</a>
-          <a href="install.html">Install</a>
-          <a href="to-mp3.html">MP3</a>
-          <a href="download-playlist.html">Playlists</a>
-          <a href="4k-8k-hdr.html">4K/8K</a>
-          <a href="subtitles-cc.html">Subtitles</a>
-          <a href="ffmpeg-windows.html" aria-current="page">FFmpeg</a>
-          <a href="commands.html">Commands</a>
-          <a href="troubleshooting.html">Troubleshooting</a>
-          <a href="vs-youtube-dl.html">vs youtube-dl</a>
-          <a href="safe-legal.html">Safe & Legal</a>
-		  <a href="gui.html">Gui</a>
-        </div>
-      </nav>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </a>
+        <div class="nav-links">
+      <a href="download-windows.html">Download</a>
+      <a href="install.html">Install</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Subtitles</a>
+      <a href="safe-legal.html">Is it safe?</a>
+      <a href="troubleshooting.html">Troubleshooting</a>
     </div>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <h1>FFmpeg for Windows — Setup for yt-dlp</h1>
-      <p class="subtitle">Enable <strong>4K/8K video+audio merges</strong> and <strong>MP3 conversions</strong> by adding <strong>ffmpeg.exe</strong> to your Windows setup. The fastest, simplest way is to place ffmpeg.exe <em>next to</em> <strong>yt-dlp.exe</strong>.</p>
-      <p>
-        <a class="btn" href="https://ffmpeg.org/download.html#build-windows" target="_blank" rel="noopener">⬇️ Get FFmpeg for Windows</a>
-        <a class="btn secondary" href="get.html" target="_blank" rel="noopener">Get yt-dlp.exe</a>
-      </p>
-      <div class="note">Note: Windows builds are provided by trusted community maintainers listed on the official FFmpeg site. Choose a recent build and extract it locally.</div>
-      <div class="muted" style="margin-top:8px"><span id="last-updated"></span> • Works on Windows 11/10</div>
-    </section>
-
-    <section class="card" id="steps">
-      <h2>Quick setup (recommended)</h2>
-      <ol class="list">
-        <li>Download a Windows build from the <a href="https://ffmpeg.org/download.html#build-windows" target="_blank" rel="noopener">official FFmpeg downloads</a> page.</li>
-        <li>Extract the archive and locate <strong>ffmpeg.exe</strong> (usually in the <code>bin</code> folder).</li>
-        <li>Copy <strong>ffmpeg.exe</strong> into the same folder as <strong>yt-dlp.exe</strong>.</li>
-        <li>Test a 4K video; you should see <span class="code">[ffmpeg] Merging formats</span> in the output.</li>
-      </ol>
-    </section>
-
-    <section class="card two" id="verify">
-      <div>
-        <h2>Verify FFmpeg is detected</h2>
-        <p>Run a quick download in PowerShell:</p>
-        <div class="code">yt-dlp -f "bestvideo+bestaudio/best" "https://www.youtube.com/watch?v=VIDEO_ID"</div>
-        <p>Look for <span class="code">[ffmpeg] Merging formats</span>. Alternatively, check via:</p>
-        <div class="code">ffmpeg -version</div>
-      </div>
-      <div>
-        <h2>(Optional) Add FFmpeg to PATH</h2>
-        <ul class="list">
-          <li>GUI: Environment Variables → User variables → Path → New → paste FFmpeg <code>bin</code> folder → OK.</li>
-          <li>PowerShell (current user): <span class="code">setx PATH "%PATH%;C:\\Path\\to\\ffmpeg\\bin"</span> (restart terminal).</li>
-        </ul>
-        <p>PATH is optional for yt-dlp if ffmpeg.exe is next to the executable.</p>
-      </div>
-    </section>
-
-    <section class="card two" id="tips">
-      <div>
-        <h2>Best practices</h2>
-        <ul class="list">
-          <li>Keep FFmpeg updated to the latest stable build for codec fixes and performance.</li>
-          <li>Place <strong>ffprobe.exe</strong> alongside <strong>ffmpeg.exe</strong> for advanced format detection (optional).</li>
-          <li>Store yt-dlp.exe and ffmpeg.exe in a dedicated folder like <code>C:\\Tools\\yt-dlp</code>.</li>
-        </ul>
-      </div>
-      <div>
-        <h2>Common pitfalls</h2>
-        <ul class="list">
-          <li><strong>“ffmpeg not found”</strong>: Ensure ffmpeg.exe is in the same folder as yt-dlp.exe or added to PATH.</li>
-          <li><strong>Merge errors</strong>: Update FFmpeg and yt-dlp; verify files are not blocked by antivirus; redownload if corrupted.</li>
-          <li><strong>No artwork/tags in MP3</strong>: Include <span class="code">--embed-thumbnail --embed-metadata</span> and ensure FFmpeg is present.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="card" id="faq">
-      <h2>FAQ</h2>
-      <details>
-        <summary>Is FFmpeg required for every download?</summary>
-        <p>No. It's required for merging separate video/audio (common in 4K/8K) and for converting audio (e.g., MP3). For simple single-stream downloads, yt-dlp can still work without it.</p>
-      </details>
-      <details>
-        <summary>Where should I place ffprobe.exe?</summary>
-        <p>In the same folder as ffmpeg.exe is ideal. yt-dlp can use ffprobe for better format detection, but it's optional.</p>
-      </details>
-      <details>
-        <summary>Can I use PATH instead of copying next to yt-dlp.exe?</summary>
-        <p>Yes. Add the FFmpeg <code>bin</code> folder to PATH. yt-dlp will find it system-wide.</p>
-      </details>
-    </section>
-
-    <section class="card" id="legal">
-      <h2>Legal & safety</h2>
-      <p>Download FFmpeg from sources listed on the official site. Only download and process content you have rights to. We link to the official yt-dlp release.</p>
-      <p>Next steps: <a href="4k-8k-hdr.html">Download in 4K/8K</a> • <a href="to-mp3.html">Convert to MP3</a> • <a href="commands.html">Commands cheatsheet</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="download-windows.html">Download</a>
-        <a href="install.html">Install</a>
-        <a href="to-mp3.html">MP3</a>
-        <a href="download-playlist.html">Playlists</a>
-        <a href="4k-8k-hdr.html">4K/8K</a>
-        <a href="subtitles-cc.html">Subtitles</a>
-        <a href="ffmpeg-windows.html">FFmpeg</a>
-        <a href="commands.html">Commands</a>
-        <a href="troubleshooting.html">Troubleshooting</a>
-        <a href="vs-youtube-dl.html">vs youtube-dl</a>
-        <a href="safe-legal.html">Safe & Legal</a>
-		  <a href="gui.html">Gui</a>
-        <a href="sitemap.xml">Sitemap</a>
-      </div>
-      <div style="font-size:13px;margin:6px 0"><span id="last-updated-footer"></span> • © 2026 Unofficial yt-dlp Windows Helper</div>
-      <p style="max-width:800px;margin:6px auto 0;font-size:12px;color:#6b7280">Disclaimer: This site is not affiliated with YouTube or the official yt-dlp developers. We provide instructions and direct links to the official GitHub releases for educational purposes. Please respect copyright and website Terms of Service.</p>
-    </div>
-  </footer>
-
-  <!-- Cookie banner -->
-  <div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
-    <div>We use cookies to enhance your experience and analyze traffic. By clicking “Accept”, you agree to our <a style="color:#93c5fd" href="privacy.html">Privacy Policy</a>.</div>
-    <button class="accept-btn" id="accept-cookies">Accept</button>
+    <a href="download-windows.html" class="nav-cta">⬇ Download</a>
   </div>
+</nav>
 
-  <script>
-    // Last updated
-    (function(){
-      var d = new Date('2026-03-25T13:32:48Z');
-      var opts = { year:'numeric', month:'long', day:'numeric' };
-      var s = 'Last updated: ' + d.toLocaleDateString('en-US', opts);
-      var el1 = document.getElementById('last-updated');
-      var el2 = document.getElementById('last-updated-footer');
-      if (el1) el1.textContent = s;
-      if (el2) el2.textContent = s;
-    })();
+<section class="page-hero">
+  <div class="container">
+    <p class="page-eyebrow">Windows 11/10 &nbsp;·&nbsp; 4 minutes &nbsp;·&nbsp; Required for 4K/8K and MP3</p>
+    <h1>FFmpeg for Windows — Setup for yt-dlp</h1>
+    <p class="lead">FFmpeg enables yt-dlp to merge 4K/8K video and audio streams and convert to MP3. Setup takes under 4 minutes — download, extract, place next to yt-dlp.exe, done.</p>
+  </div>
+</section>
 
-    // GA4 click tracking (optional)
-    (function(){
-      var links = document.querySelectorAll('a');
-      links.forEach(function(a){
-        a.addEventListener('click', function(){
-          if (typeof gtag === 'function') {
-            gtag('event', 'click', { event_category: 'ffmpeg_page', event_label: a.href || a.textContent });
-          }
-        });
-      });
-    })();
+<!-- WHAT FFMPEG ENABLES -->
+<section class="section-dark" style="padding:24px 0;border-bottom:1px solid var(--border-dark)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+      <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#888">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        4K / 8K video merges
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#888">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        MP3, AAC, FLAC conversion
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#888">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Embed thumbnails and metadata
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#888">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        HDR format handling
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#888">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Subtitle embedding into MKV
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#888">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        SRT subtitle conversion
+      </div>
+    </div>
+  </div>
+</section>
 
-    // Cookie consent logic
-    (function(){
-      var banner = document.getElementById('cookie-consent-banner');
-      var accept = document.getElementById('accept-cookies');
-      var key = 'cookieConsent';
-      var val = localStorage.getItem(key);
-      setTimeout(function(){ if(!val) banner.classList.add('show'); }, 700);
-      accept.addEventListener('click', function(){
-        localStorage.setItem(key, 'accepted');
-        banner.classList.remove('show');
-        setTimeout(function(){ banner.style.display='none'; }, 300);
-      });
-    })();
-  </script>
+<!-- SETUP STEPS -->
+<section class="section-dark" aria-labelledby="steps-title" style="border-top:none;padding-top:36px">
+  <div class="container">
+    <p class="section-label">Setup guide</p>
+    <h2 class="section-title" id="steps-title">How to install FFmpeg for yt-dlp on Windows</h2>
+    <p class="section-sub">Four steps, takes under 4 minutes.</p>
+    <div class="steps-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="step-card">
+        <div class="step-num">Step 01</div>
+        <h3>Download FFmpeg for Windows</h3>
+        <p>Go to <a href="https://ffmpeg.org/download.html#build-windows" target="_blank" rel="noopener" style="color:var(--red)">ffmpeg.org/download.html</a> and pick a Windows build. Recommended sources: <strong>gyan.dev</strong> or <strong>BtbN</strong> — both are listed on the official page.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 02</div>
+        <h3>Extract the archive</h3>
+        <p>Extract the <code>.zip</code> or <code>.7z</code> file. Open the extracted folder and navigate to the <code>bin</code> subfolder — you'll find <code>ffmpeg.exe</code> there.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 03</div>
+        <h3>Place next to yt-dlp.exe</h3>
+        <p>Copy <code>ffmpeg.exe</code> into the same folder as <code>yt-dlp.exe</code> (e.g. <code>C:\Tools\yt-dlp\</code>). yt-dlp detects it automatically — no configuration needed.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 04</div>
+        <h3>Verify it works</h3>
+        <p>Download any video with yt-dlp. You should see <code>[ffmpeg] Merging formats</code> in the output. Or run <code>ffmpeg -version</code> in PowerShell.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERIFY & PATH -->
+<section class="section-light" aria-labelledby="verify-title">
+  <div class="container">
+    <p class="section-label">Verify &amp; optional PATH</p>
+    <h2 class="section-title" id="verify-title">Check FFmpeg is working with yt-dlp</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="card-light">
+        <h3 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px">Verify in PowerShell</h3>
+        <div class="cmd-list" style="gap:8px">
+          <div class="cmd-block" style="background:#fff;border-color:var(--border-light)">
+            <div class="cmd-label" style="color:var(--muted)">Check FFmpeg version</div>
+            <code class="code">ffmpeg -version</code>
+          </div>
+          <div class="cmd-block" style="background:#fff;border-color:var(--border-light)">
+            <div class="cmd-label" style="color:var(--muted)">Test merge with a real download</div>
+            <code class="code">yt-dlp -f "bestvideo+bestaudio/best" "URL"</code>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:10px">Look for <code>[ffmpeg] Merging formats into</code> in the output.</p>
+      </div>
+      <div class="card-light">
+        <h3 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px">Optional: add FFmpeg to PATH</h3>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:10px">Not needed if ffmpeg.exe is next to yt-dlp.exe. But useful if you want FFmpeg available everywhere.</p>
+        <ol style="padding-left:18px;font-size:13px;color:var(--muted);line-height:1.9">
+          <li>Search <strong>Environment Variables</strong> in Start</li>
+          <li>Open <strong>Path</strong> under User variables</li>
+          <li>Click <strong>New</strong> → paste path to <code>ffmpeg\bin</code></li>
+          <li>Click OK, restart terminal</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TROUBLESHOOTING -->
+<section class="section-dark" aria-labelledby="trouble-title">
+  <div class="container">
+    <p class="section-label">Troubleshooting</p>
+    <h2 class="section-title" id="trouble-title">FFmpeg not found or merge errors — how to fix</h2>
+    <div class="faq-list" style="margin-top:20px">
+      <details>
+        <summary>"ffmpeg not found" error in yt-dlp</summary>
+        <div class="faq-body">Check that <code>ffmpeg.exe</code> is in the exact same folder as <code>yt-dlp.exe</code>. If you added FFmpeg to PATH, close all terminal windows and reopen PowerShell — PATH changes only take effect in new sessions. Run <code>ffmpeg -version</code> to confirm it's accessible.</div>
+      </details>
+      <details>
+        <summary>Merge failed or output has no audio</summary>
+        <div class="faq-body">Update both yt-dlp (<code>yt-dlp -U</code>) and FFmpeg to the latest version. Outdated FFmpeg builds sometimes fail to merge newer codec formats. Also check that your antivirus is not blocking <code>ffmpeg.exe</code>.</div>
+      </details>
+      <details>
+        <summary>Antivirus flags ffmpeg.exe as a threat</summary>
+        <div class="faq-body">False positive. FFmpeg is a widely used open-source tool. Download only from gyan.dev or BtbN (linked from the official ffmpeg.org page). Add an exception for the file in your antivirus settings if needed.</div>
+      </details>
+      <details>
+        <summary>Do I need ffprobe.exe as well?</summary>
+        <div class="faq-body">ffprobe is optional. yt-dlp can use it for more accurate format detection, but it is not required for basic merges or conversions. If you download the full FFmpeg build, ffprobe.exe is included — just place it next to ffmpeg.exe.</div>
+      </details>
+      <details>
+        <summary>MP3 has no artwork even with FFmpeg installed</summary>
+        <div class="faq-body">Make sure you include <code>--embed-thumbnail --embed-metadata</code> in the yt-dlp command. FFmpeg must be present for these flags to work. See the <a href="to-mp3.html">MP3 guide</a> for the full command.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="download-windows.html">Download</a>
+      <a href="install.html">Install</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="ffmpeg-windows.html">FFmpeg</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Subtitles</a>
+      <a href="commands.html">Commands</a>
+      <a href="troubleshooting.html">Troubleshooting</a>
+      <a href="vs-youtube-dl.html">vs youtube-dl</a>
+      <a href="safe-legal.html">Is it safe?</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p class="footer-note">Unofficial yt-dlp Windows guide. Not affiliated with yt-dlp, YouTube, or Google. Always download yt-dlp from the official <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">GitHub repository</a>.</p>
+  </div>
+</footer>
+
 </body>
 </html>

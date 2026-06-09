@@ -5,302 +5,263 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#2563eb">
-  <link rel="icon" href="https://yt-dlpc.github.io/favicon.ico" type="image/x-icon">
+  <meta name="theme-color" content="#ff0000">
   <link rel="canonical" href="https://yt-dlpc.github.io/subtitles-cc.html">
+  <link rel="icon" type="image/x-icon"  href="favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
 
-  <title>Download Subtitles & Closed Captions with yt-dlp (Windows)</title>
-  <meta name="description" content="Download subtitles and closed captions on Windows with yt-dlp: auto vs manual subs, languages, SRT/WebVTT, embed vs external, playlists, conversion, and FAQ.">
-  <meta name="keywords" content="yt-dlp subtitles, yt-dlp cc, download subtitles windows, auto subtitles, write-sub, write-auto-sub, sub-langs, embed-subs, convert-subs srt, vtt, mkv, mp4">
+  <title>Download YouTube Subtitles with yt-dlp on Windows — SRT, CC, Embed</title>
+  <meta name="description" content="Download YouTube subtitles with yt-dlp on Windows. Auto vs manual, language selection, SRT/WebVTT, embed into MKV, playlists. Copy-paste commands.">
+  <meta name="keywords" content="yt-dlp subtitles, yt-dlp download subtitles, yt-dlp captions, yt-dlp write-sub, yt-dlp sub-langs, download youtube subtitles windows, yt-dlp srt, yt-dlp embed subs">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Download Subtitles & CC with yt-dlp (Windows)">
-  <meta property="og:description" content="Auto/manual subtitles, language selection, SRT/WebVTT, embed vs external, playlists, conversion.">
-  <meta property="og:url" content="https://yt-dlpc.github.io/subtitles-cc.html">
-  <meta property="og:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
-  <meta property="og:updated_time" content="2026-03-25T13:38:10Z">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Download Subtitles & CC with yt-dlp (Windows)">
-  <meta name="twitter:description" content="Languages, SRT/WebVTT, embed vs external, playlists, conversion.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/subtitles-cc.html">
+  <link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/subtitles-cc.html">
+  <link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/subtitles-cc.html">
+  <link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/subtitles-cc.html">
+  <link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/subtitles-cc.html">
+  <link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/subtitles-cc.html">
+  <link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/subtitles-cc.html">
 
-  <!-- GA4 -->
+  <meta property="og:type"        content="article">
+  <meta property="og:locale"      content="en_US">
+  <meta property="og:title"       content="Download YouTube Subtitles with yt-dlp on Windows">
+  <meta property="og:description" content="Auto/manual subs, language selection, SRT/WebVTT, embed into MKV, playlists. Windows commands.">
+  <meta property="og:url"         content="https://yt-dlpc.github.io/subtitles-cc.html">
+  <meta property="og:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-06-09T00:00:00Z">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Download YouTube Subtitles with yt-dlp on Windows">
+  <meta name="twitter:description" content="Auto/manual subs, SRT, embed into MKV, playlists. Copy-paste commands.">
+  <meta name="twitter:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date());
-    gtag('config', 'G-ZL5RF9N1PR');
-  </script>
-
-  <!-- Structured Data: Breadcrumbs -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL5RF9N1PR');</script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yt-dlpc.github.io/"},
-      {"@type": "ListItem", "position": 2, "name": "Subtitles & CC", "item": "https://yt-dlpc.github.io/subtitles-cc.html"}
-    ]
-  }
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://yt-dlpc.github.io/"},
+      {"@type":"ListItem","position":2,"name":"Download Subtitles with yt-dlp","item":"https://yt-dlpc.github.io/subtitles-cc.html"}
+    ]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"How do I download subtitles with yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"For auto-generated subtitles: yt-dlp --write-auto-sub --sub-langs en --sub-format srt \"URL\". For creator-provided: yt-dlp --write-sub --sub-langs en --sub-format srt \"URL\""}},
+      {"@type":"Question","name":"What is the difference between auto and manual subtitles in yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"Auto subtitles are machine-generated by YouTube (--write-auto-sub). Manual subtitles are provided by the video creator (--write-sub)."}},
+      {"@type":"Question","name":"How do I embed subtitles into a video with yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"Use --embed-subs with --merge-output-format mkv. MKV is recommended because MP4 has limited subtitle track support."}},
+      {"@type":"Question","name":"How do I download subtitles in SRT format?","acceptedAnswer":{"@type":"Answer","text":"Add --sub-format srt --convert-subs srt to convert to SRT. YouTube natively provides WebVTT; the conversion requires FFmpeg."}}
+    ],"dateModified":"2026-06-09"}
+  ]}
   </script>
-
-  <!-- Structured Data: FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type": "Question", "name": "What is the difference between auto and manual subtitles?", "acceptedAnswer": {"@type": "Answer", "text": "Auto subtitles are machine-generated (write-auto-sub); manual subtitles are creator-provided (write-sub). Availability depends on the video."}},
-      {"@type": "Question", "name": "How do I choose languages?", "acceptedAnswer": {"@type": "Answer", "text": "Use --sub-langs with codes like en, es, or patterns like en.*. You can request multiple, e.g., --sub-langs \"en,es\" or all with --all-subs."}},
-      {"@type": "Question", "name": "SRT or WebVTT?", "acceptedAnswer": {"@type": "Answer", "text": "Many platforms provide WebVTT (vtt). Use --sub-format srt to prefer SRT and --convert-subs srt to convert when possible."}},
-      {"@type": "Question", "name": "Embed vs external subtitles?", "acceptedAnswer": {"@type": "Answer", "text": "--embed-subs muxes subs into the output file (MKV recommended for multiple tracks). Without it, .srt/.vtt files are saved alongside the video."}},
-      {"@type": "Question", "name": "Playlists with subtitles?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Combine --write-sub/--write-auto-sub with --yes-playlist and -o templates to keep files organized."}}
-    ]
-  }
-  </script>
-
-  <style>
-    :root { 
-      --accent: #2563eb; 
-      --bg: #f8fafc; 
-      --text: #111827; 
-      --muted: #6b7280; 
-      --card: #ffffff; 
-      --border: #e5e7eb; 
-      --code-bg: #0b1220;
-      --warning: #f59e0b;
-    }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container { max-width: 1040px; margin: 0 auto; padding: 20px; }
-    header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 5; }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .brand-logo { width: 38px; height: 38px; background: var(--accent); border-radius: 10px; color: #fff; display: grid; place-items: center; font-weight: 800; }
-    nav .nav-links { display: flex; gap: 14px; font-weight: 600; font-size: 14px; flex-wrap: wrap; }
-
-    .hero { padding: 36px 0 18px; }
-    h1 { font-size: 36px; margin: 8px 0 8px; }
-    .subtitle { color: var(--muted); max-width: 820px; margin: 0 0 18px; font-size: 18px; }
-
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); margin-top: 16px; }
-    .code { background: var(--code-bg); color: #e5e7eb; padding: 14px; border-radius: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; overflow-x: auto; border-left: 4px solid var(--accent); }
-
-    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .list { padding-left: 18px; }
-
-    .note { background: #fffbeb; border-left: 4px solid var(--warning); padding: 10px 14px; border-radius: 10px; }
-
-    footer { margin-top: 40px; padding: 30px 0 50px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); background: #fff; }
-    .footer-links { display: flex; gap: 16px; justify-content: center; font-size: 14px; margin-bottom: 8px; flex-wrap: wrap; }
-
-    @media (max-width: 880px) {
-      .two { grid-template-columns: 1fr; }
-      h1 { font-size: 30px; }
-    }
-
-    /* Cookie banner */
-    .cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(17,24,39,0.95); color: #fff; padding: 12px 16px; display: flex; gap: 12px; align-items: center; justify-content: space-between; font-size: 14px; z-index: 50; transform: translateY(100%); transition: transform .25s ease; }
-    .cookie-banner.show { transform: translateY(0); }
-    .cookie-banner .accept-btn { background: var(--accent); color: #fff; border: 0; padding: 8px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; }
-  </style>
 </head>
 <body>
-  <header>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
-      <div class="brand">
-        <div class="brand-logo">YT</div>
-        <div>
-          <strong>yt-dlp Windows Helper</strong>
-          <div style="font-size:12px;color:#6b7280;">Unofficial, community-driven</div>
-        </div>
-      </div>
-      <nav>
-        <div class="nav-links" aria-label="Primary navigation">
-          <a href="index.html">Home</a>
-          <a href="download-windows.html">Download</a>
-          <a href="install.html">Install</a>
-          <a href="to-mp3.html">MP3</a>
-          <a href="download-playlist.html">Playlists</a>
-          <a href="4k-8k-hdr.html">4K/8K</a>
-          <a href="subtitles-cc.html" aria-current="page">Subtitles</a>
-          <a href="ffmpeg-windows.html">FFmpeg</a>
-          <a href="commands.html">Commands</a>
-          <a href="troubleshooting.html">Troubleshooting</a>
-          <a href="vs-youtube-dl.html">vs youtube-dl</a>
-          <a href="safe-legal.html">Safe & Legal</a>
-		  <a href="gui.html">Gui</a>
-        </div>
-      </nav>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </a>
+        <div class="nav-links">
+      <a href="download-windows.html">Download</a>
+      <a href="install.html">Install</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html" aria-current="page">Subtitles</a>
+      <a href="safe-legal.html">Is it safe?</a>
+      <a href="troubleshooting.html">Troubleshooting</a>
     </div>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <h1>Download Subtitles & Closed Captions (Windows)</h1>
-      <p class="subtitle">Use <strong>yt-dlp</strong> to fetch auto or creator-provided subtitles, select languages, output <strong>SRT/WebVTT</strong>, and <strong>embed</strong> tracks into your video. For playlists, combine with templates.</p>
-      <p>
-        <a class="btn" href="get.html" target="_blank" rel="noopener">⬇️ Download yt-dlp.exe</a>
-        <a class="btn secondary" href="ffmpeg-windows.html">FFmpeg setup</a>
-      </p>
-      <div class="note">Tip: Embedding subtitles (<code>--embed-subs</code>) works best with MKV. For MP4, support can be limited depending on formats.</div>
-      <div class="muted" style="margin-top:8px"><span id="last-updated"></span> • Works on Windows 11/10</div>
-    </section>
-
-    <section class="card" id="auto-manual">
-      <h2>Auto vs manual subtitles</h2>
-      <div class="two">
-        <div>
-          <h3>Auto (machine-generated)</h3>
-          <div class="code">yt-dlp --write-auto-sub --sub-langs "en,*" --sub-format srt "URL"</div>
-          <ul class="list">
-            <li>Grabs auto-generated captions where available.</li>
-            <li><code>en,*</code> = English preferred, otherwise any.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Manual (creator-provided)</h3>
-          <div class="code">yt-dlp --write-sub --sub-langs en --sub-format srt "URL"</div>
-          <ul class="list">
-            <li>Downloads only human-provided subtitles for chosen languages.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="card two" id="embed-convert">
-      <div>
-        <h2>Embed vs external</h2>
-        <p>Soft-embed tracks into the video container (recommended MKV):</p>
-        <div class="code">yt-dlp -f "bv+ba/best" --embed-subs --merge-output-format mkv "URL"</div>
-        <p>Without <code>--embed-subs</code>, subtitle files (.srt/.vtt) are saved alongside the video.</p>
-      </div>
-      <div>
-        <h2>Convert to SRT</h2>
-        <p>Prefer SRT and convert when possible:</p>
-        <div class="code">yt-dlp --write-sub --sub-langs en --sub-format srt --convert-subs srt "URL"</div>
-      </div>
-    </section>
-
-    <section class="card" id="playlists">
-      <h2>Playlists with subtitles</h2>
-      <div class="code">yt-dlp --write-sub --sub-langs "en.*" --yes-playlist -o "%(playlist)s/%(playlist_index)02d-%(title)s.%(ext)s" "PLAYLIST_URL"</div>
-      <ul class="list">
-        <li><code>en.*</code> matches English variants (e.g., <em>en-GB</em>).</li>
-        <li>Use <code>--download-archive</code> to avoid duplicates on large lists.</li>
-      </ul>
-    </section>
-
-    <section class="card two" id="tips">
-      <div>
-        <h2>Language patterns</h2>
-        <ul class="list">
-          <li>Multiple languages: <span class="code">--sub-langs "en,es,de"</span></li>
-          <li>All available: <span class="code">--all-subs</span></li>
-          <li>Prefer English else any: <span class="code">--sub-langs "en,*"</span></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Where files save</h2>
-        <p>By default, to the current folder. Control paths with <span class="code">-o</span>, e.g.,</p>
-        <div class="code">-o "C:/Videos/%(title)s.%(ext)s"</div>
-      </div>
-    </section>
-
-    <section class="card" id="faq">
-      <h2>FAQ</h2>
-      <details>
-        <summary>No subtitles found?</summary>
-        <p>Not all videos provide subtitles. Try <span class="code">--write-auto-sub</span> or check other languages with <span class="code">--all-subs</span>.</p>
-      </details>
-      <details>
-        <summary>Embedded subs don't show up?</summary>
-        <p>Use MKV with <span class="code">--merge-output-format mkv</span> and ensure your player supports subtitle tracks.</p>
-      </details>
-      <details>
-        <summary>Can I hardcode (burn-in) subtitles?</summary>
-        <p>yt-dlp embeds subs as tracks. Hardcoding requires re-encoding with FFmpeg filters; it's beyond the scope of this guide.</p>
-      </details>
-    </section>
-
-    <section class="card" id="legal">
-      <h2>Legal & safety</h2>
-      <p>Only download and use subtitles you have rights to. Some auto-generated captions may be inaccurate; verify before reuse.</p>
-      <p>Next steps: <a href="commands.html">Commands cheatsheet</a> • <a href="troubleshooting.html">Troubleshooting</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="download-windows.html">Download</a>
-        <a href="install.html">Install</a>
-        <a href="to-mp3.html">MP3</a>
-        <a href="download-playlist.html">Playlists</a>
-        <a href="4k-8k-hdr.html">4K/8K</a>
-        <a href="subtitles-cc.html">Subtitles</a>
-        <a href="ffmpeg-windows.html">FFmpeg</a>
-        <a href="commands.html">Commands</a>
-        <a href="troubleshooting.html">Troubleshooting</a>
-        <a href="vs-youtube-dl.html">vs youtube-dl</a>
-        <a href="safe-legal.html">Safe & Legal</a>
-		  <a href="gui.html">Gui</a>
-        <a href="sitemap.xml">Sitemap</a>
-      </div>
-      <div style="font-size:13px;margin:6px 0"><span id="last-updated-footer"></span> • © 2026 Unofficial yt-dlp Windows Helper</div>
-      <p style="max-width:800px;margin:6px auto 0;font-size:12px;color:#6b7280">Disclaimer: This site is not affiliated with YouTube or the official yt-dlp developers. We provide instructions and direct links to the official GitHub releases for educational purposes. Please respect copyright and website Terms of Service.</p>
-    </div>
-  </footer>
-
-  <!-- Cookie banner -->
-  <div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
-    <div>We use cookies to enhance your experience and analyze traffic. By clicking “Accept”, you agree to our <a style="color:#93c5fd" href="privacy.html">Privacy Policy</a>.</div>
-    <button class="accept-btn" id="accept-cookies">Accept</button>
+    <a href="download-windows.html" class="nav-cta">⬇ Download</a>
   </div>
+</nav>
 
-  <script>
-    // Last updated
-    (function(){
-      var d = new Date('2026-03-25T13:38:10Z');
-      var opts = { year:'numeric', month:'long', day:'numeric' };
-      var s = 'Last updated: ' + d.toLocaleDateString('en-US', opts);
-      var el1 = document.getElementById('last-updated');
-      var el2 = document.getElementById('last-updated-footer');
-      if (el1) el1.textContent = s;
-      if (el2) el2.textContent = s;
-    })();
+<section class="page-hero">
+  <div class="container">
+    <p class="page-eyebrow">Windows 11/10 &nbsp;·&nbsp; SRT / WebVTT &nbsp;·&nbsp; Auto &amp; manual captions</p>
+    <h1>Download YouTube Subtitles &amp; Closed Captions with yt-dlp on Windows</h1>
+    <p class="lead">Save subtitles as separate SRT/VTT files or embed them directly into MKV. Supports auto-generated captions, creator-provided subs, multiple languages and playlists.</p>
+  </div>
+</section>
 
-    // GA4 click tracking (optional)
-    (function(){
-      var links = document.querySelectorAll('a');
-      links.forEach(function(a){
-        a.addEventListener('click', function(){
-          if (typeof gtag === 'function') {
-            gtag('event', 'click', { event_category: 'subtitles_page', event_label: a.href || a.textContent });
-          }
-        });
-      });
-    })();
+<div class="section-dark" style="padding:20px 0;border-bottom:1px solid var(--border-dark)">
+  <div class="container" style="display:flex;gap:12px;flex-wrap:wrap">
+    <a class="btn btn-red" href="download-windows.html">⬇ Download yt-dlp.exe</a>
+    <a class="btn btn-ghost" href="ffmpeg-windows.html">FFmpeg setup →</a>
+  </div>
+</div>
 
-    // Cookie consent logic
-    (function(){
-      var banner = document.getElementById('cookie-consent-banner');
-      var accept = document.getElementById('accept-cookies');
-      var key = 'cookieConsent';
-      var val = localStorage.getItem(key);
-      setTimeout(function(){ if(!val) banner.classList.add('show'); }, 700);
-      accept.addEventListener('click', function(){
-        localStorage.setItem(key, 'accepted');
-        banner.classList.remove('show');
-        setTimeout(function(){ banner.style.display='none'; }, 300);
-      });
-    })();
-  </script>
+<!-- AUTO VS MANUAL -->
+<section class="section-dark" aria-labelledby="types-title">
+  <div class="container">
+    <p class="section-label">Auto vs manual</p>
+    <h2 class="section-title" id="types-title">Auto-generated vs creator-provided subtitles</h2>
+    <p class="section-sub">Two types of subtitles on YouTube — pick the right flag for each.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+      <div class="card-dark" style="border-top:2px solid var(--red)">
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:10px">Auto-generated (machine captions)</h3>
+        <p style="font-size:13px;color:#888;margin-bottom:12px">YouTube's speech-to-text captions. Available on most videos. Use <code>--write-auto-sub</code>.</p>
+        <code class="code">yt-dlp --write-auto-sub --sub-langs "en,*" --sub-format srt "URL"</code>
+        <p style="font-size:12px;color:#666;margin-top:8px"><code>en,*</code> = English if available, otherwise any language</p>
+      </div>
+      <div class="card-dark" style="border-top:2px solid #4ade80">
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:10px">Manual (creator-provided)</h3>
+        <p style="font-size:13px;color:#888;margin-bottom:12px">Subtitles uploaded by the video creator. More accurate when available. Use <code>--write-sub</code>.</p>
+        <code class="code">yt-dlp --write-sub --sub-langs en --sub-format srt "URL"</code>
+        <p style="font-size:12px;color:#666;margin-top:8px">Only downloads if manual subs exist — falls back to nothing if not found</p>
+      </div>
+    </div>
+    <div style="background:#1a1000;border-left:3px solid #f59e0b;border-radius:0 10px 10px 0;padding:12px 16px;font-size:13px;color:#a07030">
+      <strong style="color:#f59e0b">Tip:</strong> To get subs regardless of type, combine both flags: <code style="background:#2a1a00;color:#f59e0b">--write-sub --write-auto-sub</code> — yt-dlp will prefer manual if available and fall back to auto.
+    </div>
+  </div>
+</section>
+
+<!-- ALL COMMANDS -->
+<section class="section-light" aria-labelledby="cmds-title">
+  <div class="container">
+    <p class="section-label">All commands</p>
+    <h2 class="section-title" id="cmds-title">yt-dlp subtitle download commands</h2>
+    <p class="section-sub" style="color:var(--muted)">Copy and paste into PowerShell. Replace URL with your video or playlist link.</p>
+    <div class="cmd-list">
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Download video + subtitles as separate SRT files</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --sub-langs en --sub-format srt "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Convert to SRT (YouTube natively provides WebVTT)</div>
+        <code class="code">yt-dlp --write-sub --sub-langs en --sub-format srt --convert-subs srt "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Embed subtitles into MKV (recommended)</div>
+        <code class="code">yt-dlp -f "bv+ba/best" --write-sub --write-auto-sub --sub-langs en --embed-subs --merge-output-format mkv "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Multiple languages at once</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --sub-langs "en,es,de,fr" --sub-format srt "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Download all available subtitle languages</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --all-subs --sub-format srt "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Playlist with subtitles — organised filenames</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --sub-langs "en.*" --yes-playlist -o "%(playlist)s/%(playlist_index)02d-%(title)s.%(ext)s" "PLAYLIST_URL"</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGE PATTERNS -->
+<section class="section-dark" aria-labelledby="lang-title">
+  <div class="container">
+    <p class="section-label">Language selection</p>
+    <h2 class="section-title" id="lang-title">Sub-lang patterns and format options</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="card-dark">
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:12px"><code>--sub-langs</code> patterns</h3>
+        <div class="cmd-list" style="gap:8px">
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">English only</div>
+            <code class="code" style="font-size:12px">--sub-langs en</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">English variants (en-GB, en-US etc.)</div>
+            <code class="code" style="font-size:12px">--sub-langs "en.*"</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">English preferred, any as fallback</div>
+            <code class="code" style="font-size:12px">--sub-langs "en,*"</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Multiple specific languages</div>
+            <code class="code" style="font-size:12px">--sub-langs "en,es,de"</code>
+          </div>
+        </div>
+      </div>
+      <div class="card-dark">
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:12px">Format options</h3>
+        <div class="cmd-list" style="gap:8px">
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Prefer SRT format</div>
+            <code class="code" style="font-size:12px">--sub-format srt</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Convert to SRT (needs FFmpeg)</div>
+            <code class="code" style="font-size:12px">--convert-subs srt</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Keep WebVTT (native YouTube format)</div>
+            <code class="code" style="font-size:12px">--sub-format vtt</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Embed into MKV (best for soft subs)</div>
+            <code class="code" style="font-size:12px">--embed-subs --merge-output-format mkv</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-dark" aria-labelledby="faq-title" style="border-top:none;padding-top:0">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title" id="faq-title">Subtitles with yt-dlp — common questions</h2>
+    <div class="faq-list" style="margin-top:20px">
+      <details>
+        <summary>No subtitles found — what should I try?</summary>
+        <div class="faq-body">First try <code>--write-auto-sub</code> — most YouTube videos have auto-generated captions. If you still get nothing, the video may not have subtitles at all. Try <code>--all-subs</code> to check all available languages. Some videos are audio-only or have captions disabled.</div>
+      </details>
+      <details>
+        <summary>SRT or WebVTT — which should I use?</summary>
+        <div class="faq-body">YouTube natively provides WebVTT. SRT is more universally supported by media players. Use <code>--sub-format srt --convert-subs srt</code> to get SRT. The conversion requires FFmpeg in the same folder as yt-dlp.exe.</div>
+      </details>
+      <details>
+        <summary>Embedded subtitles don't show in my player</summary>
+        <div class="faq-body">Make sure you use <code>--merge-output-format mkv</code> — MKV has the best subtitle track support. MP4 with embedded subs can be problematic in some players. Also check that your media player has subtitle display enabled.</div>
+      </details>
+      <details>
+        <summary>Can I download subtitles only — without the video?</summary>
+        <div class="faq-body">Yes. Add <code>--skip-download</code> to only download the subtitle files without saving the video: <code>yt-dlp --write-sub --write-auto-sub --sub-langs en --skip-download "URL"</code></div>
+      </details>
+      <details>
+        <summary>Can I hardcode subtitles into the video?</summary>
+        <div class="faq-body">yt-dlp embeds subtitles as soft tracks (selectable in player). Hardcoding (burning subtitles into the image permanently) requires FFmpeg post-processing and is outside the scope of yt-dlp's built-in options.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="download-windows.html">Download</a>
+      <a href="install.html">Install</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="ffmpeg-windows.html">FFmpeg</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Subtitles</a>
+      <a href="commands.html">Commands</a>
+      <a href="troubleshooting.html">Troubleshooting</a>
+      <a href="vs-youtube-dl.html">vs youtube-dl</a>
+      <a href="safe-legal.html">Is it safe?</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p class="footer-note">Unofficial yt-dlp Windows guide. Not affiliated with yt-dlp, YouTube, or Google. Always download yt-dlp from the official <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">GitHub repository</a>.</p>
+  </div>
+</footer>
+
 </body>
 </html>

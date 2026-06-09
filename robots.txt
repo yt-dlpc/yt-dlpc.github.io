@@ -1,7 +1,4 @@
-# robots.txt for yt-dlpc.github.io
-# Allow everything by default and point to the sitemap
-
 User-agent: *
 Allow: /
 
-Sitemap: https://yt-dlpc.github.io/sitemap.xml
+Sitemap: https://yt-dlpc.github.io/sitemap-index.xml
