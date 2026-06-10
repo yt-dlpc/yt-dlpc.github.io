@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/download-windows.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/download-windows.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/download-windows.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/download-windows.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/download-windows.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/download-windows.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/download-windows.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/download-windows.html"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/install.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/install.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/install.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/install.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/install.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/install.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/install.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/install.html"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/gui.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/gui.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/gui.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/gui.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/gui.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/gui.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/gui.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/gui.html"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/to-mp3.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/to-mp3.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/to-mp3.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/to-mp3.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/to-mp3.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/to-mp3.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/to-mp3.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/to-mp3.html"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/download-playlist.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/download-playlist.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/download-playlist.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/download-playlist.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/download-playlist.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/download-playlist.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/download-playlist.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/download-playlist.html"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/subtitles-cc.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/subtitles-cc.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/subtitles-cc.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/subtitles-cc.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/subtitles-cc.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/subtitles-cc.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/subtitles-cc.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/subtitles-cc.html"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/4k-8k-hdr.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/4k-8k-hdr.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/4k-8k-hdr.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/4k-8k-hdr.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/4k-8k-hdr.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/4k-8k-hdr.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/4k-8k-hdr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/4k-8k-hdr.html"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/ffmpeg-windows.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/ffmpeg-windows.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/ffmpeg-windows.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/ffmpeg-windows.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/ffmpeg-windows.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/ffmpeg-windows.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/ffmpeg-windows.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/ffmpeg-windows.html"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/commands.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/commands.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/commands.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/commands.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/commands.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/commands.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/commands.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/commands.html"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/troubleshooting.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/troubleshooting.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/troubleshooting.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/troubleshooting.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/troubleshooting.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/troubleshooting.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/troubleshooting.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/troubleshooting.html"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/safe-legal.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/safe-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/safe-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/safe-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/safe-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/safe-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/safe-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/safe-legal.html"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/vs-youtube-dl.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/vs-youtube-dl.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/vs-youtube-dl.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/vs-youtube-dl.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/vs-youtube-dl.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/vs-youtube-dl.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/vs-youtube-dl.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/vs-youtube-dl.html"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/privacy.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://yt-dlpc.github.io/es/terms.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/terms.html"/>
+  </url>
+
+</urlset>

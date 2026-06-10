@@ -1,1 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#ff0000">
+  <link rel="icon" type="image/x-icon"  href="../favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="canonical" href="https://yt-dlpc.github.io/es/">
+  <link rel="stylesheet" href="../style.css">
 
+  <title>yt-dlp para Windows — Descargador YouTube gratuito 4K/8K, MP3</title>
+  <meta name="description" content="Descarga yt-dlp.exe para Windows 11/10. Gratis, open source. Guarda vídeos en 4K/8K, extrae MP3, descarga playlists completas. Sin instalador.">
+  <meta name="keywords" content="yt-dlp windows, yt-dlp.exe descargar, yt-dlp para windows 11, youtube downloader windows, yt-dlp gui, yt-dlp descargar, yt-dlp instalar, youtube a mp3 yt-dlp">
+
+  <link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/">
+  <link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/">
+  <link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/">
+  <link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/">
+  <link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/">
+  <link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/">
+  <link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:locale"      content="es_ES">
+  <meta property="og:title"       content="yt-dlp para Windows — Descargador YouTube gratuito 4K/8K">
+  <meta property="og:description" content="yt-dlp.exe para Windows 11/10. Gratis, open source. 4K/8K, MP3, playlists, sin anuncios.">
+  <meta property="og:url"         content="https://yt-dlpc.github.io/es/">
+  <meta property="og:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-06-09T00:00:00Z">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="yt-dlp para Windows — Descargador YouTube gratuito 4K/8K">
+  <meta name="twitter:description" content="Gratis, open source. 4K/8K, MP3, playlists. Guía de instalación paso a paso.">
+  <meta name="twitter:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL5RF9N1PR');</script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"WebSite","url":"https://yt-dlpc.github.io/es/","name":"yt-dlp Windows Helper","description":"Guías gratuitas y descarga de yt-dlp para Windows","inLanguage":"es"},
+    {"@type":"SoftwareApplication","name":"yt-dlp","operatingSystem":"Windows 11, Windows 10","applicationCategory":"MultimediaApplication","url":"https://yt-dlpc.github.io/es/","downloadUrl":"https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe","softwareVersion":"latest","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"isAccessibleForFree":true,"dateModified":"2026-06-09","inLanguage":"es"},
+    {"@type":"FAQPage","inLanguage":"es","mainEntity":[
+      {"@type":"Question","name":"¿Es seguro usar yt-dlp en Windows?","acceptedAnswer":{"@type":"Answer","text":"Sí. yt-dlp es totalmente open source y está alojado en GitHub. Cada línea de código es auditada públicamente. Sin software adicional, sin telemetría."}},
+      {"@type":"Question","name":"¿Funciona yt-dlp en Windows 11?","acceptedAnswer":{"@type":"Answer","text":"Sí. yt-dlp.exe funciona en Windows 11 y Windows 10 (64 bits) sin instalación. Solo descarga y ejecuta desde PowerShell o CMD."}},
+      {"@type":"Question","name":"¿Es gratuito yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"Sí. yt-dlp es completamente gratuito y open source bajo la licencia Unlicense."}},
+      {"@type":"Question","name":"¿Necesito una GUI para yt-dlp en Windows?","acceptedAnswer":{"@type":"Answer","text":"No, pero hay varias interfaces GUI gratuitas disponibles. yt-dlp funciona desde PowerShell o CMD con comandos simples."}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Navegación principal">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </a>
+    <div class="nav-links">
+      <a href="download-windows.html">Descargar</a>
+      <a href="install.html">Instalar</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Subtítulos</a>
+      <a href="safe-legal.html">¿Es seguro?</a>
+      <a href="troubleshooting.html">Solución de problemas</a>
+    </div>
+    <a href="download-windows.html" class="nav-cta">⬇ Descargar</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-tag">
+      <span class="hero-tag-dot"></span>
+      Gratuito &amp; open source &nbsp;·&nbsp; Windows 11/10 &nbsp;·&nbsp; Release oficial de GitHub
+    </div>
+    <h1>Descarga <em>yt-dlp.exe</em> para Windows —<br>4K, MP3, Playlists, Sin bloatware</h1>
+    <p class="hero-sub">El descargador YouTube open source más rápido para Windows. Guarda vídeos en 4K/8K, extrae MP3, descarga playlists completas. Funciona en PowerShell en menos de 60 segundos.</p>
+    <div class="hero-btns">
+      <a class="btn btn-red" href="download-windows.html">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Descargar yt-dlp.exe
+      </a>
+      <a class="btn btn-ghost" href="install.html">Guía de instalación paso a paso →</a>
+    </div>
+    <p class="hero-meta">Último release &nbsp;·&nbsp; <a href="https://github.com/yt-dlp/yt-dlp/releases/latest" target="_blank" rel="noopener">Ver en GitHub</a> &nbsp;·&nbsp; Sin instalador &nbsp;·&nbsp; Windows 11/10</p>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="container trust-items">
+    <span class="trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Open source en GitHub</span>
+    <span class="trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sin instalador, totalmente portátil</span>
+    <span class="trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sin anuncios, sin software adicional</span>
+    <span class="trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Soporte 4K / 8K / HDR</span>
+    <span class="trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Más de 1000 sitios compatibles</span>
+  </div>
+</div>
+
+<section class="section-light" aria-labelledby="feat-title">
+  <div class="container">
+    <p class="section-label">Qué puede hacer yt-dlp</p>
+    <h2 class="section-title" id="feat-title">yt-dlp para Windows — todo para YouTube</h2>
+    <p class="section-sub">Un único archivo .exe portátil. Sin instalación. Sin permisos de administrador. Funciona en PowerShell o CMD.</p>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="m8 21 4-4 4 4"/></svg></div>
+        <h3>Descargar vídeos de YouTube en 4K y 8K</h3>
+        <p>La mejor calidad disponible con fusión automática mediante FFmpeg. Compatible con AV1, VP9, H.264 y HDR.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <h3>Convertir YouTube a MP3 en Windows</h3>
+        <p>Extrae audio como MP3, AAC, FLAC u Opus. Incorpora metadatos, etiquetas y carátula automáticamente.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+        <h3>Descargar playlists y canales de YouTube</h3>
+        <p>Descarga playlists y canales completos con un comando. Omite automáticamente los archivos ya guardados.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Descargar subtítulos y closed captions</h3>
+        <p>Subtítulos automáticos o manuales en SRT y WebVTT. Incorpóralos en MKV o guárdalos como archivos separados.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg></div>
+        <h3>GUI yt-dlp para Windows — sin línea de comandos</h3>
+        <p>¿Prefieres una interfaz visual? Hay varias interfaces GUI gratuitas para yt-dlp disponibles en Windows.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>¿Es yt-dlp seguro y legal en 2026?</h3>
+        <p>Open source, auditado por la comunidad, sin telemetría. Legal cuando se usa respetando los derechos de autor y los ToS.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="steps-title">
+  <div class="container">
+    <p class="section-label">Inicio rápido</p>
+    <h2 class="section-title" id="steps-title">Cómo instalar yt-dlp en Windows en 4 pasos</h2>
+    <p class="section-sub">Sin permisos de administrador. Funciona en cualquier PC con Windows 11 o Windows 10.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">Paso 01</div>
+        <h3>Descargar yt-dlp.exe</h3>
+        <p>Guárdalo en cualquier carpeta, p. ej.: <code>C:\Tools\yt-dlp\</code> — sin instalación, totalmente portátil.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Paso 02</div>
+        <h3>Abrir PowerShell en esa carpeta</h3>
+        <p>Haz clic en la barra de direcciones del Explorador, escribe <code>powershell</code>, pulsa Enter.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Paso 03</div>
+        <h3>Verificar la instalación</h3>
+        <p>Ejecuta <code>yt-dlp --version</code>. Si aparece un número de versión, está listo.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Paso 04</div>
+        <h3>Descargar tu primer vídeo</h3>
+        <p>Pega una URL de YouTube y pulsa Enter. yt-dlp elige automáticamente la mejor calidad.</p>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-size:13px;color:#666;">
+      ¿Necesitas FFmpeg para 4K/8K? <a href="ffmpeg-windows.html">Guía de configuración de FFmpeg →</a>
+      &nbsp;·&nbsp;
+      <a href="install.html">Guía de instalación completa con PATH →</a>
+    </p>
+  </div>
+</section>
+
+<section class="section-light" aria-labelledby="cmd-title">
+  <div class="container">
+    <p class="section-label">Comandos yt-dlp para Windows</p>
+    <h2 class="section-title" id="cmd-title">Comandos yt-dlp más útiles — copiar y pegar</h2>
+    <p class="section-sub">Ejecuta directamente en PowerShell o CMD. Sustituye la URL por el enlace de tu vídeo o playlist.</p>
+    <div class="cmd-list">
+      <div class="cmd-block">
+        <div class="cmd-label">Mejor calidad de vídeo (fusión automática con FFmpeg)</div>
+        <code class="code">yt-dlp "https://www.youtube.com/watch?v=VIDEO_ID"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Convertir YouTube a MP3 — mejor calidad</div>
+        <code class="code">yt-dlp -x --audio-format mp3 --audio-quality 0 "URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Descargar una playlist completa de YouTube</div>
+        <code class="code">yt-dlp --yes-playlist "PLAYLIST_URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Descargar en 4K con subtítulos en español</div>
+        <code class="code">yt-dlp -f "bestvideo[height&lt;=2160]+bestaudio" --write-sub --sub-langs es "URL"</code>
+      </div>
+    </div>
+    <p style="margin-top:16px;font-size:13px;color:var(--muted);">
+      <a href="commands.html">Cheatsheet completo de comandos yt-dlp para Windows →</a>
+    </p>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="guides-title">
+  <div class="container">
+    <p class="section-label">Todas las guías</p>
+    <h2 class="section-title" id="guides-title">Guías yt-dlp para Windows — paso a paso</h2>
+    <p class="section-sub">Todo lo que necesitas para sacar el máximo partido a yt-dlp en Windows 11 y 10.</p>
+    <div class="guides-grid">
+      <a class="guide-link" href="install.html"><div class="guide-link-l"><div class="guide-dot"></div><div><h3>Cómo instalar yt-dlp en Windows</h3><p>Descarga, configuración del PATH, FFmpeg, actualizaciones</p></div></div><span class="guide-arr">›</span></a>
+      <a class="guide-link" href="gui.html"><div class="guide-link-l"><div class="guide-dot"></div><div><h3>Mejor GUI yt-dlp para Windows 2026</h3><p>Interfaces visuales — sin línea de comandos</p></div></div><span class="guide-arr">›</span></a>
+      <a class="guide-link" href="to-mp3.html"><div class="guide-link-l"><div class="guide-dot"></div><div><h3>YouTube a MP3 con yt-dlp en Windows</h3><p>Mejor calidad, incorpora etiquetas &amp; carátula</p></div></div><span class="guide-arr">›</span></a>
+      <a class="guide-link" href="download-playlist.html"><div class="guide-link-l"><div class="guide-dot"></div><div><h3>Descargar playlists de YouTube en Windows</h3><p>Canales completos, ordenación, omitir duplicados</p></div></div><span class="guide-arr">›</span></a>
+      <a class="guide-link" href="4k-8k-hdr.html"><div class="guide-link-l"><div class="guide-dot"></div><div><h3>Descargar YouTube en 4K y 8K en Windows</h3><p>HDR, AV1, selección de formato, fusión FFmpeg</p></div></div><span class="guide-arr">›</span></a>
+      <a class="guide-link" href="subtitles-cc.html"><div class="guide-link-l"><div class="guide-dot"></div><div><h3>Descargar subtítulos con yt-dlp en Windows</h3><p>SRT, WebVTT, incrustar, auto vs manual</p></div></div><span class="guide-arr">›</span></a>
+      <a class="guide-link" href="safe-legal.html"><div class="guide-link-l"><div class="guide-dot"></div><div><h3>¿Es yt-dlp seguro y legal en 2026?</h3><p>Auditoría open source, derechos de autor, ToS explicados</p></div></div><span class="guide-arr">›</span></a>
+      <a class="guide-link" href="vs-youtube-dl.html"><div class="guide-link-l"><div class="guide-dot"></div><div><h3>yt-dlp vs youtube-dl en 2026</h3><p>Velocidad, actualizaciones, funciones, soporte de sitios</p></div></div><span class="guide-arr">›</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="faq-title" style="padding-top:0;border-top:none">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title" id="faq-title">Preguntas frecuentes sobre yt-dlp para Windows</h2>
+    <div class="faq-list" style="margin-top:20px">
+      <details><summary>¿Es seguro usar yt-dlp en Windows?</summary><div class="faq-body">Sí. yt-dlp es completamente open source y está alojado en <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">GitHub</a>. Cada línea de código es auditada públicamente. Sin software adicional, sin telemetría, sin servicios en segundo plano.</div></details>
+      <details><summary>¿Funciona yt-dlp en Windows 11?</summary><div class="faq-body">Sí. yt-dlp.exe funciona en Windows 11 y Windows 10 (64 bits) sin instalación. Descarga el .exe, abre PowerShell y ejecuta tu primer comando.</div></details>
+      <details><summary>¿Necesito una GUI para yt-dlp en Windows?</summary><div class="faq-body">No. yt-dlp funciona perfectamente con comandos simples de copiar y pegar en PowerShell. Si prefieres una interfaz visual, consulta la <a href="gui.html">guía de las mejores GUI yt-dlp para Windows 2026</a>.</div></details>
+      <details><summary>¿Es legal usar yt-dlp?</summary><div class="faq-body">yt-dlp en sí es legal — es una herramienta open source. Si descargar un contenido específico es legal depende de los derechos de autor y los Términos de Servicio de la plataforma. Consulta la <a href="safe-legal.html">guía completa de seguridad y legalidad de yt-dlp</a>.</div></details>
+      <details><summary>¿Cómo actualizo yt-dlp en Windows?</summary><div class="faq-body">Abre PowerShell en la carpeta donde está guardado yt-dlp.exe y ejecuta <code>yt-dlp -U</code>. Se actualiza automáticamente a la última versión.</div></details>
+      <details><summary>¿Necesito FFmpeg con yt-dlp?</summary><div class="faq-body">FFmpeg es opcional pero muy recomendado. YouTube transmite 4K/8K como flujos separados de vídeo y audio — FFmpeg los fusiona. También es necesario para la extracción de MP3. Consulta la <a href="ffmpeg-windows.html">guía de configuración de FFmpeg para Windows</a>.</div></details>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </div>
+    <nav class="footer-links" aria-label="Navegación del pie de página">
+      <a href="index.html">Inicio</a>
+      <a href="download-windows.html">Descargar</a>
+      <a href="install.html">Instalar</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="ffmpeg-windows.html">FFmpeg</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Subtítulos</a>
+      <a href="commands.html">Comandos</a>
+      <a href="troubleshooting.html">Solución de problemas</a>
+      <a href="vs-youtube-dl.html">vs youtube-dl</a>
+      <a href="safe-legal.html">¿Es seguro?</a>
+      <a href="privacy.html">Privacidad</a>
+      <a href="terms.html">Términos</a>
+    </nav>
+    <p class="footer-note">Guía no oficial de yt-dlp para Windows. No afiliado a yt-dlp, YouTube ni Google. Descarga siempre yt-dlp desde el <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">repositorio oficial de GitHub</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

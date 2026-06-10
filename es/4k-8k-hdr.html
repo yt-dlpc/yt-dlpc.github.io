@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#ff0000">
+  <link rel="canonical" href="https://yt-dlpc.github.io/es/4k-8k-hdr.html">
+  <link rel="icon" type="image/x-icon"  href="../favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../style.css">
+
+  <title>Descargar YouTube en 4K y 8K con yt-dlp en Windows — HDR, AV1, VP9</title>
+  <meta name="description" content="Descarga vídeos de YouTube en 4K y 8K en Windows con yt-dlp. Mejor selección de formato para AV1, VP9, H.264, HDR. FFmpeg necesario para la fusión. Comandos para copiar.">
+  <meta name="keywords" content="yt-dlp 4k, yt-dlp 8k, yt-dlp hdr, descargar youtube 4k windows, yt-dlp 2160p, yt-dlp av1, yt-dlp vp9, youtube 4k downloader">
+
+  <link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/4k-8k-hdr.html">
+  <link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/4k-8k-hdr.html">
+  <link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/4k-8k-hdr.html">
+  <link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/4k-8k-hdr.html">
+  <link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/4k-8k-hdr.html">
+  <link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/4k-8k-hdr.html">
+  <link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/4k-8k-hdr.html">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:locale"      content="es_ES">
+  <meta property="og:title"       content="Descargar YouTube en 4K y 8K con yt-dlp en Windows">
+  <meta property="og:description" content="Mejor selección de formato para AV1, VP9, H.264, HDR. Fusión FFmpeg. Comandos para Windows.">
+  <meta property="og:url"         content="https://yt-dlpc.github.io/es/4k-8k-hdr.html">
+  <meta property="og:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-06-09T00:00:00Z">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Descargar YouTube en 4K y 8K con yt-dlp en Windows">
+  <meta name="twitter:description" content="AV1, VP9, H.264, HDR, fusión FFmpeg. Comandos Windows.">
+  <meta name="twitter:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL5RF9N1PR');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","inLanguage":"es","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Inicio","item":"https://yt-dlpc.github.io/es/"},
+      {"@type":"ListItem","position":2,"name":"Descargar YouTube 4K/8K con yt-dlp","item":"https://yt-dlpc.github.io/es/4k-8k-hdr.html"}
+    ]},
+    {"@type":"FAQPage","inLanguage":"es","mainEntity":[
+      {"@type":"Question","name":"¿Cómo descargo YouTube en 4K con yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"Ejecuta: yt-dlp -f \"bestvideo+bestaudio/best\" \"URL\". FFmpeg debe estar en la misma carpeta que yt-dlp.exe para fusionar los flujos separados de vídeo y audio."}},
+      {"@type":"Question","name":"¿Necesito FFmpeg para descargar vídeos 4K de YouTube con yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"Sí. FFmpeg es necesario para fusionar los flujos separados de vídeo y audio. Coloca ffmpeg.exe en la misma carpeta que yt-dlp.exe."}},
+      {"@type":"Question","name":"¿Cómo limito yt-dlp a 1080p?","acceptedAnswer":{"@type":"Answer","text":"Usa: yt-dlp -f \"bestvideo[height<=1080]+bestaudio/best\" \"URL\""}},
+      {"@type":"Question","name":"¿Cómo descargo en 4K en H.264/MP4 con yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"Usa: yt-dlp -f \"bestvideo[ext=mp4][vcodec*=h264]+bestaudio[ext=m4a]/best[ext=mp4]\" \"URL\""}}
+    ],"dateModified":"2026-06-09"}
+  ]}
+  </script>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Navegación principal">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </a>
+    <div class="nav-links">
+      <a href="download-windows.html">Descargar</a>
+      <a href="install.html">Instalar</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="4k-8k-hdr.html" aria-current="page">4K/8K</a>
+      <a href="subtitles-cc.html">Subtítulos</a>
+      <a href="safe-legal.html">¿Es seguro?</a>
+      <a href="troubleshooting.html">Solución de problemas</a>
+    </div>
+    <a href="download-windows.html" class="nav-cta">⬇ Descargar</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="page-eyebrow">Windows 11/10 &nbsp;·&nbsp; Requiere FFmpeg &nbsp;·&nbsp; AV1 / VP9 / H.264</p>
+    <h1>Descargar YouTube en 4K y 8K con yt-dlp en Windows</h1>
+    <p class="lead">yt-dlp descarga los mejores flujos de vídeo y audio disponibles por separado y los fusiona con FFmpeg. Aquí están los comandos correctos para cada escenario.</p>
+  </div>
+</section>
+
+<div class="section-dark" style="padding:20px 0;border-bottom:1px solid var(--border-dark)">
+  <div class="container" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+    <a class="btn btn-red" href="download-windows.html">⬇ Descargar yt-dlp.exe</a>
+    <a class="btn btn-ghost" href="ffmpeg-windows.html">Configurar FFmpeg →</a>
+    <p style="font-size:13px;color:#555;margin:0">FFmpeg necesario para las fusiones 4K/8K</p>
+  </div>
+</div>
+
+<section class="section-dark" style="padding:28px 0;border-bottom:1px solid var(--border-dark)">
+  <div class="container">
+    <div style="background:#0d1a0d;border:1px solid #1a3a1a;border-left:3px solid #4ade80;border-radius:0 10px 10px 0;padding:14px 18px;font-size:13px;color:#6a9a6a;max-width:760px">
+      <strong style="color:#4ade80">Por qué el vídeo y el audio van separados:</strong> YouTube entrega 4K y 8K como flujos separados de solo vídeo y solo audio para reducir el ancho de banda. yt-dlp descarga ambos y usa FFmpeg para fusionarlos en un único archivo. Sin FFmpeg solo obtendrás vídeo — sin audio.
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="cmds-title" style="border-top:none;padding-top:28px">
+  <div class="container">
+    <p class="section-label">Comandos</p>
+    <h2 class="section-title" id="cmds-title">Comandos yt-dlp para descargar en 4K y 8K en Windows</h2>
+    <p class="section-sub">Todos los comandos requieren FFmpeg en la misma carpeta que yt-dlp.exe.</p>
+    <div class="cmd-list">
+      <div class="cmd-block">
+        <div class="cmd-label">Mejor calidad disponible — fusión automática (recomendado)</div>
+        <code class="code">yt-dlp -f "bestvideo+bestaudio/best" "URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">4K explícito (2160p) — mejor códec disponible</div>
+        <code class="code">yt-dlp -f "bestvideo[height>=2160]+bestaudio/best" "URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Limitar a 1080p — buen equilibrio entre calidad y tamaño</div>
+        <code class="code">yt-dlp -f "bestvideo[height<=1080]+bestaudio/best" "URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Preferir H.264/MP4 — máxima compatibilidad con reproductores y editores</div>
+        <code class="code">yt-dlp -f "bestvideo[ext=mp4][vcodec*=h264]+bestaudio[ext=m4a]/best[ext=mp4]" "URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Preferir AV1 → VP9 → alternativa (mejor compresión)</div>
+        <code class="code">yt-dlp -f "bestvideo[vcodec^=av01]/bestvideo[vcodec^=vp9]/bestvideo+bestaudio/best" "URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">8K (4320p) si está disponible</div>
+        <code class="code">yt-dlp -f "bestvideo[height>=4320]+bestaudio/best" "URL"</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-light" aria-labelledby="codec-title">
+  <div class="container">
+    <p class="section-label">Guía de códecs</p>
+    <h2 class="section-title" id="codec-title">AV1 vs VP9 vs H.264 — ¿cuál elegir?</h2>
+    <p class="section-sub" style="color:var(--muted)">YouTube ofrece varios códecs para 4K. Esto es lo que significa cada uno para ti.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+      <div class="card-light">
+        <h3 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px">AV1</h3>
+        <ul style="padding-left:16px;font-size:13px;color:var(--muted);line-height:1.8">
+          <li>Mejor compresión en 4K/8K</li>
+          <li>Menor tamaño de archivo para la misma calidad</li>
+          <li>Requiere hardware moderno para decodificación fluida</li>
+          <li>Mejor opción si tu PC/reproductor lo soporta</li>
+        </ul>
+      </div>
+      <div class="card-light">
+        <h3 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px">VP9</h3>
+        <ul style="padding-left:16px;font-size:13px;color:var(--muted);line-height:1.8">
+          <li>Buena calidad en 4K, ampliamente compatible</li>
+          <li>Archivos más grandes que AV1</li>
+          <li>Funciona en la mayoría de reproductores modernos</li>
+          <li>Buena opción predeterminada para la mayoría de usuarios</li>
+        </ul>
+      </div>
+      <div class="card-light">
+        <h3 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px">H.264 (MP4)</h3>
+        <ul style="padding-left:16px;font-size:13px;color:var(--muted);line-height:1.8">
+          <li>Mejor compatibilidad — funciona en todas partes</li>
+          <li>Mayor tamaño de archivo en 4K</li>
+          <li>Puede no estar disponible en 4K en todos los vídeos</li>
+          <li>Mejor para edición o dispositivos más antiguos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="faq-title">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title" id="faq-title">Descarga 4K/8K con yt-dlp — preguntas frecuentes</h2>
+    <div class="faq-list" style="margin-top:20px">
+      <details>
+        <summary>La descarga 4K no tiene audio — ¿por qué?</summary>
+        <div class="faq-body">FFmpeg no está instalado o no está en la misma carpeta que yt-dlp.exe. Sin FFmpeg, yt-dlp no puede fusionar los flujos separados de vídeo y audio. Coloca <code>ffmpeg.exe</code> junto a <code>yt-dlp.exe</code> y vuelve a ejecutar el comando. Consulta la <a href="ffmpeg-windows.html">guía de configuración de FFmpeg</a>.</div>
+      </details>
+      <details>
+        <summary>El vídeo no tiene opción 4K — ¿por qué?</summary>
+        <div class="faq-body">No todos los vídeos de YouTube se suben en 4K. yt-dlp no puede hacer upscaling — solo descarga lo que ofrece la fuente. Usa <code>yt-dlp -F "URL"</code> para listar todos los formatos disponibles para un vídeo específico.</div>
+      </details>
+      <details>
+        <summary>¿Cómo veo todos los formatos disponibles para un vídeo?</summary>
+        <div class="faq-body">Ejecuta <code>yt-dlp -F "URL"</code> (F mayúscula). Esto lista cada formato disponible con ID, resolución, códec, bitrate y tamaño de archivo. Luego puedes usar un ID de formato específico con <code>-f FORMAT_ID+AUDIO_ID</code>.</div>
+      </details>
+      <details>
+        <summary>Mi reproductor no puede reproducir archivos AV1 o WebM</summary>
+        <div class="faq-body">Usa el comando H.264/MP4: <code>-f "bestvideo[ext=mp4][vcodec*=h264]+bestaudio[ext=m4a]/best[ext=mp4]"</code>. Ten en cuenta que H.264 en 4K puede no estar disponible para todos los vídeos — los flujos 4K de YouTube son frecuentemente solo AV1 o VP9.</div>
+      </details>
+      <details>
+        <summary>¿Cómo verifico si un archivo descargado es realmente 4K?</summary>
+        <div class="faq-body">Haz clic derecho en el archivo de vídeo en el Explorador → Propiedades → pestaña Detalles. Verás el ancho y alto del fotograma. 4K es 3840×2160. También puedes abrirlo en VLC: Herramientas → Información de medios → Códec.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </div>
+    <nav class="footer-links" aria-label="Navegación del pie de página">
+      <a href="index.html">Inicio</a>
+      <a href="download-windows.html">Descargar</a>
+      <a href="install.html">Instalar</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="ffmpeg-windows.html">FFmpeg</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Subtítulos</a>
+      <a href="commands.html">Comandos</a>
+      <a href="troubleshooting.html">Solución de problemas</a>
+      <a href="vs-youtube-dl.html">vs youtube-dl</a>
+      <a href="safe-legal.html">¿Es seguro?</a>
+      <a href="privacy.html">Privacidad</a>
+      <a href="terms.html">Términos</a>
+    </nav>
+    <p class="footer-note">Guía no oficial de yt-dlp para Windows. No afiliado a yt-dlp, YouTube ni Google. Descarga siempre yt-dlp desde el <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">repositorio oficial de GitHub</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

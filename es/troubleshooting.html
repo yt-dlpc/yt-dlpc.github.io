@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#ff0000">
+  <link rel="canonical" href="https://yt-dlpc.github.io/es/troubleshooting.html">
+  <link rel="icon" type="image/x-icon"  href="../favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../style.css">
+
+  <title>Solución de Problemas yt-dlp en Windows — Errores Comunes y Soluciones</title>
+  <meta name="description" content="Soluciona errores de yt-dlp en Windows: FFmpeg no encontrado, Unable to extract, errores 403/404, velocidad lenta, yt-dlp no reconocido, SmartScreen, errores SSL.">
+  <meta name="keywords" content="solución problemas yt-dlp, yt-dlp no funciona windows, yt-dlp ffmpeg no encontrado, yt-dlp unable to extract, yt-dlp error 403, yt-dlp no reconocido">
+
+  <link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/troubleshooting.html">
+  <link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/troubleshooting.html">
+  <link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/troubleshooting.html">
+  <link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/troubleshooting.html">
+  <link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/troubleshooting.html">
+  <link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/troubleshooting.html">
+  <link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/troubleshooting.html">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:locale"      content="es_ES">
+  <meta property="og:title"       content="Solución de Problemas yt-dlp en Windows — Errores Comunes y Soluciones">
+  <meta property="og:description" content="Soluciona FFmpeg no encontrado, Unable to extract, errores 403, velocidad lenta, no reconocido. Soluciones paso a paso para Windows.">
+  <meta property="og:url"         content="https://yt-dlpc.github.io/es/troubleshooting.html">
+  <meta property="og:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-06-09T00:00:00Z">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Solución de Problemas yt-dlp en Windows">
+  <meta name="twitter:description" content="Soluciona errores comunes de yt-dlp en Windows. FFmpeg, errores de extracción, 403, lento, PATH.">
+  <meta name="twitter:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL5RF9N1PR');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","inLanguage":"es","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Inicio","item":"https://yt-dlpc.github.io/es/"},
+      {"@type":"ListItem","position":2,"name":"Solución de Problemas yt-dlp","item":"https://yt-dlpc.github.io/es/troubleshooting.html"}
+    ]},
+    {"@type":"FAQPage","inLanguage":"es","mainEntity":[
+      {"@type":"Question","name":"Error Unable to extract en yt-dlp — ¿cómo lo soluciono?","acceptedAnswer":{"@type":"Answer","text":"Ejecuta yt-dlp -U para actualizar a la última versión. Este error generalmente significa que el extractor está desactualizado."}},
+      {"@type":"Question","name":"Error ffmpeg no encontrado en yt-dlp en Windows","acceptedAnswer":{"@type":"Answer","text":"Coloca ffmpeg.exe en la misma carpeta que yt-dlp.exe. yt-dlp busca FFmpeg primero en su propia carpeta."}},
+      {"@type":"Question","name":"yt-dlp no se reconoce como comando en PowerShell","acceptedAnswer":{"@type":"Answer","text":"Ejecuta yt-dlp.exe desde su carpeta, o añade esa carpeta al PATH de Windows."}},
+      {"@type":"Question","name":"Error 403 en yt-dlp al descargar","acceptedAnswer":{"@type":"Answer","text":"Primero actualiza yt-dlp con yt-dlp -U. Si se requiere inicio de sesión, usa --cookies-from-browser chrome."}},
+      {"@type":"Question","name":"La descarga de yt-dlp es muy lenta en Windows","acceptedAnswer":{"@type":"Answer","text":"Prueba -N 4 para descargas paralelas. Evita VPNs que limiten el tráfico. Usa --limit-rate 5M para limitar la velocidad."}}
+    ],"dateModified":"2026-06-09"}
+  ]}
+  </script>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Navegación principal">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </a>
+    <div class="nav-links">
+      <a href="download-windows.html">Descargar</a>
+      <a href="install.html">Instalar</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Subtítulos</a>
+      <a href="safe-legal.html">¿Es seguro?</a>
+      <a href="troubleshooting.html" aria-current="page">Solución de problemas</a>
+    </div>
+    <a href="download-windows.html" class="nav-cta">⬇ Descargar</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="page-eyebrow">Windows 11/10 &nbsp;·&nbsp; Errores comunes &nbsp;·&nbsp; Soluciones paso a paso</p>
+    <h1>Solución de Problemas yt-dlp en Windows — Errores Comunes y Soluciones</h1>
+    <p class="lead">La mayoría de los errores de yt-dlp en Windows tienen soluciones sencillas. Empieza actualizando — <code>yt-dlp -U</code> — y comprobando FFmpeg. Eso resuelve el 80% de los problemas.</p>
+  </div>
+</section>
+
+<div class="section-dark" style="padding:20px 0;border-bottom:1px solid var(--border-dark)">
+  <div class="container">
+    <p style="font-size:13px;color:#888;margin-bottom:10px;font-weight:600">Empieza siempre por aquí:</p>
+    <div class="cmd-list" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div class="cmd-block">
+        <div class="cmd-label">Paso 1 — actualizar yt-dlp</div>
+        <code class="code">yt-dlp -U</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Paso 2 — verificar los formatos disponibles</div>
+        <code class="code">yt-dlp -F "URL"</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section-dark" aria-labelledby="errors-title" style="border-top:none;padding-top:36px">
+  <div class="container">
+    <p class="section-label">Referencia de errores</p>
+    <h2 class="section-title" id="errors-title">Mensajes de error de yt-dlp y cómo solucionarlos</h2>
+    <div class="faq-list" style="margin-top:20px">
+
+      <details open>
+        <summary>Error "Unable to extract" o de parsing</summary>
+        <div class="faq-body">
+          <strong style="color:#ddd">Causa:</strong> El sitio ha actualizado su estructura y el extractor de yt-dlp está desactualizado.<br><br>
+          <strong style="color:#ddd">Solución:</strong> Ejecuta <code>yt-dlp -U</code> para obtener los últimos extractores. Esta es la solución más habitual para este error. Si persiste tras la actualización, el sitio puede haber hecho un cambio importante — consulta la <a href="https://github.com/yt-dlp/yt-dlp/issues" target="_blank" rel="noopener">página de issues de GitHub</a> para ver informes.
+        </div>
+      </details>
+
+      <details>
+        <summary>Error "ffmpeg not found" o sin audio en el archivo descargado</summary>
+        <div class="faq-body">
+          <strong style="color:#ddd">Causa:</strong> FFmpeg no está instalado o no está en el lugar correcto.<br><br>
+          <strong style="color:#ddd">Solución:</strong> Coloca <code>ffmpeg.exe</code> en la misma carpeta que <code>yt-dlp.exe</code>. yt-dlp busca allí primero. Verifica con <code>ffmpeg -version</code> en PowerShell. Consulta la <a href="ffmpeg-windows.html">guía de configuración de FFmpeg</a>.
+        </div>
+      </details>
+
+      <details>
+        <summary>"yt-dlp no se reconoce como comando"</summary>
+        <div class="faq-body">
+          <strong style="color:#ddd">Causa:</strong> PowerShell no puede encontrar yt-dlp.exe porque la carpeta no está en el PATH.<br><br>
+          <strong style="color:#ddd">Solución — opción 1:</strong> Navega hasta la carpeta con yt-dlp.exe en el Explorador, haz clic en la barra de direcciones, escribe <code>powershell</code> y pulsa Enter. Ejecuta yt-dlp desde allí.<br><br>
+          <strong style="color:#ddd">Solución — opción 2:</strong> Añade la carpeta de yt-dlp al PATH. Consulta la <a href="install.html">guía de instalación</a> para instrucciones paso a paso.
+        </div>
+      </details>
+
+      <details>
+        <summary>Error HTTP 403 o "Sign in to confirm your age"</summary>
+        <div class="faq-body">
+          <strong style="color:#ddd">Causa:</strong> El vídeo requiere autenticación o YouTube está limitando la solicitud.<br><br>
+          <strong style="color:#ddd">Solución:</strong> Primero actualiza yt-dlp: <code>yt-dlp -U</code>. Si el vídeo requiere inicio de sesión, pasa las cookies del navegador:
+          <code class="code" style="margin-top:8px">--cookies-from-browser chrome</code>
+          Sustituye <code>chrome</code> por <code>edge</code> o <code>firefox</code> según sea necesario. Si usas una VPN, prueba sin ella — algunos nodos de salida de VPN son bloqueados por YouTube.
+        </div>
+      </details>
+
+      <details>
+        <summary>La descarga es muy lenta o se detiene continuamente</summary>
+        <div class="faq-body">
+          <strong style="color:#ddd">Causa:</strong> Throttling de red, conexión inestable o limitación de velocidad de YouTube.<br><br>
+          <strong style="color:#ddd">Solución:</strong>
+          <code class="code" style="margin-top:8px">-N 4 --retries 10 --fragment-retries 10</code>
+          <code class="code" style="margin-top:6px">--limit-rate 5M</code>
+          <code>-N 4</code> activa las descargas de fragmentos paralelas. <code>--limit-rate 5M</code> limita la velocidad para evitar reinicios de conexión. Intenta descargar en otro momento si YouTube está limitando.
+        </div>
+      </details>
+
+      <details>
+        <summary>Fusión fallida — vídeo y audio guardados como archivos separados</summary>
+        <div class="faq-body">
+          <strong style="color:#ddd">Causa:</strong> FFmpeg no está instalado o está desactualizado.<br><br>
+          <strong style="color:#ddd">Solución:</strong> Asegúrate de que <code>ffmpeg.exe</code> está en la misma carpeta que <code>yt-dlp.exe</code> y es un build reciente. Actualiza yt-dlp con <code>yt-dlp -U</code>. Luego vuelve a intentarlo con:
+          <code class="code" style="margin-top:8px">yt-dlp -f "bestvideo+bestaudio/best" "URL"</code>
+        </div>
+      </details>
+
+      <details>
+        <summary>SmartScreen de Windows bloquea yt-dlp.exe</summary>
+        <div class="faq-body">
+          <strong style="color:#ddd">Causa:</strong> SmartScreen señala ejecutables portátiles no firmados por defecto — es un falso positivo.<br><br>
+          <strong style="color:#ddd">Solución:</strong> Haz clic en <strong>Más información</strong> → <strong>Ejecutar de todos modos</strong>. El archivo es el release oficial no modificado de GitHub. También puedes hacer clic derecho en <code>yt-dlp.exe</code> → Propiedades → marcar <strong>Desbloquear</strong> en la parte inferior → Aceptar.
+        </div>
+      </details>
+
+      <details>
+        <summary>"Acceso denegado" o el antivirus bloquea el archivo</summary>
+        <div class="faq-body">
+          <strong style="color:#ddd">Causa:</strong> Windows o el antivirus ha bloqueado el archivo descargado de internet.<br><br>
+          <strong style="color:#ddd">Solución:</strong> Haz clic derecho en <code>yt-dlp.exe</code> → Propiedades → marca <strong>Desbloquear</strong> → Aceptar. Si el antivirus lo bloquea, añade una excepción para el archivo. Descarga siempre desde la <a href="https://github.com/yt-dlp/yt-dlp/releases/latest" target="_blank" rel="noopener">página oficial de releases de GitHub</a>.
+        </div>
+      </details>
+
+      <details>
+        <summary>Error de verificación de certificado SSL</summary>
+        <div class="faq-body">
+          <strong style="color:#ddd">Causa:</strong> El almacén de certificados de Windows está desactualizado, o un proxy/VPN está interceptando HTTPS.<br><br>
+          <strong style="color:#ddd">Solución:</strong> Actualiza Windows (Configuración → Windows Update), luego vuelve a intentarlo. Si estás detrás de un proxy corporativo, contacta con tu equipo de IT. Como último recurso únicamente: <code>--no-check-certificate</code> — no recomendado a largo plazo ya que deshabilita la validación de certificados.
+        </div>
+      </details>
+
+      <details>
+        <summary>Error "URL no compatible"</summary>
+        <div class="faq-body">
+          <strong style="color:#ddd">Causa:</strong> El sitio no está soportado por yt-dlp, o el formato de URL ha cambiado.<br><br>
+          <strong style="color:#ddd">Solución:</strong> Actualiza yt-dlp con <code>yt-dlp -U</code>. Comprueba la <a href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md" target="_blank" rel="noopener">lista de sitios compatibles</a>. Asegúrate de usar la URL correcta del vídeo — las URLs de playlist y canal tienen formatos distintos.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<section class="section-light" aria-labelledby="diag-title">
+  <div class="container">
+    <p class="section-label">Diagnóstico</p>
+    <h2 class="section-title" id="diag-title">Comandos de depuración — obtener más información</h2>
+    <div class="cmd-list">
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Salida detallada — muestra los detalles completos del error</div>
+        <code class="code">yt-dlp -v "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Listar todos los formatos disponibles para un vídeo</div>
+        <code class="code">yt-dlp -F "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Simulación — probar sin descargar realmente</div>
+        <code class="code">yt-dlp --simulate "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Verificar que FFmpeg funciona</div>
+        <code class="code">ffmpeg -version</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </div>
+    <nav class="footer-links" aria-label="Navegación del pie de página">
+      <a href="index.html">Inicio</a>
+      <a href="download-windows.html">Descargar</a>
+      <a href="install.html">Instalar</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="ffmpeg-windows.html">FFmpeg</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Subtítulos</a>
+      <a href="commands.html">Comandos</a>
+      <a href="troubleshooting.html">Solución de problemas</a>
+      <a href="vs-youtube-dl.html">vs youtube-dl</a>
+      <a href="safe-legal.html">¿Es seguro?</a>
+      <a href="privacy.html">Privacidad</a>
+      <a href="terms.html">Términos</a>
+    </nav>
+    <p class="footer-note">Guía no oficial de yt-dlp para Windows. No afiliado a yt-dlp, YouTube ni Google. Descarga siempre yt-dlp desde el <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">repositorio oficial de GitHub</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

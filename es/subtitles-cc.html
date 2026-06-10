@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#ff0000">
+  <link rel="canonical" href="https://yt-dlpc.github.io/es/subtitles-cc.html">
+  <link rel="icon" type="image/x-icon"  href="../favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../style.css">
+
+  <title>Descargar Subtítulos de YouTube con yt-dlp en Windows — SRT, CC, Incrustar</title>
+  <meta name="description" content="Descarga subtítulos de YouTube con yt-dlp en Windows. Auto vs manual, selección de idioma, SRT/WebVTT, incrusta en MKV, playlists. Comandos para copiar.">
+  <meta name="keywords" content="yt-dlp subtítulos, yt-dlp descargar subtítulos, yt-dlp write-sub, yt-dlp sub-langs, descargar subtítulos youtube windows, yt-dlp srt, yt-dlp incrustar subtítulos">
+
+  <link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/subtitles-cc.html">
+  <link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/subtitles-cc.html">
+  <link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/subtitles-cc.html">
+  <link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/subtitles-cc.html">
+  <link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/subtitles-cc.html">
+  <link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/subtitles-cc.html">
+  <link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/subtitles-cc.html">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:locale"      content="es_ES">
+  <meta property="og:title"       content="Descargar Subtítulos de YouTube con yt-dlp en Windows">
+  <meta property="og:description" content="Auto/manual, selección de idioma, SRT/WebVTT, incrustar en MKV, playlists. Comandos Windows.">
+  <meta property="og:url"         content="https://yt-dlpc.github.io/es/subtitles-cc.html">
+  <meta property="og:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-06-09T00:00:00Z">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Descargar Subtítulos de YouTube con yt-dlp en Windows">
+  <meta name="twitter:description" content="Auto/manual, SRT, incrustar en MKV, playlists. Comandos para copiar.">
+  <meta name="twitter:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL5RF9N1PR');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","inLanguage":"es","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Inicio","item":"https://yt-dlpc.github.io/es/"},
+      {"@type":"ListItem","position":2,"name":"Descargar Subtítulos con yt-dlp","item":"https://yt-dlpc.github.io/es/subtitles-cc.html"}
+    ]},
+    {"@type":"FAQPage","inLanguage":"es","mainEntity":[
+      {"@type":"Question","name":"¿Cómo descargo subtítulos con yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"Para subtítulos generados automáticamente: yt-dlp --write-auto-sub --sub-langs es --sub-format srt \"URL\". Para subtítulos del creador: yt-dlp --write-sub --sub-langs es --sub-format srt \"URL\""}},
+      {"@type":"Question","name":"¿Cuál es la diferencia entre subtítulos auto y manuales en yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"Los subtítulos automáticos son generados por la máquina de YouTube (--write-auto-sub). Los subtítulos manuales son proporcionados por el creador del vídeo (--write-sub)."}},
+      {"@type":"Question","name":"¿Cómo incrusto subtítulos en un vídeo con yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"Usa --embed-subs con --merge-output-format mkv. Se recomienda MKV porque MP4 tiene soporte limitado para pistas de subtítulos."}},
+      {"@type":"Question","name":"¿Cómo descargo subtítulos en formato SRT?","acceptedAnswer":{"@type":"Answer","text":"Añade --sub-format srt --convert-subs srt para convertir a SRT. YouTube proporciona nativamente WebVTT; la conversión requiere FFmpeg."}}
+    ],"dateModified":"2026-06-09"}
+  ]}
+  </script>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Navegación principal">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </a>
+    <div class="nav-links">
+      <a href="download-windows.html">Descargar</a>
+      <a href="install.html">Instalar</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html" aria-current="page">Subtítulos</a>
+      <a href="safe-legal.html">¿Es seguro?</a>
+      <a href="troubleshooting.html">Solución de problemas</a>
+    </div>
+    <a href="download-windows.html" class="nav-cta">⬇ Descargar</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="page-eyebrow">Windows 11/10 &nbsp;·&nbsp; SRT / WebVTT &nbsp;·&nbsp; Subtítulos auto &amp; manuales</p>
+    <h1>Descargar Subtítulos &amp; Closed Captions de YouTube con yt-dlp en Windows</h1>
+    <p class="lead">Guarda los subtítulos como archivos SRT/VTT separados o incrústalos directamente en MKV. Compatible con subtítulos generados automáticamente, del creador, múltiples idiomas y playlists.</p>
+  </div>
+</section>
+
+<div class="section-dark" style="padding:20px 0;border-bottom:1px solid var(--border-dark)">
+  <div class="container" style="display:flex;gap:12px;flex-wrap:wrap">
+    <a class="btn btn-red" href="download-windows.html">⬇ Descargar yt-dlp.exe</a>
+    <a class="btn btn-ghost" href="ffmpeg-windows.html">Configurar FFmpeg →</a>
+  </div>
+</div>
+
+<section class="section-dark" aria-labelledby="types-title">
+  <div class="container">
+    <p class="section-label">Auto vs manual</p>
+    <h2 class="section-title" id="types-title">Subtítulos generados automáticamente vs proporcionados por el creador</h2>
+    <p class="section-sub">Dos tipos de subtítulos en YouTube — elige la opción correcta para cada tipo.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+      <div class="card-dark" style="border-top:2px solid var(--red)">
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:10px">Generados automáticamente (subtítulos de máquina)</h3>
+        <p style="font-size:13px;color:#888;margin-bottom:12px">Subtítulos de reconocimiento de voz de YouTube. Disponibles en la mayoría de vídeos. Usa <code>--write-auto-sub</code>.</p>
+        <code class="code">yt-dlp --write-auto-sub --sub-langs "es,*" --sub-format srt "URL"</code>
+        <p style="font-size:12px;color:#666;margin-top:8px"><code>es,*</code> = Español si está disponible, si no cualquier idioma</p>
+      </div>
+      <div class="card-dark" style="border-top:2px solid #4ade80">
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:10px">Manuales (proporcionados por el creador)</h3>
+        <p style="font-size:13px;color:#888;margin-bottom:12px">Subtítulos subidos por el creador del vídeo. Más precisos cuando están disponibles. Usa <code>--write-sub</code>.</p>
+        <code class="code">yt-dlp --write-sub --sub-langs es --sub-format srt "URL"</code>
+        <p style="font-size:12px;color:#666;margin-top:8px">Solo descarga si existen subtítulos manuales — no encuentra nada si no están disponibles</p>
+      </div>
+    </div>
+    <div style="background:#1a1000;border-left:3px solid #f59e0b;border-radius:0 10px 10px 0;padding:12px 16px;font-size:13px;color:#a07030">
+      <strong style="color:#f59e0b">Consejo:</strong> Para obtener subtítulos independientemente del tipo, combina ambos flags: <code style="background:#2a1a00;color:#f59e0b">--write-sub --write-auto-sub</code> — yt-dlp preferirá los manuales si están disponibles y usará los automáticos como alternativa.
+    </div>
+  </div>
+</section>
+
+<section class="section-light" aria-labelledby="cmds-title">
+  <div class="container">
+    <p class="section-label">Todos los comandos</p>
+    <h2 class="section-title" id="cmds-title">Comandos yt-dlp para descargar subtítulos</h2>
+    <p class="section-sub" style="color:var(--muted)">Copia y pega en PowerShell. Sustituye la URL por el enlace de tu vídeo o playlist.</p>
+    <div class="cmd-list">
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Descargar vídeo + subtítulos como archivos SRT separados</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --sub-langs es --sub-format srt "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Convertir a SRT (YouTube proporciona nativamente WebVTT)</div>
+        <code class="code">yt-dlp --write-sub --sub-langs es --sub-format srt --convert-subs srt "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Incrustar subtítulos en MKV (recomendado)</div>
+        <code class="code">yt-dlp -f "bv+ba/best" --write-sub --write-auto-sub --sub-langs es --embed-subs --merge-output-format mkv "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Varios idiomas a la vez</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --sub-langs "es,en,fr" --sub-format srt "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Descargar todos los idiomas de subtítulos disponibles</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --all-subs --sub-format srt "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Playlist con subtítulos — nombres de archivo organizados</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --sub-langs "es.*" --yes-playlist -o "%(playlist)s/%(playlist_index)02d-%(title)s.%(ext)s" "PLAYLIST_URL"</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="lang-title">
+  <div class="container">
+    <p class="section-label">Selección de idioma</p>
+    <h2 class="section-title" id="lang-title">Patrones de sub-langs y opciones de formato</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="card-dark">
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:12px">Patrones <code>--sub-langs</code></h3>
+        <div class="cmd-list" style="gap:8px">
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Solo español</div>
+            <code class="code" style="font-size:12px">--sub-langs es</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Variantes del español (es-ES, es-MX etc.)</div>
+            <code class="code" style="font-size:12px">--sub-langs "es.*"</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Español preferido, cualquier idioma como alternativa</div>
+            <code class="code" style="font-size:12px">--sub-langs "es,*"</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Varios idiomas específicos</div>
+            <code class="code" style="font-size:12px">--sub-langs "es,en,pt"</code>
+          </div>
+        </div>
+      </div>
+      <div class="card-dark">
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:12px">Opciones de formato</h3>
+        <div class="cmd-list" style="gap:8px">
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Preferir formato SRT</div>
+            <code class="code" style="font-size:12px">--sub-format srt</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Convertir a SRT (requiere FFmpeg)</div>
+            <code class="code" style="font-size:12px">--convert-subs srt</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Conservar WebVTT (formato nativo de YouTube)</div>
+            <code class="code" style="font-size:12px">--sub-format vtt</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Incrustar en MKV (mejor para subtítulos soft)</div>
+            <code class="code" style="font-size:12px">--embed-subs --merge-output-format mkv</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="faq-title" style="border-top:none;padding-top:0">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title" id="faq-title">Subtítulos con yt-dlp — preguntas frecuentes</h2>
+    <div class="faq-list" style="margin-top:20px">
+      <details>
+        <summary>No se encontraron subtítulos — ¿qué debo intentar?</summary>
+        <div class="faq-body">Primero prueba <code>--write-auto-sub</code> — la mayoría de los vídeos de YouTube tienen subtítulos generados automáticamente. Si aún no encuentras nada, el vídeo puede no tener subtítulos. Prueba <code>--all-subs</code> para comprobar todos los idiomas disponibles. Algunos vídeos son solo audio o tienen los subtítulos desactivados.</div>
+      </details>
+      <details>
+        <summary>SRT o WebVTT — ¿cuál debo usar?</summary>
+        <div class="faq-body">YouTube proporciona nativamente WebVTT. SRT tiene soporte más universal en reproductores multimedia. Usa <code>--sub-format srt --convert-subs srt</code> para obtener SRT. La conversión requiere FFmpeg en la misma carpeta que yt-dlp.exe.</div>
+      </details>
+      <details>
+        <summary>Los subtítulos incrustados no se muestran en mi reproductor</summary>
+        <div class="faq-body">Asegúrate de usar <code>--merge-output-format mkv</code> — MKV tiene el mejor soporte para pistas de subtítulos. MP4 con subtítulos incrustados puede ser problemático en algunos reproductores. Comprueba también que la visualización de subtítulos esté habilitada en tu reproductor multimedia.</div>
+      </details>
+      <details>
+        <summary>¿Puedo descargar solo los subtítulos — sin el vídeo?</summary>
+        <div class="faq-body">Sí. Añade <code>--skip-download</code> para descargar solo los archivos de subtítulos sin guardar el vídeo: <code>yt-dlp --write-sub --write-auto-sub --sub-langs es --skip-download "URL"</code></div>
+      </details>
+      <details>
+        <summary>¿Puedo grabar los subtítulos permanentemente en el vídeo?</summary>
+        <div class="faq-body">yt-dlp incrusta los subtítulos como pistas soft (seleccionables en el reproductor). Grabar permanentemente (quemar los subtítulos en la imagen) requiere postprocesamiento con FFmpeg y está fuera del alcance de las opciones integradas de yt-dlp.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </div>
+    <nav class="footer-links" aria-label="Navegación del pie de página">
+      <a href="index.html">Inicio</a>
+      <a href="download-windows.html">Descargar</a>
+      <a href="install.html">Instalar</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="ffmpeg-windows.html">FFmpeg</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Subtítulos</a>
+      <a href="commands.html">Comandos</a>
+      <a href="troubleshooting.html">Solución de problemas</a>
+      <a href="vs-youtube-dl.html">vs youtube-dl</a>
+      <a href="safe-legal.html">¿Es seguro?</a>
+      <a href="privacy.html">Privacidad</a>
+      <a href="terms.html">Términos</a>
+    </nav>
+    <p class="footer-note">Guía no oficial de yt-dlp para Windows. No afiliado a yt-dlp, YouTube ni Google. Descarga siempre yt-dlp desde el <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">repositorio oficial de GitHub</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
