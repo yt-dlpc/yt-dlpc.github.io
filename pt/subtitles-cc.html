@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#ff0000">
+  <link rel="canonical" href="https://yt-dlpc.github.io/pt/subtitles-cc.html">
+  <link rel="icon" type="image/x-icon"  href="../favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../style.css">
+
+  <title>Baixar Legendas do YouTube com yt-dlp no Windows — SRT, CC, Incorporar</title>
+  <meta name="description" content="Baixe legendas e closed captions do YouTube no Windows com yt-dlp. Auto vs manual, seleção de idioma, SRT/WebVTT, incorpore no MKV, playlists. Comandos para copiar.">
+  <meta name="keywords" content="yt-dlp legendas, yt-dlp baixar legendas, yt-dlp write-sub, yt-dlp sub-langs, baixar legendas youtube windows, yt-dlp srt, yt-dlp incorporar legendas">
+
+  <link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/subtitles-cc.html">
+  <link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/subtitles-cc.html">
+  <link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/subtitles-cc.html">
+  <link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/subtitles-cc.html">
+  <link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/subtitles-cc.html">
+  <link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/subtitles-cc.html">
+  <link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/subtitles-cc.html">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:locale"      content="pt_BR">
+  <meta property="og:title"       content="Baixar Legendas do YouTube com yt-dlp no Windows">
+  <meta property="og:description" content="Auto/manual, seleção de idioma, SRT/WebVTT, incorporar no MKV, playlists. Comandos Windows.">
+  <meta property="og:url"         content="https://yt-dlpc.github.io/pt/subtitles-cc.html">
+  <meta property="og:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-06-09T00:00:00Z">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Baixar Legendas do YouTube com yt-dlp no Windows">
+  <meta name="twitter:description" content="Auto/manual, SRT, incorporar no MKV, playlists. Comandos para copiar.">
+  <meta name="twitter:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL5RF9N1PR');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","inLanguage":"pt","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Início","item":"https://yt-dlpc.github.io/pt/"},
+      {"@type":"ListItem","position":2,"name":"Baixar Legendas com yt-dlp","item":"https://yt-dlpc.github.io/pt/subtitles-cc.html"}
+    ]},
+    {"@type":"FAQPage","inLanguage":"pt","mainEntity":[
+      {"@type":"Question","name":"Como baixar legendas com yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"Para legendas geradas automaticamente: yt-dlp --write-auto-sub --sub-langs pt --sub-format srt \"URL\". Para legendas do criador: yt-dlp --write-sub --sub-langs pt --sub-format srt \"URL\""}},
+      {"@type":"Question","name":"Qual a diferença entre legendas auto e manuais no yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"Legendas automáticas são geradas por máquina pelo YouTube (--write-auto-sub). Legendas manuais são fornecidas pelo criador do vídeo (--write-sub)."}},
+      {"@type":"Question","name":"Como incorporar legendas em um vídeo com yt-dlp?","acceptedAnswer":{"@type":"Answer","text":"Use --embed-subs com --merge-output-format mkv. MKV é recomendado porque MP4 tem suporte limitado a faixas de legenda."}},
+      {"@type":"Question","name":"Como baixar legendas no formato SRT?","acceptedAnswer":{"@type":"Answer","text":"Adicione --sub-format srt --convert-subs srt para converter para SRT. YouTube fornece nativamente WebVTT; a conversão requer FFmpeg."}}
+    ],"dateModified":"2026-06-09"}
+  ]}
+  </script>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Navegação principal">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </a>
+    <div class="nav-links">
+      <a href="download-windows.html">Baixar</a>
+      <a href="install.html">Instalar</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html" aria-current="page">Legendas</a>
+      <a href="safe-legal.html">É seguro?</a>
+      <a href="troubleshooting.html">Solução de Problemas</a>
+    </div>
+    <a href="download-windows.html" class="nav-cta">⬇ Baixar</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="page-eyebrow">Windows 11/10 &nbsp;·&nbsp; SRT / WebVTT &nbsp;·&nbsp; Legendas auto &amp; manuais</p>
+    <h1>Baixar Legendas &amp; Closed Captions do YouTube com yt-dlp no Windows</h1>
+    <p class="lead">Salve legendas como arquivos SRT/VTT separados ou incorpore diretamente no MKV. Suporta legendas geradas automaticamente, legendas do criador, múltiplos idiomas e playlists.</p>
+  </div>
+</section>
+
+<div class="section-dark" style="padding:20px 0;border-bottom:1px solid var(--border-dark)">
+  <div class="container" style="display:flex;gap:12px;flex-wrap:wrap">
+    <a class="btn btn-red" href="download-windows.html">⬇ Baixar yt-dlp.exe</a>
+    <a class="btn btn-ghost" href="ffmpeg-windows.html">Configurar FFmpeg →</a>
+  </div>
+</div>
+
+<section class="section-dark" aria-labelledby="types-title">
+  <div class="container">
+    <p class="section-label">Auto vs manual</p>
+    <h2 class="section-title" id="types-title">Legendas geradas automaticamente vs fornecidas pelo criador</h2>
+    <p class="section-sub">Dois tipos de legendas no YouTube — escolha a flag certa para cada tipo.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+      <div class="card-dark" style="border-top:2px solid var(--red)">
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:10px">Geradas automaticamente (legendas de máquina)</h3>
+        <p style="font-size:13px;color:#888;margin-bottom:12px">Legendas de reconhecimento de voz do YouTube. Disponíveis na maioria dos vídeos. Use <code>--write-auto-sub</code>.</p>
+        <code class="code">yt-dlp --write-auto-sub --sub-langs "pt,*" --sub-format srt "URL"</code>
+        <p style="font-size:12px;color:#666;margin-top:8px"><code>pt,*</code> = Português se disponível, caso contrário qualquer idioma</p>
+      </div>
+      <div class="card-dark" style="border-top:2px solid #4ade80">
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:10px">Manuais (fornecidas pelo criador)</h3>
+        <p style="font-size:13px;color:#888;margin-bottom:12px">Legendas enviadas pelo criador do vídeo. Mais precisas quando disponíveis. Use <code>--write-sub</code>.</p>
+        <code class="code">yt-dlp --write-sub --sub-langs pt --sub-format srt "URL"</code>
+        <p style="font-size:12px;color:#666;margin-top:8px">Baixa apenas se existirem legendas manuais — não encontra nada se não disponíveis</p>
+      </div>
+    </div>
+    <div style="background:#1a1000;border-left:3px solid #f59e0b;border-radius:0 10px 10px 0;padding:12px 16px;font-size:13px;color:#a07030">
+      <strong style="color:#f59e0b">Dica:</strong> Para obter legendas independentemente do tipo, combine ambas as flags: <code style="background:#2a1a00;color:#f59e0b">--write-sub --write-auto-sub</code> — yt-dlp prefere as manuais se disponíveis e usa as automáticas como fallback.
+    </div>
+  </div>
+</section>
+
+<section class="section-light" aria-labelledby="cmds-title">
+  <div class="container">
+    <p class="section-label">Todos os comandos</p>
+    <h2 class="section-title" id="cmds-title">Comandos yt-dlp para download de legendas</h2>
+    <p class="section-sub" style="color:var(--muted)">Copie e cole no PowerShell. Substitua a URL pelo link do seu vídeo ou playlist.</p>
+    <div class="cmd-list">
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Baixar vídeo + legendas como arquivos SRT separados</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --sub-langs pt --sub-format srt "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Converter para SRT (YouTube fornece nativamente WebVTT)</div>
+        <code class="code">yt-dlp --write-sub --sub-langs pt --sub-format srt --convert-subs srt "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Incorporar legendas no MKV (recomendado)</div>
+        <code class="code">yt-dlp -f "bv+ba/best" --write-sub --write-auto-sub --sub-langs pt --embed-subs --merge-output-format mkv "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Múltiplos idiomas ao mesmo tempo</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --sub-langs "pt,en,es" --sub-format srt "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Baixar todos os idiomas de legendas disponíveis</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --all-subs --sub-format srt "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Playlist com legendas — nomes de arquivo organizados</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --sub-langs "pt.*" --yes-playlist -o "%(playlist)s/%(playlist_index)02d-%(title)s.%(ext)s" "PLAYLIST_URL"</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="lang-title">
+  <div class="container">
+    <p class="section-label">Seleção de idioma</p>
+    <h2 class="section-title" id="lang-title">Padrões de sub-langs e opções de formato</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="card-dark">
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:12px">Padrões <code>--sub-langs</code></h3>
+        <div class="cmd-list" style="gap:8px">
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Apenas português</div>
+            <code class="code" style="font-size:12px">--sub-langs pt</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Variantes do português (pt-BR, pt-PT etc.)</div>
+            <code class="code" style="font-size:12px">--sub-langs "pt.*"</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Português preferido, qualquer idioma como fallback</div>
+            <code class="code" style="font-size:12px">--sub-langs "pt,*"</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Múltiplos idiomas específicos</div>
+            <code class="code" style="font-size:12px">--sub-langs "pt,en,es"</code>
+          </div>
+        </div>
+      </div>
+      <div class="card-dark">
+        <h3 style="font-size:14px;font-weight:700;color:#fff;margin-bottom:12px">Opções de formato</h3>
+        <div class="cmd-list" style="gap:8px">
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Preferir formato SRT</div>
+            <code class="code" style="font-size:12px">--sub-format srt</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Converter para SRT (requer FFmpeg)</div>
+            <code class="code" style="font-size:12px">--convert-subs srt</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Manter WebVTT (formato nativo do YouTube)</div>
+            <code class="code" style="font-size:12px">--sub-format vtt</code>
+          </div>
+          <div class="cmd-block" style="padding:10px 12px">
+            <div class="cmd-label">Incorporar no MKV (melhor para legendas soft)</div>
+            <code class="code" style="font-size:12px">--embed-subs --merge-output-format mkv</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="faq-title" style="border-top:none;padding-top:0">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title" id="faq-title">Legendas com yt-dlp — perguntas frequentes</h2>
+    <div class="faq-list" style="margin-top:20px">
+      <details>
+        <summary>Nenhuma legenda encontrada — o que tentar?</summary>
+        <div class="faq-body">Primeiro tente <code>--write-auto-sub</code> — a maioria dos vídeos do YouTube tem legendas geradas automaticamente. Se ainda não encontrar nada, o vídeo pode não ter legendas. Tente <code>--all-subs</code> para verificar todos os idiomas disponíveis. Alguns vídeos são somente áudio ou têm legendas desativadas.</div>
+      </details>
+      <details>
+        <summary>SRT ou WebVTT — qual devo usar?</summary>
+        <div class="faq-body">YouTube fornece nativamente WebVTT. SRT é mais universalmente suportado por players de mídia. Use <code>--sub-format srt --convert-subs srt</code> para obter SRT. A conversão requer FFmpeg na mesma pasta que yt-dlp.exe.</div>
+      </details>
+      <details>
+        <summary>Legendas incorporadas não aparecem no meu player</summary>
+        <div class="faq-body">Certifique-se de usar <code>--merge-output-format mkv</code> — MKV tem o melhor suporte a faixas de legenda. MP4 com legendas incorporadas pode ser problemático em alguns players. Também verifique se a exibição de legendas está habilitada no seu player de mídia.</div>
+      </details>
+      <details>
+        <summary>Posso baixar apenas as legendas — sem o vídeo?</summary>
+        <div class="faq-body">Sim. Adicione <code>--skip-download</code> para baixar apenas os arquivos de legenda sem salvar o vídeo: <code>yt-dlp --write-sub --write-auto-sub --sub-langs pt --skip-download "URL"</code></div>
+      </details>
+      <details>
+        <summary>Posso gravar as legendas permanentemente no vídeo?</summary>
+        <div class="faq-body">yt-dlp incorpora legendas como faixas soft (selecionáveis no player). Gravar permanentemente (queimar as legendas na imagem) requer pós-processamento com FFmpeg e está fora do escopo das opções integradas do yt-dlp.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </div>
+    <nav class="footer-links" aria-label="Navegação do rodapé">
+      <a href="index.html">Início</a>
+      <a href="download-windows.html">Baixar</a>
+      <a href="install.html">Instalar</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="ffmpeg-windows.html">FFmpeg</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Legendas</a>
+      <a href="commands.html">Comandos</a>
+      <a href="troubleshooting.html">Solução de Problemas</a>
+      <a href="vs-youtube-dl.html">vs youtube-dl</a>
+      <a href="safe-legal.html">É seguro?</a>
+      <a href="privacy.html">Privacidade</a>
+      <a href="terms.html">Termos</a>
+    </nav>
+    <p class="footer-note">Guia não oficial de yt-dlp para Windows. Não afiliado ao yt-dlp, YouTube ou Google. Sempre baixe o yt-dlp do <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">repositório oficial do GitHub</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
