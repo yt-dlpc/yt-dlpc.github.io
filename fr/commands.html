@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#ff0000">
+  <link rel="canonical" href="https://yt-dlpc.github.io/fr/commands.html">
+  <link rel="icon" type="image/x-icon"  href="../favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../style.css">
+
+  <title>Cheatsheet des commandes yt-dlp pour Windows — Exemples à copier 2026</title>
+  <meta name="description" content="Cheatsheet des commandes yt-dlp pour Windows. Meilleure qualité, 1080p, 4K/8K, MP3, playlists, sous-titres, noms de fichiers, cookies. À coller dans PowerShell.">
+  <meta name="keywords" content="commandes yt-dlp, commandes yt-dlp windows, yt-dlp cheatsheet, commandes yt-dlp powershell, yt-dlp sélection format, exemples yt-dlp">
+
+  <link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/commands.html">
+  <link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/commands.html">
+  <link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/commands.html">
+  <link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/commands.html">
+  <link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/commands.html">
+  <link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/commands.html">
+  <link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/commands.html">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:locale"      content="fr_FR">
+  <meta property="og:title"       content="Cheatsheet des commandes yt-dlp pour Windows">
+  <meta property="og:description" content="Commandes à copier-coller pour Windows : qualité, MP3, playlists, sous-titres, noms de fichiers, cookies.">
+  <meta property="og:url"         content="https://yt-dlpc.github.io/fr/commands.html">
+  <meta property="og:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-06-09T00:00:00Z">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Cheatsheet des commandes yt-dlp pour Windows">
+  <meta name="twitter:description" content="Commandes à copier : qualité, MP3, playlists, sous-titres, noms de fichiers.">
+  <meta name="twitter:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL5RF9N1PR');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","inLanguage":"fr","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Accueil","item":"https://yt-dlpc.github.io/fr/"},
+      {"@type":"ListItem","position":2,"name":"Cheatsheet des commandes yt-dlp","item":"https://yt-dlpc.github.io/fr/commands.html"}
+    ]},
+    {"@type":"FAQPage","inLanguage":"fr","mainEntity":[
+      {"@type":"Question","name":"Quelle est la commande de base de yt-dlp pour télécharger une vidéo ?","acceptedAnswer":{"@type":"Answer","text":"yt-dlp \"URL\" télécharge dans la meilleure qualité disponible. Ajoutez -f \"bestvideo+bestaudio/best\" pour forcer la fusion des meilleurs flux vidéo et audio."}},
+      {"@type":"Question","name":"Comment utiliser yt-dlp pour télécharger en MP3 ?","acceptedAnswer":{"@type":"Answer","text":"yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --embed-metadata \"URL\". Nécessite FFmpeg dans le même dossier."}},
+      {"@type":"Question","name":"Comment limiter yt-dlp à 1080p ?","acceptedAnswer":{"@type":"Answer","text":"yt-dlp -f \"bestvideo[height<=1080]+bestaudio/best\" \"URL\""}},
+      {"@type":"Question","name":"Qu'est-ce que le template de sortie -o de yt-dlp ?","acceptedAnswer":{"@type":"Answer","text":"L'option -o définit le nom du fichier de sortie. Utilisez des variables comme %(title)s, %(playlist_index)02d, %(ext)s."}}
+    ],"dateModified":"2026-06-09"}
+  ]}
+  </script>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Navigation principale">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </a>
+    <div class="nav-links">
+      <a href="download-windows.html">Télécharger</a>
+      <a href="install.html">Installer</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Sous-titres</a>
+      <a href="safe-legal.html">Sécurisé ?</a>
+      <a href="troubleshooting.html">Dépannage</a>
+    </div>
+    <a href="download-windows.html" class="nav-cta">⬇ Télécharger</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="page-eyebrow">Windows PowerShell / CMD &nbsp;·&nbsp; Copier-coller &nbsp;·&nbsp; Mis à jour 2026</p>
+    <h1>Cheatsheet des commandes yt-dlp pour Windows</h1>
+    <p class="lead">Toutes les commandes yt-dlp courantes en un seul endroit. Collez directement dans PowerShell ou CMD. Remplacez l'URL par votre lien vidéo ou playlist.</p>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="basics-title">
+  <div class="container">
+    <p class="section-label">Essentiels</p>
+    <h2 class="section-title" id="basics-title">Commandes yt-dlp essentielles</h2>
+    <div class="cmd-list">
+      <div class="cmd-block">
+        <div class="cmd-label">Télécharger une vidéo — meilleure qualité disponible</div>
+        <code class="code">yt-dlp "URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Forcer la fusion meilleure vidéo + meilleur audio (nécessite FFmpeg)</div>
+        <code class="code">yt-dlp -f "bestvideo+bestaudio/best" "URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Vérifier la version installée</div>
+        <code class="code">yt-dlp --version</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Mettre à jour vers la dernière release</div>
+        <code class="code">yt-dlp -U</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Lister tous les formats disponibles pour une vidéo</div>
+        <code class="code">yt-dlp -F "URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Simulation — afficher ce qui serait téléchargé sans télécharger</div>
+        <code class="code">yt-dlp --simulate "URL"</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-light" aria-labelledby="quality-title">
+  <div class="container">
+    <p class="section-label">Qualité &amp; sélection de format</p>
+    <h2 class="section-title" id="quality-title">Commandes de format et résolution</h2>
+    <div class="cmd-list">
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Limiter à 1080p</div>
+        <code class="code">yt-dlp -f "bestvideo[height&lt;=1080]+bestaudio/best" "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Forcer la 4K (2160p) si disponible</div>
+        <code class="code">yt-dlp -f "bestvideo[height>=2160]+bestaudio/best" "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Préférer H.264/MP4 — compatibilité maximale</div>
+        <code class="code">yt-dlp -f "bestvideo[ext=mp4][vcodec*=h264]+bestaudio[ext=m4a]/best[ext=mp4]" "URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Préférer AV1 → VP9 → fallback</div>
+        <code class="code">yt-dlp -f "bestvideo[vcodec^=av01]/bestvideo[vcodec^=vp9]/bestvideo+bestaudio/best" "URL"</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="audio-title">
+  <div class="container">
+    <p class="section-label">Audio &amp; MP3</p>
+    <h2 class="section-title" id="audio-title">Extraction et conversion audio</h2>
+    <div class="cmd-list">
+      <div class="cmd-block">
+        <div class="cmd-label">Convertir en MP3 — meilleure qualité avec artwork et tags</div>
+        <code class="code">yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --embed-metadata "URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Conserver l'audio original sans ré-encodage (meilleure qualité réelle)</div>
+        <code class="code">yt-dlp -f ba -x --audio-format best "URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Convertir une playlist en MP3</div>
+        <code class="code">yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --embed-metadata --yes-playlist -o "%(playlist_index)02d-%(title)s.%(ext)s" "PLAYLIST_URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Traitement en lot depuis un fichier texte (une URL par ligne)</div>
+        <code class="code">yt-dlp -a links.txt -x --audio-format mp3 --audio-quality 0</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-light" aria-labelledby="playlist-title">
+  <div class="container">
+    <p class="section-label">Playlists &amp; chaînes</p>
+    <h2 class="section-title" id="playlist-title">Commandes pour playlists et chaînes</h2>
+    <div class="cmd-list">
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Télécharger une playlist entière — conserver l'ordre dans les noms de fichiers</div>
+        <code class="code">yt-dlp --yes-playlist -o "%(playlist_index)02d-%(title)s.%(ext)s" "PLAYLIST_URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Télécharger uniquement des éléments spécifiques</div>
+        <code class="code">yt-dlp --playlist-items 1,5,10-12 "PLAYLIST_URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Reprendre + ignorer les déjà téléchargés</div>
+        <code class="code">yt-dlp --continue --download-archive downloaded.txt "PLAYLIST_URL"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Télécharger une chaîne entière</div>
+        <code class="code">yt-dlp "https://www.youtube.com/@NomDeLaChaîne/videos" -o "%(upload_date>%Y-%m-%d)s-%(title)s.%(ext)s"</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="subs-title">
+  <div class="container">
+    <p class="section-label">Sous-titres</p>
+    <h2 class="section-title" id="subs-title">Commandes de téléchargement de sous-titres</h2>
+    <div class="cmd-list">
+      <div class="cmd-block">
+        <div class="cmd-label">Télécharger les sous-titres en fichiers SRT séparés</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --sub-langs fr --sub-format srt "URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Intégrer les sous-titres dans MKV</div>
+        <code class="code">yt-dlp -f "bv+ba/best" --write-auto-sub --sub-langs "fr,*" --embed-subs --merge-output-format mkv "URL"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Sous-titres uniquement — sans téléchargement de la vidéo</div>
+        <code class="code">yt-dlp --write-sub --write-auto-sub --sub-langs fr --skip-download "URL"</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-light" aria-labelledby="output-title">
+  <div class="container">
+    <p class="section-label">Templates de sortie</p>
+    <h2 class="section-title" id="output-title">Noms de fichiers et organisation des dossiers</h2>
+    <div class="cmd-list">
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Titre de la vidéo comme nom de fichier</div>
+        <code class="code">-o "C:/Vidéos/%(title)s.%(ext)s"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Un dossier par playlist, fichiers numérotés</div>
+        <code class="code">-o "C:/Vidéos/%(playlist)s/%(playlist_index)02d-%(title)s.%(ext)s"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Bibliothèque musicale — sous-dossier artiste/chaîne</div>
+        <code class="code">-o "C:/Musique/%(artist,channel)s/%(title)s.%(ext)s"</code>
+      </div>
+      <div class="cmd-block" style="background:var(--off-white);border-color:var(--border-light)">
+        <div class="cmd-label" style="color:var(--muted)">Nommage par date pour les chaînes</div>
+        <code class="code">-o "C:/Vidéos/%(channel)s/%(upload_date>%Y-%m-%d)s-%(title)s.%(ext)s"</code>
+      </div>
+    </div>
+    <div style="margin-top:16px">
+      <p style="font-size:13px;color:var(--muted);margin-bottom:8px"><strong style="color:var(--text)">Variables de template courantes :</strong></p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:12px">
+        <div class="card-light" style="padding:10px 12px"><code>%(title)s</code><br><span style="color:var(--muted)">Titre de la vidéo</span></div>
+        <div class="card-light" style="padding:10px 12px"><code>%(ext)s</code><br><span style="color:var(--muted)">Extension du fichier</span></div>
+        <div class="card-light" style="padding:10px 12px"><code>%(id)s</code><br><span style="color:var(--muted)">ID de la vidéo</span></div>
+        <div class="card-light" style="padding:10px 12px"><code>%(upload_date)s</code><br><span style="color:var(--muted)">Date de mise en ligne (AAAAMMJJ)</span></div>
+        <div class="card-light" style="padding:10px 12px"><code>%(channel)s</code><br><span style="color:var(--muted)">Nom de la chaîne</span></div>
+        <div class="card-light" style="padding:10px 12px"><code>%(playlist_index)02d</code><br><span style="color:var(--muted)">N° de piste avec zéros</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="adv-title">
+  <div class="container">
+    <p class="section-label">Avancé</p>
+    <h2 class="section-title" id="adv-title">Performances, cookies et métadonnées</h2>
+    <div class="cmd-list">
+      <div class="cmd-block">
+        <div class="cmd-label">Téléchargements de fragments parallèles (plus rapide sur bonne connexion)</div>
+        <code class="code">-N 4</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Limite de débit (éviter le throttling)</div>
+        <code class="code">--limit-rate 5M</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Réessayer en cas d'échec</div>
+        <code class="code">--retries 10 --fragment-retries 10</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Transmettre les cookies du navigateur (pour contenu privé ou avec restriction d'âge)</div>
+        <code class="code">--cookies-from-browser chrome</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Intégrer thumbnail et métadonnées</div>
+        <code class="code">--embed-thumbnail --embed-metadata</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Uniquement les nouvelles vidéos des 30 derniers jours</div>
+        <code class="code">--dateafter today-30days</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </div>
+    <nav class="footer-links" aria-label="Navigation du pied de page">
+      <a href="index.html">Accueil</a>
+      <a href="download-windows.html">Télécharger</a>
+      <a href="install.html">Installer</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="ffmpeg-windows.html">FFmpeg</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Sous-titres</a>
+      <a href="commands.html">Commandes</a>
+      <a href="troubleshooting.html">Dépannage</a>
+      <a href="vs-youtube-dl.html">vs youtube-dl</a>
+      <a href="safe-legal.html">Sécurisé ?</a>
+      <a href="privacy.html">Confidentialité</a>
+      <a href="terms.html">CGU</a>
+    </nav>
+    <p class="footer-note">Guide non officiel de yt-dlp pour Windows. Non affilié à yt-dlp, YouTube ou Google. Téléchargez toujours yt-dlp depuis le <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">dépôt officiel GitHub</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

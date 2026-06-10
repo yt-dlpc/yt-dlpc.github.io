@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#ff0000">
+  <link rel="canonical" href="https://yt-dlpc.github.io/fr/install.html">
+  <link rel="icon" type="image/x-icon"  href="../favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../style.css">
+
+  <title>Comment installer yt-dlp sur Windows — Guide étape par étape 2026</title>
+  <meta name="description" content="Comment télécharger et installer yt-dlp sur Windows 11/10. Ajoutez au PATH, exécutez via PowerShell, vérifiez la version, mettez à jour avec -U. Configuration FFmpeg incluse.">
+  <meta name="keywords" content="installer yt-dlp windows, télécharger yt-dlp windows 11, yt-dlp.exe installer, ajouter yt-dlp au PATH, comment installer yt-dlp 2026, yt-dlp powershell, configurer yt-dlp windows">
+
+  <link rel="alternate" hreflang="en"        href="https://yt-dlpc.github.io/install.html">
+  <link rel="alternate" hreflang="de"        href="https://yt-dlpc.github.io/de/install.html">
+  <link rel="alternate" hreflang="pt"        href="https://yt-dlpc.github.io/pt/install.html">
+  <link rel="alternate" hreflang="fr"        href="https://yt-dlpc.github.io/fr/install.html">
+  <link rel="alternate" hreflang="es"        href="https://yt-dlpc.github.io/es/install.html">
+  <link rel="alternate" hreflang="it"        href="https://yt-dlpc.github.io/it/install.html">
+  <link rel="alternate" hreflang="x-default" href="https://yt-dlpc.github.io/install.html">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:locale"      content="fr_FR">
+  <meta property="og:title"       content="Comment installer yt-dlp sur Windows — Étape par étape 2026">
+  <meta property="og:description" content="Téléchargez yt-dlp.exe, configurez le PATH, PowerShell. FFmpeg inclus. 5 minutes.">
+  <meta property="og:url"         content="https://yt-dlpc.github.io/fr/install.html">
+  <meta property="og:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+  <meta property="og:updated_time" content="2026-06-09T00:00:00Z">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Comment installer yt-dlp sur Windows — Étape par étape 2026">
+  <meta name="twitter:description" content="Téléchargez yt-dlp.exe, PATH, PowerShell, FFmpeg. En moins de 5 minutes.">
+  <meta name="twitter:image"       content="https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/unnamed.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL5RF9N1PR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZL5RF9N1PR');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","inLanguage":"fr","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Accueil","item":"https://yt-dlpc.github.io/fr/"},
+      {"@type":"ListItem","position":2,"name":"Installer yt-dlp sur Windows","item":"https://yt-dlpc.github.io/fr/install.html"}
+    ]},
+    {"@type":"HowTo","inLanguage":"fr","name":"Comment installer yt-dlp sur Windows","totalTime":"PT5M",
+      "supply":[{"@type":"HowToSupply","name":"PC sous Windows 11 ou Windows 10 (64 bits)"}],
+      "tool":[{"@type":"HowToTool","name":"PowerShell ou Invite de commandes"}],
+      "step":[
+        {"@type":"HowToStep","position":1,"name":"Télécharger yt-dlp.exe","text":"Téléchargez le dernier yt-dlp.exe depuis la page de releases officielle GitHub."},
+        {"@type":"HowToStep","position":2,"name":"Enregistrer dans un dossier","text":"Déplacez yt-dlp.exe dans un dossier dédié comme C:\\Tools\\yt-dlp\\"},
+        {"@type":"HowToStep","position":3,"name":"Ajouter au PATH (facultatif)","text":"Ajoutez le dossier au PATH utilisateur pour exécuter yt-dlp depuis n'importe quel répertoire."},
+        {"@type":"HowToStep","position":4,"name":"Ouvrir PowerShell et vérifier","text":"Ouvrez PowerShell dans le dossier et exécutez : yt-dlp --version"},
+        {"@type":"HowToStep","position":5,"name":"Mettre à jour yt-dlp","text":"Maintenez yt-dlp à jour en exécutant : yt-dlp -U"},
+        {"@type":"HowToStep","position":6,"name":"Installer FFmpeg (recommandé)","text":"Placez ffmpeg.exe à côté de yt-dlp.exe pour fusionner la 4K/8K et convertir en MP3."}
+      ],"dateModified":"2026-06-09"},
+    {"@type":"FAQPage","inLanguage":"fr","mainEntity":[
+      {"@type":"Question","name":"Ai-je besoin de droits administrateur pour installer yt-dlp sur Windows ?","acceptedAnswer":{"@type":"Answer","text":"Non. yt-dlp.exe est entièrement portable. Les droits administrateur ne sont nécessaires que pour ajouter le dossier au PATH système."}},
+      {"@type":"Question","name":"Comment ajouter yt-dlp au PATH sous Windows ?","acceptedAnswer":{"@type":"Answer","text":"Ouvrez le menu Démarrer, recherchez Variables d'environnement, cliquez sur Modifier les variables d'environnement système, ouvrez Path dans les variables utilisateur, cliquez sur Nouveau et collez le chemin du dossier (ex. : C:\\Tools\\yt-dlp), puis cliquez sur OK. Redémarrez le terminal."}},
+      {"@type":"Question","name":"Comment mettre à jour yt-dlp sous Windows ?","acceptedAnswer":{"@type":"Answer","text":"Exécutez yt-dlp -U dans PowerShell. Cela télécharge et remplace automatiquement l'exécutable par la dernière release."}},
+      {"@type":"Question","name":"Pourquoi ai-je besoin de FFmpeg avec yt-dlp ?","acceptedAnswer":{"@type":"Answer","text":"YouTube diffuse la vidéo 4K et 8K en flux séparés de vidéo et d'audio. FFmpeg les fusionne en un seul fichier. Il est aussi nécessaire pour les conversions MP3."}},
+      {"@type":"Question","name":"PowerShell dit que yt-dlp n'est pas reconnu ?","acceptedAnswer":{"@type":"Answer","text":"Exécutez yt-dlp depuis le dossier où se trouve yt-dlp.exe, ou ajoutez ce dossier au PATH. Après avoir ajouté au PATH, fermez et rouvrez le terminal."}}
+    ]}
+  ]}
+  </script>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Navigation principale">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="nav-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </a>
+    <div class="nav-links">
+      <a href="download-windows.html">Télécharger</a>
+      <a href="install.html" aria-current="page">Installer</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Sous-titres</a>
+      <a href="safe-legal.html">Sécurisé ?</a>
+      <a href="troubleshooting.html">Dépannage</a>
+    </div>
+    <a href="download-windows.html" class="nav-cta">⬇ Télécharger</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="page-eyebrow">Windows 11 / 10 &nbsp;·&nbsp; 5 minutes &nbsp;·&nbsp; Sans droits administrateur</p>
+    <h1>Comment télécharger et installer yt-dlp sur Windows — Guide étape par étape 2026</h1>
+    <p class="lead">Téléchargez yt-dlp.exe, enregistrez dans un dossier, ouvrez PowerShell — c'est prêt. Ajoutez optionnellement au PATH et configurez FFmpeg pour la 4K/8K et le MP3.</p>
+  </div>
+</section>
+
+<div class="section-dark" style="padding:24px 0">
+  <div class="container" style="display:flex;gap:12px;flex-wrap:wrap">
+    <a class="btn btn-red" href="download-windows.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Télécharger yt-dlp.exe
+    </a>
+    <a class="btn btn-ghost" href="ffmpeg-windows.html">Configurer FFmpeg →</a>
+  </div>
+</div>
+
+<section class="section-dark" aria-labelledby="steps-title" style="padding-top:40px">
+  <div class="container">
+    <p class="section-label">Installation étape par étape</p>
+    <h2 class="section-title" id="steps-title">Comment installer yt-dlp sur Windows en 6 étapes</h2>
+    <p class="section-sub">Fonctionne sur Windows 11 et Windows 10 (64 bits). Sans assistant d'installation, sans droits administrateur.</p>
+    <div class="steps-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="step-card">
+        <div class="step-num">Étape 01</div>
+        <h3>Télécharger yt-dlp.exe</h3>
+        <p>Allez à la <a href="download-windows.html" style="color:var(--red)">page de téléchargement</a> et enregistrez <code>yt-dlp.exe</code> depuis la release officielle GitHub.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Étape 02</div>
+        <h3>Enregistrer dans un dossier dédié</h3>
+        <p>Déplacez le fichier vers un emplacement permanent, ex. : <code>C:\Tools\yt-dlp\</code>. Évitez Téléchargements — les fichiers peuvent y être nettoyés automatiquement.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Étape 03</div>
+        <h3>Ouvrir PowerShell dans ce dossier</h3>
+        <p>Dans l'Explorateur, cliquez sur la barre d'adresse, tapez <code>powershell</code> et appuyez sur Entrée. PowerShell s'ouvre directement dans le bon dossier.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Étape 04</div>
+        <h3>Vérifier que ça fonctionne</h3>
+        <p>Exécutez <code>yt-dlp --version</code>. Un numéro de version comme <code>2025.xx.xx</code> doit s'afficher. Si oui, c'est fonctionnel.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Étape 05</div>
+        <h3>Mettre à jour vers la dernière version</h3>
+        <p>Exécutez <code>yt-dlp -U</code>. Il télécharge et se remplace par la release la plus récente. Faites-le régulièrement.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Étape 06</div>
+        <h3>Installer FFmpeg (recommandé)</h3>
+        <p>Téléchargez <code>ffmpeg.exe</code> et placez-le dans le même dossier. Nécessaire pour fusionner la 4K/8K et le MP3. <a href="ffmpeg-windows.html" style="color:var(--red)">Guide complet →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-light" aria-labelledby="path-title">
+  <div class="container">
+    <p class="section-label">Facultatif mais recommandé</p>
+    <h2 class="section-title" id="path-title">Comment ajouter yt-dlp au PATH sous Windows</h2>
+    <p class="section-sub" style="color:var(--muted)">Ajouter yt-dlp au PATH permet d'exécuter <code>yt-dlp</code> depuis n'importe quel dossier dans PowerShell ou CMD — sans naviguer vers le dossier yt-dlp à chaque fois.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="card-light">
+        <h3 style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:12px">Méthode graphique (recommandée)</h3>
+        <ol style="padding-left:18px;font-size:14px;color:var(--muted);line-height:1.8">
+          <li>Appuyez sur <kbd>Win</kbd> et recherchez <strong>Variables d'environnement</strong></li>
+          <li>Cliquez sur <strong>Modifier les variables d'environnement système</strong></li>
+          <li>Dans <em>Variables utilisateur</em>, sélectionnez <strong>Path</strong> → <strong>Modifier</strong></li>
+          <li>Cliquez sur <strong>Nouveau</strong> et collez le chemin du dossier, ex. : <code>C:\Tools\yt-dlp</code></li>
+          <li>Cliquez <strong>OK</strong> sur tous les dialogues, puis redémarrez le terminal</li>
+        </ol>
+      </div>
+      <div class="card-light">
+        <h3 style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:12px">Méthode PowerShell</h3>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:10px">Exécutez ceci une fois dans PowerShell — définit le PATH uniquement pour votre utilisateur, sans droits administrateur :</p>
+        <code class="code">setx PATH "%PATH%;C:\Tools\yt-dlp"</code>
+        <p style="font-size:12px;color:var(--muted);margin-top:10px">Fermez et rouvrez PowerShell après l'exécution. Testez ensuite avec <code>yt-dlp --version</code> depuis n'importe quel répertoire.</p>
+      </div>
+    </div>
+    <div style="margin-top:16px;background:#fff8e1;border:1px solid #ffe082;border-left:4px solid #f59e0b;border-radius:0 10px 10px 0;padding:12px 16px;font-size:13px;color:#7c5e00">
+      <strong>Remarque :</strong> Si <em>"yt-dlp n'est pas reconnu"</em> apparaît après avoir ajouté au PATH, fermez toutes les fenêtres du terminal et rouvrez-les — les modifications du PATH ne prennent effet que dans les nouvelles sessions.
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="verify-title">
+  <div class="container">
+    <p class="section-label">Vérifications post-installation</p>
+    <h2 class="section-title" id="verify-title">Vérifier l'installation et maintenir yt-dlp à jour</h2>
+    <div class="cmd-list">
+      <div class="cmd-block">
+        <div class="cmd-label">Vérifier la version installée</div>
+        <code class="code">yt-dlp --version</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Mettre à jour vers la dernière release</div>
+        <code class="code">yt-dlp -U</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Tester avec un vrai téléchargement (meilleure qualité)</div>
+        <code class="code">yt-dlp "https://www.youtube.com/watch?v=VIDEO_ID"</code>
+      </div>
+      <div class="cmd-block">
+        <div class="cmd-label">Si yt-dlp n'est pas dans le PATH — exécutez directement depuis le dossier</div>
+        <code class="code">C:\Tools\yt-dlp\yt-dlp.exe --version</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" aria-labelledby="trouble-title">
+  <div class="container">
+    <p class="section-label">Problèmes courants</p>
+    <h2 class="section-title" id="trouble-title">Résoudre les problèmes d'installation de yt-dlp sous Windows</h2>
+    <div class="faq-list" style="margin-top:20px">
+      <details>
+        <summary>Avertissement SmartScreen de Windows lors de l'exécution de yt-dlp.exe</summary>
+        <div class="faq-body">Cliquez sur <strong>Informations complémentaires</strong> → <strong>Exécuter quand même</strong>. SmartScreen signale les nouveaux exécutables par défaut. yt-dlp.exe est la release officielle open source de GitHub sans modification.</div>
+      </details>
+      <details>
+        <summary>"yt-dlp n'est pas reconnu" dans PowerShell</summary>
+        <div class="faq-body">Deux options : exécutez yt-dlp directement depuis son dossier, ou ajoutez le dossier au PATH (voir la section ci-dessus). Après avoir ajouté au PATH, fermez toutes les fenêtres du terminal et rouvrez-les.</div>
+      </details>
+      <details>
+        <summary>"Accès refusé" ou fichier bloqué</summary>
+        <div class="faq-body">Clic droit sur <code>yt-dlp.exe</code> → <strong>Propriétés</strong> → en bas cochez <strong>Débloquer</strong> si la case apparaît → cliquez OK. Cela supprime la restriction "téléchargé depuis Internet" de Windows.</div>
+      </details>
+      <details>
+        <summary>Le téléchargement 4K/8K renvoie seulement la vidéo ou seulement l'audio</summary>
+        <div class="faq-body">FFmpeg n'est pas installé ou introuvable. Placez <code>ffmpeg.exe</code> dans le même dossier que <code>yt-dlp.exe</code>. yt-dlp le détectera automatiquement et fusionnera les flux.</div>
+      </details>
+    </div>
+    <p style="margin-top:16px;font-size:13px;color:#666">
+      Plus de problèmes ? <a href="troubleshooting.html">Guide complet de dépannage yt-dlp →</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+      yt-dlp Windows Helper
+    </div>
+    <nav class="footer-links" aria-label="Navigation du pied de page">
+      <a href="index.html">Accueil</a>
+      <a href="download-windows.html">Télécharger</a>
+      <a href="install.html">Installer</a>
+      <a href="gui.html">GUI</a>
+      <a href="to-mp3.html">MP3</a>
+      <a href="download-playlist.html">Playlists</a>
+      <a href="ffmpeg-windows.html">FFmpeg</a>
+      <a href="4k-8k-hdr.html">4K/8K</a>
+      <a href="subtitles-cc.html">Sous-titres</a>
+      <a href="commands.html">Commandes</a>
+      <a href="troubleshooting.html">Dépannage</a>
+      <a href="vs-youtube-dl.html">vs youtube-dl</a>
+      <a href="safe-legal.html">Sécurisé ?</a>
+      <a href="privacy.html">Confidentialité</a>
+      <a href="terms.html">CGU</a>
+    </nav>
+    <p class="footer-note">Guide non officiel de yt-dlp pour Windows. Non affilié à yt-dlp, YouTube ou Google. Téléchargez toujours yt-dlp depuis le <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">dépôt officiel GitHub</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
